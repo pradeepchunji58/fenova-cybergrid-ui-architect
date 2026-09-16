@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Orbitron', 'Space Grotesk', 'Rajdhani', sans-serif;
+    --font-mono: 'Share Tech Mono', monospace;
+    --font-cyber: 'Orbitron', sans-serif;
+    --font-geom: 'Space Grotesk', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+    --font-arabic: 'Cairo', sans-serif;
+    --font-hindi: 'Noto Sans Devanagari', sans-serif;
+
+    /* Default to Tech Green */
+    --accent-color: #0df2c9;
+    --accent-secondary: #00f0b5;
+    --accent-glow: rgba(13, 242, 201, 0.35);
+    --accent-border: rgba(13, 242, 201, 0.3);
+    --accent-badge: rgba(13, 242, 201, 0.12);
+    --accent-btn-bg: #0df2c9;
+    --accent-btn-text: #02060a;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #04070a;
+    color: #f1f5f9;
+  }
+
+  [dir="rtl"] {
+    font-family: var(--font-arabic);
+  }
+
+  [lang="hi"] {
+    font-family: var(--font-hindi);
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: 0.05em;
+  }
+
+  .font-mono, .font-tech {
+    font-family: var(--font-mono);
+  }
+
+  .font-cyber {
+    font-family: var(--font-cyber);
+  }
+
+  .font-geom {
+    font-family: var(--font-geom);
+  }
+
+  [dir="rtl"] h1, 
+  [dir="rtl"] h2, 
+  [dir="rtl"] h3, 
+  [dir="rtl"] .font-heading {
+    font-family: var(--font-arabic);
+    letter-spacing: normal;
+  }
+}
+
+/* Custom Cursor Rules */
+@media (hover: hover) and (pointer: fine) {
+  body.custom-cursor-active,
+  body.custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* =======================================================
+   THREE CEER-INSPIRED COLOR THEMES
+   1. Tech Green (Default - Ceer Neptune Teal / Emerald)
+   2. Cyber Blue (Electric Cobalt / Cyan)
+   3. Crimson Red (Hyper Red / Cyber Crimson)
+   ======================================================= */
+
+/* Theme 1: Tech Green (Neptune Teal / High-Tech Green) */
+.theme-tech-green,
+.theme-premium-engineering {
+  --bg-primary: #04070a;
+  --bg-secondary: #070c12;
+  --bg-card: #0a1118;
+  --bg-card-hover: #0f1924;
+  --accent-color: #0df2c9;
+  --accent-secondary: #00f0b5;
+  --accent-glow: rgba(13, 242, 201, 0.4);
+  --accent-border: rgba(13, 242, 201, 0.3);
+  --accent-badge: rgba(13, 242, 201, 0.12);
+  --accent-btn-bg: #0df2c9;
+  --accent-btn-text: #02060a;
+  --theme-grid-color: rgba(13, 242, 201, 0.04);
+}
+
+/* Theme 2: Cyber Blue (Electric Cobalt / High-Tech Cyan) */
+.theme-cyber-blue,
+.theme-modern-construction {
+  --bg-primary: #04070e;
+  --bg-secondary: #060b16;
+  --bg-card: #091120;
+  --bg-card-hover: #0f1a30;
+  --accent-color: #00d2ff;
+  --accent-secondary: #3b82f6;
+  --accent-glow: rgba(0, 210, 255, 0.4);
+  --accent-border: rgba(0, 210, 255, 0.3);
+  --accent-badge: rgba(0, 210, 255, 0.12);
+  --accent-btn-bg: #00d2ff;
+  --accent-btn-text: #02060a;
+  --theme-grid-color: rgba(0, 210, 255, 0.04);
+}
+
+/* Theme 3: Crimson Red (Hyper Red / Cyber Crimson) */
+.theme-crimson-red {
+  --bg-primary: #0a0406;
+  --bg-secondary: #12060a;
+  --bg-card: #18090f;
+  --bg-card-hover: #240e17;
+  --accent-color: #ff3366;
+  --accent-secondary: #f43f5e;
+  --accent-glow: rgba(255, 51, 102, 0.4);
+  --accent-border: rgba(255, 51, 102, 0.3);
+  --accent-badge: rgba(255, 51, 102, 0.12);
+  --accent-btn-bg: #ff3366;
+  --accent-btn-text: #ffffff;
+  --theme-grid-color: rgba(255, 51, 102, 0.04);
+}
+
+/* Global Dynamic Theme Classes */
+.text-theme-accent {
+  color: var(--accent-color);
+}
+.bg-theme-accent {
+  background-color: var(--accent-color);
+}
+.border-theme-accent {
+  border-color: var(--accent-color);
+}
+.border-theme-subtle {
+  border-color: var(--accent-border);
+}
+.bg-theme-badge {
+  background-color: var(--accent-badge);
+  border: 1px solid var(--accent-border);
+  color: var(--accent-color);
+}
+.shadow-theme-glow {
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+.shadow-theme-glow-lg {
+  box-shadow: 0 0 35px var(--accent-glow);
+}
+.hover-theme-accent:hover {
+  color: var(--accent-color);
+}
+.hover-border-theme-accent:hover {
+  border-color: var(--accent-color);
+}
+
+/* Ceer Motors Cyber Grid & Modular Tile Lines */
+.bg-grid-cyber {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-grid-fine {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.bg-grid-engineering {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Subtle CRT scanline effect */
+.scanline-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.3)
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+/* Custom technical scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #04070a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #162432;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}

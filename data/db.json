@@ -1,0 +1,1451 @@
+{
+  "settings": {
+    "companyName": {
+      "en": "Fenova Hi-Tech Civil Engineering",
+      "ar": "شركة فينوفا للهندسة المدنية والتقنية العالية",
+      "hi": "फ़ेनोवा हाई-टेक सिविल इंजीनियरिंग"
+    },
+    "tagline": {
+      "en": "Pioneering Mega-Scale Civil Engineering, Sustainable Infrastructure & Industrial EPC",
+      "ar": "رواد الهندسة المدنية الكبرى والبنية التحتية المستدامة والمشاريع الصناعية المتكاملة",
+      "hi": "अग्रणी मेगा-स्तरीय सिविल इंजीनियरिंग, सतत बुनियादी ढांचा और औद्योगिक ईपीसी"
+    },
+    "theme": "premium-engineering",
+    "defaultLanguage": "en",
+    "phonePrimary": "+966 11 489 7700",
+    "phoneSecondary": "+966 13 361 9200",
+    "emailContact": "inquiry@fenovacivil.com",
+    "emailCareers": "careers@fenovacivil.com",
+    "emailQuotes": "tenders@fenovacivil.com",
+    "headquartersAddress": {
+      "en": "Fenova Engineering Tower, Floor 24, King Fahd Road, Al Olaya District, Riyadh 12214, Kingdom of Saudi Arabia",
+      "ar": "برج فينوفا الهندسي، الطابق 24، طريق الملك فهد، حي العليا، الرياض 12214، المملكة العربية السعودية",
+      "hi": "फ़ेनोवा इंजीनियरिंग टॉवर, 24वीं मंजिल, किंग फहद रोड, अल ओलाया, रियाद, सऊदी अरब"
+    },
+    "socials": {
+      "linkedin": "https://linkedin.com/company/fenova-civil",
+      "twitter": "https://twitter.com/fenovacivil",
+      "youtube": "https://youtube.com/@fenovacivil"
+    },
+    "stats": {
+      "yearsOfExcellence": 34,
+      "completedMegaProjects": 148,
+      "workforceStrength": "12,500+",
+      "equipmentFleetCount": "1,850+ Heavy Machinery Units",
+      "safetyHoursWithoutLTI": "42.8 Million Hours",
+      "aggregateProjectValue": "$18.4 Billion"
+    },
+    "certifications": [
+      "ISO 9001:2015 Quality Management",
+      "ISO 14001:2015 Environmental Management",
+      "ISO 45001:2018 Occupational Health & Safety",
+      "Class A Contractor License - Ministry of Municipal & Rural Affairs (MOMRA)",
+      "Aramco Approved General Civil Contractor (Vendor #10049281)"
+    ],
+    "primaryTheme": "premium-engineering"
+  },
+  "heroSlides": [
+    {
+      "id": "slide-1",
+      "order": 1,
+      "visible": true,
+      "badge": {
+        "en": "MEGA-SCALE INFRASTRUCTURE",
+        "ar": "مشاريع البنية التحتية العملاقة",
+        "hi": "मेगा-स्तरीय बुनियादी ढांचा"
+      },
+      "title": {
+        "en": "Engineering Resilient Infrastructure for Future Generations",
+        "ar": "هندسة بنية تحتية مرنة ومستدامة للأجيال القادمة",
+        "hi": "भावी पीढ़ियों के लिए लचीले बुनियादी ढांचे का निर्माण"
+      },
+      "subtitle": {
+        "en": "Precision Civil Engineering & Heavy Industrial Construction",
+        "ar": "الهندسة المدنية الدقيقة والإنشاءات الصناعية الثقيلة",
+        "hi": "सटीक सिविल इंजीनियरिंग और भारी औद्योगिक निर्माण"
+      },
+      "description": {
+        "en": "From multi-span bridge viaducts and high-speed rail corridors to automated industrial complexes across the Middle East and South Asia.",
+        "ar": "من جسور الجسور متعددة الفتحات وممرات السكك الحديدية فائقة السرعة إلى المجمعات الصناعية المتطورة في الشرق الأوسط وجنوب آسيا.",
+        "hi": "मध्य पूर्व और दक्षिण एशिया में मल्टी-स्पैन ब्रिज वायाडक्ट्स और हाई-स्पीड रेल कॉरिडोर से लेकर अत्याधुनिक औद्योगिक परिसरों तक।"
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f8?q=80&w=2070&auto=format&fit=crop",
+      "primaryCtaText": {
+        "en": "Explore Mega Projects",
+        "ar": "استكشف المشاريع الكبرى",
+        "hi": "मेगा परियोजनाएं देखें"
+      },
+      "primaryCtaLink": "/projects",
+      "secondaryCtaText": {
+        "en": "Request a Quotation",
+        "ar": "طلب تسعير المشروع",
+        "hi": "कोटेशन का अनुरोध करें"
+      },
+      "secondaryCtaLink": "/quotation"
+    },
+    {
+      "id": "slide-2",
+      "order": 2,
+      "visible": true,
+      "badge": {
+        "en": "HEAVY INDUSTRIAL EPC",
+        "ar": "المشاريع الصناعية المتكاملة (EPC)",
+        "hi": "भारी औद्योगिक ईपीसी"
+      },
+      "title": {
+        "en": "Delivering Complex Civil Works with Uncompromising Safety",
+        "ar": "تنفيذ الأعمال المدنية المعقدة بأعلى معايير السلامة والجودة",
+        "hi": "अटल सुरक्षा और गुणवत्ता के साथ जटिल सिविल कार्यों का निष्पादन"
+      },
+      "subtitle": {
+        "en": "Over 42 Million Man-Hours Without Lost Time Injury",
+        "ar": "أكثر من 42 مليون ساعة عمل دون أي إصابة مهدرة للوقت",
+        "hi": "बिना किसी रुकावट के 42 मिलियन से अधिक सुरक्षित कार्य-घंटे"
+      },
+      "description": {
+        "en": "Specialized deep foundations, marine berths, and heavy structural engineering executed with an owned fleet of 1,850+ specialized equipment units.",
+        "ar": "أساسات عميقة متخصصة، وأرصفة بحرية، وهندسة إنشائية ثقيلة تُنفذ بأسطول مملوك يضم أكثر من 1,850 وحدة معدات تخصصية.",
+        "hi": "1,850 से अधिक भारी उपकरणों के हमारे स्वामित्व वाले बेड़े के साथ विशिष्ट गहरे फाउंडेशन, समुद्री बर्थ और जटिल संरचनात्मक इंजीनियरिंग।"
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop",
+      "primaryCtaText": {
+        "en": "Our Capabilities",
+        "ar": "قدراتنا وخبراتنا",
+        "hi": "हमारी क्षमताएं"
+      },
+      "primaryCtaLink": "/services",
+      "secondaryCtaText": {
+        "en": "Download Corporate Profile",
+        "ar": "تحميل ملف الشركة التعريفي",
+        "hi": "कॉर्पोरेट प्रोफ़ाइल डाउनलोड करें"
+      },
+      "secondaryCtaLink": "/brochures"
+    },
+    {
+      "id": "slide-3",
+      "order": 3,
+      "visible": true,
+      "badge": {
+        "en": "MULTINATIONAL OPERATIONS",
+        "ar": "عمليات دولية رائدة",
+        "hi": "अंतरराष्ट्रीय संचालन"
+      },
+      "title": {
+        "en": "Strategic Operations Across Riyadh, Jubail, and India",
+        "ar": "عمليات استراتيجية تشمل الرياض والجبيل والهند",
+        "hi": "रियाद, जुबैल और भारत में रणनीतिक इंजीनियरिंग संचालन"
+      },
+      "subtitle": {
+        "en": "Unified Quality Standards & Multidisciplinary Technical Teams",
+        "ar": "معايير جودة موحدة وفرق فنية متعددة التخصصات",
+        "hi": "एकीकृत गुणवत्ता मानक और बहु-विषयक तकनीकी विशेषज्ञ"
+      },
+      "description": {
+        "en": "Combining international engineering excellence with deep regional geotechnical mastery and full local regulatory alignment.",
+        "ar": "نجمع بين التميز الهندسي العالمي والخبرة الجيوتقنية الإقليمية العميقة مع الامتثال الكامل للأنظمة المحلية.",
+        "hi": "अंतरराष्ट्रीय इंजीनियरिंग उत्कृष्टता और क्षेत्रीय भू-तकनीकी विशेषज्ञता का अद्वितीय संयोजन।"
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+      "primaryCtaText": {
+        "en": "View Operating Locations",
+        "ar": "فروعنا ومواقعنا",
+        "hi": "हमारे कार्यालय देखें"
+      },
+      "primaryCtaLink": "/about/locations",
+      "secondaryCtaText": {
+        "en": "Speak to Leadership",
+        "ar": "تواصل مع الإدارة",
+        "hi": "नेतृत्व से संपर्क करें"
+      },
+      "secondaryCtaLink": "/contact"
+    },
+    {
+      "id": "slide_1789546172467",
+      "order": 4,
+      "title": {
+        "en": "New Infrastructure Milestone",
+        "ar": "إنجاز بنية تحتية جديد",
+        "hi": "नया बुनियादी ढांचा"
+      },
+      "subtitle": {
+        "en": "Precision Geotechnical Engineering",
+        "ar": "هندسة جيوتقنية دقيقة",
+        "hi": "सटीक भू-तकनीकी इंजीनियरिंग"
+      },
+      "description": {
+        "en": "Executing mega civil contracts with speed and safety.",
+        "ar": "تنفيذ العقود المدنية الكبرى",
+        "hi": "मेगा सिविल अनुबंधों का निष्पादन"
+      },
+      "badge": {
+        "en": "Featured Landmark",
+        "ar": "معلم رئيسي",
+        "hi": "प्रमुख मील का पत्थर"
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=1920&q=80",
+      "primaryCtaText": {
+        "en": "Explore Project",
+        "ar": "استكشف المشروع",
+        "hi": "परियोजना देखें"
+      },
+      "primaryCtaLink": "/projects",
+      "visible": false
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "slug": "riyadh-metro-line-7-viaduct",
+      "name": {
+        "en": "Riyadh Metro Line 7 Elevated Viaduct & Transit Hubs",
+        "ar": "جسر مترو الرياض الخط 7 العلوي ومحطات النقل التبادلية",
+        "hi": "रियाद मेट्रो लाइन 7 एलिवेटेड वायाडक्ट और ट्रांजिट हब"
+      },
+      "client": "Royal Commission for Riyadh City (RCRC)",
+      "location": {
+        "en": "Riyadh, Saudi Arabia",
+        "ar": "الرياض، المملكة العربية السعودية",
+        "hi": "रियाद, सऊदी अरब"
+      },
+      "category": "transportation",
+      "status": "completed",
+      "featured": true,
+      "startDate": "2021-03-15",
+      "completionDate": "2024-11-30",
+      "projectValue": "$840 Million USD",
+      "description": {
+        "en": "Complete turnkey civil execution of a 24.6-kilometer twin-track elevated segmental concrete viaduct with 8 architectural transit stations, seismic dampers, and integrated stormwater subterranean channels.",
+        "ar": "تنفيذ مدني متكامل لجسر خرساني قطاعي علوي مزدوج المسار بطول 24.6 كم، يشمل 8 محطات ترانزيت معمارية وأنظمة تخميد زلزالي وقنوات تصريف مياه أمطار تحت الأرض.",
+        "hi": "8 आर्किटेक्चरल स्टेशनों, भूकंपीय डैम्पर्स और भूमिगत जल निकासी चैनलों के साथ 24.6 किमी डबल-ट्रैक एलिवेटेड कंक्रीट वायाडक्ट का पूर्ण सिविल निर्माण।"
+      },
+      "scopeOfWork": [
+        {
+          "en": "1,120 prestressed precast concrete box girders manufactured in on-site casting yard",
+          "ar": "تصنيع 1,120 عارضة صندوقية خرسانية مسبقة الإجهاد والصب في ساحة الصب الميدانية",
+          "hi": "साइट पर कास्टिंग यार्ड में 1,120 प्रीस्ट्रेस्ड प्रीकास्ट कंक्रीट बॉक्स गर्डर्स का निर्माण"
+        },
+        {
+          "en": "36,000 meters of large-diameter bored pile foundations reaching depths of 38m",
+          "ar": "36,000 متر من خوازيق الحفر العميقة ذات الأقطار الكبيرة حتى عمق 38 متراً",
+          "hi": "38 मीटर गहराई तक 36,000 मीटर बड़े व्यास के पाइल फाउंडेशन"
+        },
+        {
+          "en": "8 state-of-the-art passenger stations with tensile PTFE canopies and smart HVAC",
+          "ar": "8 محطات ركاب متطورة مزودة بمظلات PTFE المشدودة وأنظمة تكييف ذكية",
+          "hi": "स्मार्ट एचवीएसी सिस्टम वाले 8 अत्याधुनिक यात्री स्टेशन"
+        }
+      ],
+      "mainImage": "https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=2070&auto=format&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=2070&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2069&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop"
+      ],
+      "highlights": [
+        {
+          "en": "Zero Lost Time Incidents across 14.2 million man-hours",
+          "ar": "صفر حوادث مهدرة للوقت عبر 14.2 مليون ساعة عمل",
+          "hi": "14.2 मिलियन कार्य-घंटों में शून्य दुर्घटनाएं"
+        },
+        {
+          "en": "Delivered 3 months ahead of contracted schedule",
+          "ar": "تم التسليم قبل 3 أشهر من الموعد التعاقدي المحدد",
+          "hi": "अनुबंधित समय से 3 महीने पहले पूर्ण"
+        }
+      ],
+      "order": 1,
+      "visible": true
+    },
+    {
+      "id": "proj-2",
+      "slug": "king-salman-energy-park-civil-grid",
+      "name": {
+        "en": "King Salman Energy Park (SPARK) Heavy Industrial Civil Grid",
+        "ar": "مدينة الملك سلمان للطاقة (سبارك) - شبكة الأعمال المدنية الصناعية",
+        "hi": "किंग सलमान एनर्जी पार्क भारी औद्योगिक सिविल ग्रिड"
+      },
+      "client": "Saudi Aramco & SPARK Development Company",
+      "location": {
+        "en": "Eastern Province, Saudi Arabia",
+        "ar": "المنطقة الشرقية، المملكة العربية السعودية",
+        "hi": "पूर्वी प्रांत, सऊदी अरब"
+      },
+      "category": "industrial",
+      "status": "ongoing",
+      "featured": true,
+      "startDate": "2023-01-10",
+      "completionDate": "2026-12-15",
+      "projectValue": "$620 Million USD",
+      "description": {
+        "en": "Comprehensive site preparation, heavy reinforced foundation pads for petrochemical equipment, 52 km of utility duct banks, flood prevention canals, and heavy-haul road network capable of bearing 600-ton modular loads.",
+        "ar": "تجهيز شامل للموقع وقواعد خرسانية مسلحة ثقيلة لمعدات البتروكيماويات و52 كم من مسارات المرافق وقنوات تصريف السيول وشبكة طرق للحمولات الفائقة حتى 600 طن.",
+        "hi": "पेट्रोकेमिकल उपकरणों के लिए भारी कंक्रीट नींव, 52 किमी उपयोगिता चैनल और 600 टन तक भारी भार सहन करने वाली सड़कें।"
+      },
+      "scopeOfWork": [
+        {
+          "en": "4.8 million cubic meters of engineered earthmoving and rock blasting",
+          "ar": "4.8 مليون متر مكعب من أعمال الحفر والردم الهندسي وتفجير الصخور",
+          "hi": "4.8 मिलियन क्यूबिक मीटर अर्थमूविंग और रॉक ब्लास्टिंग"
+        },
+        {
+          "en": "Over 280,000 cubic meters of high-durability sulfate-resistant concrete",
+          "ar": "أكثر من 280,000 متر مكعب من الخرسانة المقاومة للكبريتات عالية المتانة",
+          "hi": "280,000 क्यूबिक मीटर से अधिक उच्च स्थायित्व वाला कंक्रीट"
+        }
+      ],
+      "mainImage": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f8?q=80&w=2070&auto=format&fit=crop"
+      ],
+      "highlights": [
+        {
+          "en": "Awarded Aramco Best Contractor HSE Excellence 2024",
+          "ar": "جائزة أرامكو لأفضل مقاول في السلامة والصحة والبيئة 2024",
+          "hi": "2024 में अरामको सर्वश्रेष्ठ ठेकेदार सुरक्षा पुरस्कार से सम्मानित"
+        }
+      ],
+      "order": 2,
+      "visible": true
+    },
+    {
+      "id": "proj-3",
+      "slug": "jubail-marine-desalination-intake",
+      "name": {
+        "en": "Jubail Industrial Seawater Intake & Marine Quay Wall",
+        "ar": "مأخذ مياه البحر الصناعية وجدار الرصيف البحري بالجبيل",
+        "hi": "जुबैल औद्योगिक समुद्री जल सेवन और समुद्री तटबंध"
+      },
+      "client": "Royal Commission for Jubail and Yanbu (RCJY)",
+      "location": {
+        "en": "Jubail Industrial City, Saudi Arabia",
+        "ar": "مدينة الجبيل الصناعية، المملكة العربية السعودية",
+        "hi": "जुबैल औद्योगिक शहर, सऊदी अरब"
+      },
+      "category": "infrastructure",
+      "status": "completed",
+      "featured": true,
+      "startDate": "2020-08-01",
+      "completionDate": "2023-09-15",
+      "projectValue": "$390 Million USD",
+      "description": {
+        "en": "Deep-water intake structure and 1.8km heavy gravity quay wall for desalination plants, featuring reinforced precast concrete caissons submerged with marine floating cranes.",
+        "ar": "منشأة مأخذ مياه عميقة وجدار رصيف بحري خرساني ثقيل بطول 1.8 كم لمحطات التحلية، باستخدام كتل قيسونات خرسانية مسبقة الصب تم إنزالها برافعة بحرية عائمة.",
+        "hi": "अलवणीकरण संयंत्रों के लिए गहरा समुद्री जल सेवन संरचना और 1.8 किमी लंबा भारी समुद्री तटबंध।"
+      },
+      "scopeOfWork": [
+        {
+          "en": "Installation of 64 heavy reinforced concrete maritime caissons (each 2,400 tons)",
+          "ar": "تركيب 64 قيسون خرساني مسلح بحري ثقيل (وزن كل منها 2,400 طن)",
+          "hi": "64 भारी प्रबलित समुद्री कैसॉन (प्रत्येक 2,400 टन) की स्थापना"
+        },
+        {
+          "en": "Underwater marine dredging of 1.2 million m3 of offshore seabed",
+          "ar": "تجريف بحري لقاع البحر بكمية 1.2 مليون متر مكعب",
+          "hi": "1.2 मिलियन घन मीटर समुद्री तल की ड्रेजिंग"
+        }
+      ],
+      "mainImage": "https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?q=80&w=2070&auto=format&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?q=80&w=2070&auto=format&fit=crop"
+      ],
+      "highlights": [
+        {
+          "en": "Engineered for a 100-year design life against high marine salinity",
+          "ar": "مصمم لعمر افتراضي يمتد لـ 100 عام لمقاومة الملوحة البحرية العالية",
+          "hi": "उच्च समुद्री लवणता के विरुद्ध 100 वर्षों के सेवा जीवन के लिए डिज़ाइन किया गया"
+        }
+      ],
+      "order": 3,
+      "visible": true
+    },
+    {
+      "id": "proj-4",
+      "slug": "mumbai-coastal-viaduct-connector",
+      "name": {
+        "en": "Western Coastal Expressway Viaduct & Deep Piling Package",
+        "ar": "جسر طريق الساحل الغربي السريع وحزمة الخوازيق العميقة",
+        "hi": "पश्चिमी तटीय एक्सप्रेसवे वायाडक्ट और डीप पाइलिंग पैकेज"
+      },
+      "client": "Municipal Corporation of Greater Mumbai (MCGM)",
+      "location": {
+        "en": "Mumbai, Maharashtra, India",
+        "ar": "مومباي، ماهاراشترا، الهند",
+        "hi": "मुंबई, महाराष्ट्र, भारत"
+      },
+      "category": "transportation",
+      "status": "ongoing",
+      "featured": false,
+      "startDate": "2023-06-01",
+      "completionDate": "2026-08-30",
+      "projectValue": "$410 Million USD",
+      "description": {
+        "en": "Construction of a 6-lane elevated coastal expressway over intertidal mudflats utilizing specialized launching gantries, drilled shafts in basalt bedrocks, and anti-corrosive epoxy-coated reinforcement.",
+        "ar": "بناء طريق سريع ساحلي علوي من 6 مسارات فوق المناطق الطينية الساحلية باستخدام روافع إطلاق متخصصة وأوتاد محفورة في صخور البازلت الخرسانية المقاومة للتآكل.",
+        "hi": "विशिष्ट गेंट्री और बेसाल्ट चट्टानों में ड्रिल किए गए शाफ्ट का उपयोग करके 6-लेन एलिवेटेड कोस्टल एक्सप्रेसवे का निर्माण।"
+      },
+      "scopeOfWork": [
+        {
+          "en": "440 segmental spans constructed with twin self-launching hydraulic gantries",
+          "ar": "440 قطاع جسري شيدت باستخدام رافعتين هيدروليكيتين ذاتيتي الإطلاق",
+          "hi": "ट्विन सेल्फ-लॉन्चिंग हाइड्रोलिक गैंट्री से निर्मित 440 स्पैन"
+        },
+        {
+          "en": "Intertidal foundation protection and environmental reclamation",
+          "ar": "حماية الأساسات في المناطق المدية واستصلاح بيئي للشواطئ",
+          "hi": "पर्यावरण-अनुकूल नींव संरक्षण और तटवर्ती पुनरुद्धार"
+        }
+      ],
+      "mainImage": "https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=2070&auto=format&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=2070&auto=format&fit=crop"
+      ],
+      "highlights": [
+        {
+          "en": "Innovative launching gantry reduced construction timeline by 22%",
+          "ar": "نظام الروافع المتطور خفض مدة الإنشاء الإجمالية بنسبة 22%",
+          "hi": "उन्नत गैंट्री सिस्टम ने निर्माण समय को 22% कम कर दिया"
+        }
+      ],
+      "order": 4,
+      "visible": true
+    },
+    {
+      "id": "proj-5",
+      "slug": "red-sea-luxury-island-geotechnical",
+      "name": {
+        "en": "Red Sea Coastal Spine & Marine Foundation Infrastructure",
+        "ar": "العمود الفقري لساحل البحر الأحمر والبنية التحتية للأساسات البحرية",
+        "hi": "रेड सी कोस्टल स्पाइन और समुद्री फाउंडेशन इन्फ्रास्ट्रक्चर"
+      },
+      "client": "Red Sea Global (RSG)",
+      "location": {
+        "en": "Tabuk Province, Saudi Arabia",
+        "ar": "منطقة تبوك، المملكة العربية السعودية",
+        "hi": "तबूक, सऊदी अरब"
+      },
+      "category": "infrastructure",
+      "status": "completed",
+      "featured": false,
+      "startDate": "2021-11-01",
+      "completionDate": "2024-02-28",
+      "projectValue": "$275 Million USD",
+      "description": {
+        "en": "Sustainable marine bridge connecting luxury archipelago islands, geotechnical dynamic compaction, eco-sensitive silt curtains, and solar-powered utility tunnels embedded beneath coral-protected channels.",
+        "ar": "جسر بحري مستدام يربط جزر الأرخبيل الفاخرة، مع أعمال الدمك الديناميكي وستائر الحماية الرسوبية البيئية وأنفاق مرافق تعمل بالطاقة الشمسية.",
+        "hi": "अल्ट्रा-लक्जरी द्वीपों को जोड़ने वाला टिकाऊ समुद्री पुल, पर्यावरण-अनुकूल तकनीक और सौर-ऊर्जा संचालित उपयोगिता सुरंगें।"
+      },
+      "scopeOfWork": [
+        {
+          "en": "Low-carbon geopolymer concrete formulations reducing carbon footprint by 35%",
+          "ar": "خلطات خرسانية جيوبوليميرية منخفضة الكربون خفضت الانبعاثات بنسبة 35%",
+          "hi": "कम कार्बन उत्सर्जन वाला कंक्रीट जिससे कार्बन फुटप्रिंट में 35% कमी आई"
+        }
+      ],
+      "mainImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+      ],
+      "highlights": [
+        {
+          "en": "100% LEED Platinum and Green Marine Certified execution",
+          "ar": "تنفيذ حاصل على اعتماد LEED البلاتيني الكامل والشهادة البحرية الخضراء",
+          "hi": "100% LEED प्लेटिनम और पर्यावरण-सर्टिफाइड निष्पादन"
+        }
+      ],
+      "order": 5,
+      "visible": true
+    }
+  ],
+  "services": [
+    {
+      "id": "serv-1",
+      "slug": "civil-engineering",
+      "title": {
+        "en": "Civil Engineering & Heavy Foundations",
+        "ar": "الهندسة المدنية والأساسات العميقة",
+        "hi": "सिविल इंजीनियरिंग और भारी फाउंडेशन"
+      },
+      "shortDescription": {
+        "en": "Comprehensive structural analysis, deep bored piling, diaphragm walls, and heavy reinforced concrete works for critical installations.",
+        "ar": "تحليل إنشائي متكامل، خوازيق حفر عميقة، جدران استنادية مسبقة الإجهاد، وأعمال خرسانية مسلحة للمنشآت الاستراتيجية.",
+        "hi": "महत्वपूर्ण प्रतिष्ठानों के लिए संरचनात्मक विश्लेषण, गहरी बोरिंग पाइलिंग और भारी कंक्रीट कार्य।"
+      },
+      "detailedDescription": {
+        "en": "Our Civil Engineering division executes the bedrock of modern civilization. With dedicated high-torque hydraulic piling rigs capable of reaching 60-meter depths, mass concrete thermal control systems, and robotic total-station survey networks, we engineer structures built to withstand extreme geotechnical and seismic conditions.",
+        "ar": "يقوم قسم الهندسة المدنية بتنفيذ أساسات البنية التحتية الاستراتيجية بأحدث منصات الحفر الهيدروليكية ذات العزم الفائق التي تصل لأعماق 60 متراً، مع أنظمة التحكم الحراري للصب الكلي وشبكات المسح الروبوتية المتقدمة.",
+        "hi": "हमारा सिविल इंजीनियरिंग विभाग 60 मीटर की गहराई तक पहुंचने में सक्षम उच्च टॉर्क हाइड्रोलिक पाइलिंग रिग्स के साथ जटिल नींव और भारी संरचनाओं का निर्माण करता है।"
+      },
+      "category": "Engineering & Groundworks",
+      "iconName": "Building2",
+      "mainImage": "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f8?q=80&w=2070&auto=format&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f8?q=80&w=2070&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop"
+      ],
+      "features": [
+        {
+          "en": "Bored piling up to 3,000mm diameter in all rock formations",
+          "ar": "خوازيق محفورة بأقطار تصل إلى 3,000 ملم في مختلف التكوينات الصخرية",
+          "hi": "सभी चट्टानी संरचनाओं में 3,000 मिमी व्यास तक की बोरिंग पाइलिंग"
+        },
+        {
+          "en": "Diaphragm wall construction with bentonite slurry desanding plants",
+          "ar": "إنشاء الجدران الاستنادية اللوحية مع محطات تنقية سائل البنتونيت",
+          "hi": "बेंटोनाइट स्लरी डिसेन्डिंग के साथ डायाफ्राम दीवार निर्माण"
+        },
+        {
+          "en": "Post-tensioned slabs and massive equipment foundation blocks",
+          "ar": "بلاطات خرسانية لاحقة الشد وقواعد ضخمة للآلات والمعدات الثقيلة",
+          "hi": "पोस्ट-टेंशन वाले स्लैब और विशाल उपकरण नींव ब्लॉक"
+        }
+      ],
+      "benefits": [
+        {
+          "en": "Sub-millimeter laser-guided structural accuracy",
+          "ar": "دقة إنشائية فائقة بتوجيه الليزر الميليمتري",
+          "hi": "उप-मिलीमीटर लेज़र-निर्देशित संरचनात्मक सटीकता"
+        },
+        {
+          "en": "Guaranteed 100+ year durability against aggressive soil sulfates",
+          "ar": "ضمان متانة تتجاوز 100 عام ضد كبريتات التربة القلوية",
+          "hi": "आक्रामक मिट्टी के सल्फेट्स के खिलाफ 100+ वर्षों का स्थायित्व"
+        }
+      ],
+      "relatedProjectIds": [
+        "proj-1",
+        "proj-2"
+      ],
+      "order": 1,
+      "visible": true
+    },
+    {
+      "id": "serv-2",
+      "slug": "construction",
+      "title": {
+        "en": "General & Industrial Construction",
+        "ar": "المقاولات العامة والإنشاءات الصناعية",
+        "hi": "सामान्य और औद्योगिक निर्माण"
+      },
+      "shortDescription": {
+        "en": "Full-scale general contracting, petrochemical process units, manufacturing facilities, and super-heavy industrial structures.",
+        "ar": "مقاولات عامة متكاملة، وحدات المعالجة البتروكيماوية، المنشآت التصنيعية، والمباني الصناعية الفائقة.",
+        "hi": "पूर्ण पैमाने पर सामान्य अनुबंध, पेट्रोकेमिकल इकाइयां और विनिर्माण सुविधाएं।"
+      },
+      "detailedDescription": {
+        "en": "We specialize in industrial and high-load commercial construction. We act as EPC lead or primary civil partner for refineries, chemical parks, power substations, and automated manufacturing gigafactories.",
+        "ar": "نحن متخصصون في الإنشاءات الصناعية والتجارية ذات الحمولات العالية. نعمل كمقاول رئيسي لأعمال الهندسة والتوريد والإنشاء (EPC) أو شريك مدني للمصافي ومحطات الطاقة والمصانع العملاقة.",
+        "hi": "हम रिफाइनरियों, रासायनिक संयंत्रों, विद्युत सबस्टेशनों और अत्याधुनिक विनिर्माण संयंत्रों के लिए मुख्य सिविल और निर्माण साझेदार के रूप में कार्य करते हैं।"
+      },
+      "category": "Construction & EPC",
+      "iconName": "Factory",
+      "mainImage": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop"
+      ],
+      "features": [
+        {
+          "en": "Heavy blast-resistant control buildings and substations",
+          "ar": "مباني تحكم ومحطات تحويل مقاومة للانفجارات والصدمات",
+          "hi": "विस्फोट-प्रतिरोधी नियंत्रण भवन और सबस्टेशन"
+        },
+        {
+          "en": "Pre-engineered steel fabrication & heavy erection over 5,000 tons",
+          "ar": "تصنيع وتركيب الهياكل الفولاذية المسبقة الصنع حتى 5,000 طن",
+          "hi": "5,000 टन से अधिक प्री-इंजीनियर्ड स्टील फैब्रिकेशन और इरेक्शन"
+        }
+      ],
+      "benefits": [
+        {
+          "en": "Rapid modular assembly reducing on-site downtime",
+          "ar": "تركيب موديولار سريع يقلل من فترات توقف العمل الميداني",
+          "hi": "तीव्र मॉड्यूलर असेंबली जिससे ऑन-साइट समय की बचत होती है"
+        }
+      ],
+      "relatedProjectIds": [
+        "proj-2",
+        "proj-3"
+      ],
+      "order": 2,
+      "visible": true
+    },
+    {
+      "id": "serv-3",
+      "slug": "infrastructure",
+      "title": {
+        "en": "Infrastructure & Transportation Corridors",
+        "ar": "البنية التحتية وشبكات النقل الاستراتيجية",
+        "hi": "बुनियादी ढांचा और परिवहन गलियारे"
+      },
+      "shortDescription": {
+        "en": "Highways, multi-tier interchanges, elevated transit bridges, railway viaducts, and utility trunk networks.",
+        "ar": "الطرق السريعة والتقاطعات متعددة المستويات وجسور المترو المعلقة وشبكات خطوط السكك الحديدية والمرافق الرئيسية.",
+        "hi": "राजमार्ग, बहु-स्तरीय इंटरचेंज, एलिवेटेड ट्रांजिट ब्रिज और रेलवे वायाडक्ट।"
+      },
+      "detailedDescription": {
+        "en": "Our infrastructure group transforms regions into interconnected economies. With fleet-operated asphalt paving trains, segmental launching gantries, and comprehensive micro-tunneling for utility mains, we deliver large transportation corridors on schedule.",
+        "ar": "تحول مجموعة البنية التحتية لدينا الأقاليم إلى اقتصادات مترابطة. نمتلك قطارات رصف الأسفلت العملاقة وروافع إطلاق قطاعات الجسور وأنظمة الحفر النفقي الدقيق لشبكات المرافق.",
+        "hi": "हमारा इन्फ्रास्ट्रक्चर ग्रुप स्वचालित डामर पेविंग, ब्रिज लॉन्चिंग गैंट्री और माइक्रो-टनलिंग के साथ बड़े परिवहन गलियारों का निर्माण करता है।"
+      },
+      "category": "Transportation & Networks",
+      "iconName": "Truck",
+      "mainImage": "https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=2070&auto=format&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=2070&auto=format&fit=crop"
+      ],
+      "features": [
+        {
+          "en": "Segmental bridge construction with spans up to 90 meters",
+          "ar": "إنشاء الجسور القطاعية بفتحات تمتد حتى 90 متراً",
+          "hi": "90 मीटर तक के स्पैन वाले सेगमेंटल ब्रिज निर्माण"
+        },
+        {
+          "en": "Dual multi-lane expressway paving with modified polymer bitumen",
+          "ar": "رصف الطرق السريعة متعددة المسارات بأسفلت البوليمر المحسن",
+          "hi": "पॉलिमर बिटुमेन के साथ मल्टी-लेन एक्सप्रेसवे पेविंग"
+        }
+      ],
+      "benefits": [
+        {
+          "en": "Optimized vehicular flow and heavy freight capability",
+          "ar": "تحسين تدفق المركبات وتحمل الحمولات الثقيلة والشاحنات",
+          "hi": "वाहनों का बेहतर प्रवाह और भारी माल परिवहन क्षमता"
+        }
+      ],
+      "relatedProjectIds": [
+        "proj-1",
+        "proj-4"
+      ],
+      "order": 3,
+      "visible": true
+    },
+    {
+      "id": "serv-4",
+      "slug": "marine-and-coastal",
+      "title": {
+        "en": "Marine & Coastal Engineering",
+        "ar": "الهندسة البحرية والمنشآت الساحلية",
+        "hi": "समुद्री और तटीय इंजीनियरिंग"
+      },
+      "shortDescription": {
+        "en": "Quay walls, breakwaters, offshore intakes, port berths, and coastal erosion defense structures.",
+        "ar": "أرصفة الموانئ وكواسر الأمواج ومآخذ المياه البحرية وأرصفة التفريغ وحماية الشواطئ من التآكل.",
+        "hi": "तटबंध, ब्रेकवाटर, समुद्री जल सेवन और बंदरगाह बर्थ।"
+      },
+      "detailedDescription": {
+        "en": "Operating in demanding marine environments requires precision maritime engineering. We deploy heavy spud barges, subsea piling hammers, and underwater diving inspection teams for port and coastal defenses.",
+        "ar": "يتطلب العمل في البيئات البحرية خبرة هندسية دقيقة. نستخدم الصنادل البحرية الثقيلة ومطارق الدق تحت الماء وفرق الغوص الهندسي المتخصصة للأرصفة ومصدات الأمواج.",
+        "hi": "हम बंदरगाहों और समुद्री सुरक्षा के लिए भारी बार्ज, सबसी पाइलिंग और अंडरवाटर इंजीनियरिंग तकनीकों का उपयोग करते हैं।"
+      },
+      "category": "Maritime Works",
+      "iconName": "Anchor",
+      "mainImage": "https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?q=80&w=2070&auto=format&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?q=80&w=2070&auto=format&fit=crop"
+      ],
+      "features": [
+        {
+          "en": "Precast concrete caissons up to 3,000 tons installed offshore",
+          "ar": "تركيب قيسونات خرسانية بحرية مسبقة الصنع حتى 3,000 طن",
+          "hi": "3,000 टन तक के प्रीकास्ट कंक्रीट कैसॉन की स्थापना"
+        },
+        {
+          "en": "Heavy rock armoring and tetrapod breakwater construction",
+          "ar": "تدريع الصخور الثقيلة وإنشاء كواسر الأمواج بالكتل الرباعية (تترابود)",
+          "hi": "भारी रॉक आर्मरिंग और टेट्रापॉड ब्रेकवाटर निर्माण"
+        }
+      ],
+      "benefits": [
+        {
+          "en": "High resilience against tidal currents and extreme storm surges",
+          "ar": "مقاومة فائقة للتيارات المدية والعواصف البحرية القاسية",
+          "hi": "समुद्री लहरों और तूफानों के खिलाफ असाधारण मजबूती"
+        }
+      ],
+      "relatedProjectIds": [
+        "proj-3",
+        "proj-5"
+      ],
+      "order": 4,
+      "visible": true
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-1",
+      "name": {
+        "en": "Riyadh Corporate Headquarters",
+        "ar": "المقر الرئيسي للشركة - الرياض",
+        "hi": "रियाद कॉर्पोरेट मुख्यालय"
+      },
+      "country": {
+        "en": "Kingdom of Saudi Arabia",
+        "ar": "المملكة العربية السعودية",
+        "hi": "सऊदी अरब"
+      },
+      "address": {
+        "en": "Apex Tower, 24th Floor, King Fahd Road, Al Olaya District, Riyadh 12214",
+        "ar": "برج أبيكس، الطابق 24، طريق الملك فهد، حي العليا، الرياض 12214",
+        "hi": "एपेक्स टॉवर, 24वीं मंजिल, किंग फहद रोड, अल ओलाया, रियाद"
+      },
+      "phone": "+966 11 489 7700",
+      "email": "riyadh.hq@apexcivil.com",
+      "mapEmbedUrl": "https://maps.google.com/maps?q=King+Fahd+Road+Riyadh&t=&z=14&ie=UTF8&iwloc=&output=embed",
+      "coordinates": {
+        "lat": 24.7136,
+        "lng": 46.6753
+      },
+      "description": {
+        "en": "Central executive leadership, engineering design center, tendering, procurement, and mega-project monitoring control room.",
+        "ar": "مقر القيادة التنفيذية ومركز التصميم الهندسي وطرح العطاءات والمشتريات وغرفة التحكم والمتابعة للمشاريع الكبرى.",
+        "hi": "केंद्रीय कार्यकारी नेतृत्व, इंजीनियरिंग डिजाइन केंद्र, टेंडरिंग और मेगा-परियोजना नियंत्रण कक्ष।"
+      },
+      "locationImage": "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=2070&auto=format&fit=crop",
+      "officeImage": "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
+      "contactPerson": "Eng. Khalid Al-Zahrani (Regional Director)",
+      "workingHours": {
+        "en": "Sun - Thu: 08:00 AM - 05:30 PM (AST)",
+        "ar": "الأحد - الخميس: 08:00 ص - 05:30 م",
+        "hi": "रवि - गुरु: 08:00 पूर्वाह्न - 05:30 अपराह्न"
+      },
+      "status": "active",
+      "order": 1
+    },
+    {
+      "id": "loc-2",
+      "name": {
+        "en": "Jubail Industrial & Marine Hub",
+        "ar": "مركز الجبيل للصناعة والأعمال البحرية",
+        "hi": "जुबैल औद्योगिक एवं समुद्री केंद्र"
+      },
+      "country": {
+        "en": "Kingdom of Saudi Arabia",
+        "ar": "المملكة العربية السعودية",
+        "hi": "सऊदी अरब"
+      },
+      "address": {
+        "en": "Plot 41-B, Support Industrial Area, Jubail Industrial City 31961",
+        "ar": "قطعة 41-ب، منطقة الصناعات المساندة، مدينة الجبيل الصناعية 31961",
+        "hi": "प्लॉट 41-बी, सपोर्ट इंडस्ट्रियल एरिया, जुबैल 31961"
+      },
+      "phone": "+966 13 361 9200",
+      "email": "jubail.ops@apexcivil.com",
+      "mapEmbedUrl": "https://maps.google.com/maps?q=Jubail+Industrial+City&t=&z=13&ie=UTF8&iwloc=&output=embed",
+      "coordinates": {
+        "lat": 27.0046,
+        "lng": 49.6595
+      },
+      "description": {
+        "en": "Heavy equipment fleet maintenance base, 20-acre precast concrete yard, metallurgical testing laboratory, and petrochemical safety training center.",
+        "ar": "قاعدة صيانة المعدات الثقيلة، وساحة خرسانة مسبقة الصنع بمساحة 20 فداناً، ومختبر فحص المواد ومركز التدريب على السلامة البتروكيماوية.",
+        "hi": "भारी मशीनरी रखरखाव केंद्र, 20 एकड़ का प्रीकास्ट कंक्रीट यार्ड और सामग्री परीक्षण प्रयोगशाला।"
+      },
+      "locationImage": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop",
+      "officeImage": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop",
+      "contactPerson": "Eng. Fahad Al-Subaie (VP Eastern Operations)",
+      "workingHours": {
+        "en": "Sat - Thu: 07:00 AM - 05:00 PM (AST)",
+        "ar": "السبت - الخميس: 07:00 ص - 05:00 م",
+        "hi": "शनि - गुरु: 07:00 पूर्वाह्न - 05:00 अपराह्न"
+      },
+      "status": "active",
+      "order": 2
+    },
+    {
+      "id": "loc-3",
+      "name": {
+        "en": "Mumbai Engineering & Technical Design Center",
+        "ar": "مركز مومباي الهندسي والتصميم الفني",
+        "hi": "मुंबई इंजीनियरिंग और तकनीकी डिजाइन केंद्र"
+      },
+      "country": {
+        "en": "India",
+        "ar": "جمهورية الهند",
+        "hi": "भारत"
+      },
+      "address": {
+        "en": "Bandra-Kurla Complex (BKC), One International Center, 14th Floor, Mumbai 400051",
+        "ar": "مجمع باندرا-كورلا (BKC)، مركز ون إنترناشيونال، الطابق 14، مومباي 400051",
+        "hi": "बांद्रा-कुर्ला कॉम्प्लेक्स (BKC), वन इंटरनेशनल सेंटर, 14वीं मंजिल, मुंबई 400051"
+      },
+      "phone": "+91 22 6128 4400",
+      "email": "mumbai.office@apexcivil.com",
+      "mapEmbedUrl": "https://maps.google.com/maps?q=Bandra+Kurla+Complex+Mumbai&t=&z=14&ie=UTF8&iwloc=&output=embed",
+      "coordinates": {
+        "lat": 19.0662,
+        "lng": 72.8687
+      },
+      "description": {
+        "en": "Advanced BIM modeling, finite element computational analysis, structural bridge design, and South Asia project management coordination.",
+        "ar": "نمذجة معلومات البناء (BIM)، التحليل الحسابي للعناصر المحدودة، وتصميم الجسور الإنشائية وإدارة مشاريع جنوب آسيا.",
+        "hi": "उन्नत बीआईएम मॉडलिंग, परिमित तत्व विश्लेषण, स्ट्रक्चरल ब्रिज डिजाइन और दक्षिण एशिया परियोजना प्रबंधन।"
+      },
+      "locationImage": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=2070&auto=format&fit=crop",
+      "officeImage": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop",
+      "contactPerson": "Rajesh Nair, M.Tech (Director, Technical Services)",
+      "workingHours": {
+        "en": "Mon - Fri: 09:00 AM - 06:30 PM (IST)",
+        "ar": "الإثنين - الجمعة: 09:00 ص - 06:30 م",
+        "hi": "सोम - शुक्र: 09:00 पूर्वाह्न - 06:30 अपराह्न"
+      },
+      "status": "active",
+      "order": 3
+    }
+  ],
+  "clients": [
+    {
+      "id": "cli-1",
+      "name": "Saudi Aramco",
+      "logo": "https://images.unsplash.com/photo-1618042164219-62c820f10723?q=80&w=400&auto=format&fit=crop",
+      "industry": {
+        "en": "Energy & Petrochemicals",
+        "ar": "الطاقة والبتروكيماويات",
+        "hi": "ऊर्जा और पेट्रोकेमिकल्स"
+      },
+      "shortDescription": {
+        "en": "Tier-1 civil infrastructure partner across upstream & midstream developments.",
+        "ar": "شريك استراتيجي للبنية التحتية المدنية في المشاريع النفطية والغازية.",
+        "hi": "प्रमुख बुनियादी ढांचा परियोजनाओं में टियर-1 सिविल साझेदार।"
+      },
+      "featured": true,
+      "order": 1,
+      "visible": true
+    },
+    {
+      "id": "cli-2",
+      "name": "Royal Commission for Jubail & Yanbu",
+      "logo": "https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=400&auto=format&fit=crop",
+      "industry": {
+        "en": "Industrial Cities Authority",
+        "ar": "الهيئة الملكية للجبيل وينبع",
+        "hi": "औद्योगिक शहर प्राधिकरण"
+      },
+      "shortDescription": {
+        "en": "Executing port docks, seawater channels, and industrial road infrastructure.",
+        "ar": "تنفيذ أرصفة الموانئ وقنوات مياه البحر وشبكات الطرق الصناعية.",
+        "hi": "बंदरगाह डॉक और औद्योगिक सड़क बुनियादी ढांचे का निर्माण।"
+      },
+      "featured": true,
+      "order": 2,
+      "visible": true
+    },
+    {
+      "id": "cli-3",
+      "name": "Royal Commission for Riyadh City",
+      "logo": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=400&auto=format&fit=crop",
+      "industry": {
+        "en": "Urban & Transit Authority",
+        "ar": "الهيئة الملكية لمدينة الرياض",
+        "hi": "शहरी एवं ट्रांजिट प्राधिकरण"
+      },
+      "shortDescription": {
+        "en": "Partner for Riyadh transit viaducts, multi-level interchanges, and civic hubs.",
+        "ar": "شريك في جسور مسارات النقل والتقاطعات المرورية والساحات الحضرية.",
+        "hi": "रियाद ट्रांजिट वायाडक्ट और बहुस्तरीय इंटरचेंज में मुख्य साझेदार।"
+      },
+      "featured": true,
+      "order": 3,
+      "visible": true
+    },
+    {
+      "id": "cli-4",
+      "name": "Red Sea Global",
+      "logo": "https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=400&auto=format&fit=crop",
+      "industry": {
+        "en": "Regenerative Tourism & Infrastructure",
+        "ar": "السياحة المتجددة والتطوير المستدام",
+        "hi": "पुनर्योजी पर्यटन और सतत विकास"
+      },
+      "shortDescription": {
+        "en": "Low-carbon civil foundations, coastal bridges, and sustainable causeways.",
+        "ar": "أساسات مدنية منخفضة الكربون وجسور بحرية مستدامة.",
+        "hi": "कम कार्बन वाले सिविल फाउंडेशन और तटीय पुल।"
+      },
+      "featured": true,
+      "order": 4,
+      "visible": true
+    },
+    {
+      "id": "cli-5",
+      "name": "Larsen & Toubro Joint Venture",
+      "logo": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=400&auto=format&fit=crop",
+      "industry": {
+        "en": "Engineering & Construction Consortium",
+        "ar": "تحالف الهندسة والمقاولات الدولية",
+        "hi": "इंजीनियरिंग एवं निर्माण कंसोर्टियम"
+      },
+      "shortDescription": {
+        "en": "Cross-border technical collaboration on mega metro viaduct packages.",
+        "ar": "تعاون فني دولي في حزم جسور المترو الكبرى في الهند والخليج.",
+        "hi": "मेगा मेट्रो वायाडक्ट परियोजनाओं में अंतरराष्ट्रीय तकनीकी सहयोग।"
+      },
+      "featured": true,
+      "order": 5,
+      "visible": true
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "test-1",
+      "clientName": "Eng. Mansoor Al-Harbi",
+      "company": "Royal Commission for Riyadh City",
+      "position": {
+        "en": "Senior Vice President of Metro Infrastructure",
+        "ar": "نائب الرئيس الأول لمشاريع البنية التحتية للنقل",
+        "hi": "मेट्रो बुनियादी ढांचे के वरिष्ठ उपाध्यक्ष"
+      },
+      "testimonial": {
+        "en": "Apex demonstrated unmatched geotechnical acumen and logistical discipline during the construction of the elevated viaduct. Completing 24 kilometers in complex urban terrain 3 months ahead of target with zero lost-time incidents is a hallmark of world-class civil leadership.",
+        "ar": "أثبتت شركة أبيكس كفاءة جيوتقنية وانضباطاً لوجستياً لا مثيل لهما أثناء تشييد الجسر العلوي. إن إنجاز 24 كيلومتراً في تضاريس حضرية معقدة قبل 3 أشهر من الموعد المستهدف وبلا أي حوادث يعد علامة فارقة في ريادة الهندسة المدنية العالمية.",
+        "hi": "एपेक्स ने एलिवेटेड वायाडक्ट के निर्माण के दौरान बेजोड़ भू-तकनीकी विशेषज्ञता और अनुशासन का प्रदर्शन किया। शून्य दुर्घटनाओं के साथ समय से 3 महीने पहले 24 किमी का निर्माण एक विश्व स्तरीय उपलब्धि है।"
+      },
+      "projectReference": "Riyadh Metro Line 7 Elevated Viaduct",
+      "date": "2024-12-10",
+      "rating": 5,
+      "visible": true,
+      "order": 1
+    },
+    {
+      "id": "test-2",
+      "clientName": "Dr. Abdulaziz Al-Qahtani",
+      "company": "SPARK Development Company / Saudi Aramco",
+      "position": {
+        "en": "General Manager of Mega-Project Construction",
+        "ar": "المدير العام لمشاريع الإنشاءات الكبرى",
+        "hi": "मेगा-परियोजना निर्माण के महाप्रबंधक"
+      },
+      "testimonial": {
+        "en": "In industrial mega-developments, failure is not an option. Apex brought over 1,000 specialized machines to our King Salman Energy Park packages, handling challenging rocky terrain and strict Aramco HSE audits with absolute distinction.",
+        "ar": "في المشاريع الصناعية العملاقة، لا مجال للتراجع. دفعت أبيكس بأكثر من 1,000 معدة متخصصة لحزم مدينة الملك سلمان للطاقة، وتعاملت مع تضاريس الصخور القاسية وتدقيقات السلامة الصارمة لأرامكو بكل تميز.",
+        "hi": "औद्योगिक मेगा-परियोजनाओं में, कोई समझौता नहीं हो सकता। एपेक्स ने किंग सलमान एनर्जी पार्क में 1,000 से अधिक विशेष मशीनें लगाईं और सख्त सुरक्षा मानकों का पूरी तरह पालन किया।"
+      },
+      "projectReference": "King Salman Energy Park (SPARK) Civil Grid",
+      "date": "2024-08-22",
+      "rating": 5,
+      "visible": true,
+      "order": 2
+    },
+    {
+      "id": "test-3",
+      "clientName": "Vikramaditya Sharma",
+      "company": "Western Marine Expressway Authority",
+      "position": {
+        "en": "Chief Project Engineer",
+        "ar": "كبير مهندسي المشروع",
+        "hi": "मुख्य परियोजना अभियंता"
+      },
+      "testimonial": {
+        "en": "Their specialized engineering design team and self-launching hydraulic gantries revolutionized our marine viaduct progress. Apex operates with true structural engineering brilliance and professional integrity.",
+        "ar": "أحدث فريق التصميم الهندسي المتخصص لدى أبيكس وروافعهم الهيدروليكية ذاتية الإطلاق نقلة نوعية في تقدم مشروع الجسر البحري. إنهم يعملون ببراعة إنشائية ونزاهة مهنية حقيقية.",
+        "hi": "उनकी विशेष इंजीनियरिंग टीम और सेल्फ-लॉन्चिंग गैंट्री ने हमारे समुद्री वायाडक्ट में तेजी ला दी। एपेक्स उत्कृष्ट तकनीकी निष्ठा के साथ काम करता है।"
+      },
+      "projectReference": "Western Coastal Expressway Viaduct",
+      "date": "2024-05-18",
+      "rating": 5,
+      "visible": true,
+      "order": 3
+    }
+  ],
+  "leaders": [
+    {
+      "id": "lead-ceo",
+      "name": "Eng. Tariq Al-Mansoor, MSc, PE",
+      "designation": {
+        "en": "Chief Executive Officer & Managing Director",
+        "ar": "الرئيس التنفيذي والعضو المنتدب",
+        "hi": "मुख्य कार्यकारी अधिकारी एवं प्रबंध निदेशक"
+      },
+      "roleType": "ceo",
+      "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
+      "biography": {
+        "en": "With over 32 years of executive engineering experience across the Middle East, Europe, and Asia, Eng. Tariq has steered Apex from a regional contractor into an international civil infrastructure titan. He holds an MSc in Structural Engineering from Imperial College London and serves on several national infrastructure advisory panels.",
+        "ar": "يمتلك المهندس طارق أكثر من 32 عاماً من الخبرة الهندسية التنفيذية في الشرق الأوسط وأوروبا وآسيا. قاد تحول أبيكس من مقاول إقليمي إلى صرح عالمي في البنية التحتية. يحمل ماجستير الهندسة الإنشائية من إمبريال كوليدج لندن.",
+        "hi": "मध्य पूर्व और एशिया में 32 से अधिक वर्षों के कार्यकारी अनुभव के साथ, इंजी. तारिक ने एपेक्स को एक अंतरराष्ट्रीय बुनियादी ढांचा दिग्गज के रूप में स्थापित किया है। उन्होंने इंपीरियल कॉलेज लंदन से मास्टर्स किया है।"
+      },
+      "message": {
+        "en": "Our mission has never been simply pouring concrete or assembling steel—it is constructing the economic arteries of nations. Every viaduct, port berth, and foundation we deliver is engineered to stand the test of centuries with unyielding safety.",
+        "ar": "لم تكن مهمتنا يوماً مجرد صب الخرسانة أو تشييد الفولاذ، بل بناء الشرايين الاقتصادية للدول. كل جسر ورصيف بحري وقاعدة ننفذها مصممة لتصمد لقرون بأعلى معايير السلامة والجودة.",
+        "hi": "हमारा मिशन सिर्फ कंक्रीट डालना या स्टील जोड़ना नहीं है—यह राष्ट्रों की आर्थिक जीवनरेखा का निर्माण करना है। हमारा प्रत्येक कार्य सदियों तक अडिग रहने के लिए बनाया गया है।"
+      },
+      "linkedin": "https://linkedin.com",
+      "email": "ceo.office@apexcivil.com",
+      "order": 1,
+      "visible": true
+    },
+    {
+      "id": "lead-board-1",
+      "name": "H.E. Dr. Salman Al-Khater",
+      "designation": {
+        "en": "Chairman of the Board of Directors",
+        "ar": "رئيس مجلس الإدارة",
+        "hi": "निदेशक मंडल के अध्यक्ष"
+      },
+      "roleType": "board",
+      "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop",
+      "biography": {
+        "en": "Former Senior Deputy Minister of Municipal Infrastructure, Dr. Salman brings decades of governance, sovereign capital planning, and high-level regulatory oversight to Apex Corporation.",
+        "ar": "وكيل وزارة الشؤون البلدية للبنية التحتية سابقاً، يجلب الدكتور سلمان عقوداً من الحوكمة وتخطيط رؤوس الأموال السيادية والرقابة التنظيمية لشركة أبيكس.",
+        "hi": "पूर्व वरिष्ठ उप मंत्री, डॉ. सलमान शासन और बड़े पैमाने पर बुनियादी ढांचा नियोजन में दशकों का अनुभव लेकर आते हैं।"
+      },
+      "linkedin": "https://linkedin.com",
+      "order": 2,
+      "visible": true
+    },
+    {
+      "id": "lead-board-2",
+      "name": "Dame Eleanor Vance, DBE, FREng",
+      "designation": {
+        "en": "Independent Board Director & Chair of Technical Audit",
+        "ar": "عضو مجلس إدارة مستقل ورئيس لجنة التدقيق الفني",
+        "hi": "स्वतंत्र बोर्ड निदेशक एवं तकनीकी ऑडिट अध्यक्ष"
+      },
+      "roleType": "board",
+      "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop",
+      "biography": {
+        "en": "Fellow of the Royal Academy of Engineering, former Chief Engineer for High Speed Rail UK, international advisor on megaproject risk allocation and structural resilience.",
+        "ar": "زميلة الأكاديمية الملكية للهندسة، وكبيرة المهندسين السابقة للسكك الحديدية فائقة السرعة ببريطانيا، ومستشارة دولية في مخاطر المشاريع الكبرى.",
+        "hi": "रॉयल एकेडमी ऑफ इंजीनियरिंग की फेलो, यूके हाई-स्पीड रेल की पूर्व मुख्य अभियंता और अंतरराष्ट्रीय तकनीकी सलाहकार।"
+      },
+      "linkedin": "https://linkedin.com",
+      "order": 3,
+      "visible": true
+    },
+    {
+      "id": "lead-team-1",
+      "name": "Eng. Ziyad Al-Ghamdi",
+      "designation": {
+        "en": "Chief Operating Officer & Head of Plant & Fleet",
+        "ar": "الرئيس التنفيذي للعمليات ورئيس أسطول المعدات",
+        "hi": "मुख्य परिचालन अधिकारी एवं प्लांट प्रमुख"
+      },
+      "roleType": "team",
+      "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop",
+      "biography": {
+        "en": "Oversees 12,500 personnel and our 1,850+ specialized heavy construction equipment units, plant maintenance hubs, and logistics supply lines.",
+        "ar": "يشرف على 12,500 موظف وعامل وعلى أسطولنا الذي يضم أكثر من 1,850 وحدة معدات ثقيلة ومحطات الصيانة اللوجستية.",
+        "hi": "12,500 कर्मचारियों और 1,850+ भारी निर्माण उपकरणों, संयंत्रों और आपूर्ति श्रृंखला की देखरेख करते हैं।"
+      },
+      "department": {
+        "en": "Operations & Fleet Logistics",
+        "ar": "العمليات واللوجستيات",
+        "hi": "संचालन एवं बेड़ा रसद"
+      },
+      "order": 4,
+      "visible": true
+    },
+    {
+      "id": "lead-team-2",
+      "name": "Dr. Sunita Deshmukh, PhD",
+      "designation": {
+        "en": "Chief Geotechnical Engineer & Head of Design",
+        "ar": "كبير المهندسين الجيوتقنيين ورئيس قسم التصميم الإنشائي",
+        "hi": "मुख्य भू-तकनीकी इंजीनियर एवं डिजाइन प्रमुख"
+      },
+      "roleType": "team",
+      "photo": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop",
+      "biography": {
+        "en": "PhD in Soil Mechanics from IIT Bombay; international authority on deep foundation dynamics, seismic soil-structure interaction, and marine geotechnical engineering.",
+        "ar": "دكتوراه في ميكانيكا التربة من المعهد الهندي للتكنولوجيا، مرجع معتمد في ديناميكا الأساسات العميقة والتفاعل الزلزالي بين التربة والمنشآت.",
+        "hi": "आईआईटी बॉम्बे से मृदा यांत्रिकी में पीएचडी; गहरी नींव, भूकंपीय संरचना और समुद्री भू-तकनीकी के विशेषज्ञ।"
+      },
+      "department": {
+        "en": "Geotechnical & Structural Design",
+        "ar": "التصميم الجيوتقني والإنشائي",
+        "hi": "भू-तकनीकी और संरचनात्मक डिजाइन"
+      },
+      "order": 5,
+      "visible": true
+    }
+  ],
+  "careers": [
+    {
+      "id": "vac-1",
+      "slug": "senior-bridge-construction-engineer",
+      "title": {
+        "en": "Senior Bridge Construction Engineer (Precast Viaducts)",
+        "ar": "مهندس أول إنشاءات جسور (الجسور القطاعية مسبقة الصب)",
+        "hi": "वरिष्ठ पुल निर्माण इंजीनियर (प्रीकास्ट वायाडक्ट्स)"
+      },
+      "department": {
+        "en": "Transportation & Heavy Civil Infrastructure",
+        "ar": "البنية التحتية والنقل والجسور",
+        "hi": "परिवहन और भारी सिविल बुनियादी ढांचा"
+      },
+      "location": {
+        "en": "Riyadh, Saudi Arabia",
+        "ar": "الرياض، المملكة العربية السعودية",
+        "hi": "रियाद, सऊदी अरब"
+      },
+      "employmentType": "Full-time",
+      "experience": "8–12 Years",
+      "qualification": {
+        "en": "B.Sc. in Civil / Structural Engineering (Saudi Council of Engineers accredited)",
+        "ar": "بكالوريوس في الهندسة المدنية / الإنشائية (معتمد من الهيئة السعودية للمهندسين)",
+        "hi": "सिविल / स्ट्रक्चरल इंजीनियरिंग में बी.एससी. / बी.ई."
+      },
+      "skills": [
+        "Launching Gantry Operations",
+        "Segmental Precast",
+        "Post-Tensioning Stressing",
+        "Primavera P6",
+        "BIM Revizto"
+      ],
+      "description": {
+        "en": "Lead on-site construction of multi-span post-tensioned bridge viaducts, directing launching gantries, segment erection tolerances, and coordinate with international inspection authorities.",
+        "ar": "قيادة الأعمال الميدانية لإنشاء جسور خرسانية مسبقة الصب والإجهاد، وإدارة روافع التركيب وتفاوتات التركيب الميليمتري والتنسيق مع جهات الفحص.",
+        "hi": "मल्टी-स्पैन पोस्ट-टेंशन वाले पुलों के ऑन-साइट निर्माण का नेतृत्व करना और गुणवत्ता सुनिश्चित करना।"
+      },
+      "responsibilities": [
+        {
+          "en": "Supervise launching gantry progression, segment epoxy application, and PT tendon stressing protocols",
+          "ar": "الإشراف على تقدم روافع الإطلاق وخلطات الإيبوكسي وعمليات شد كابلات ما بعد الصب",
+          "hi": "लॉन्चिंग गैंट्री, सेगमेंट एपॉक्सी और पीटी टेंडन स्ट्रेसिंग की देखरेख करना"
+        },
+        {
+          "en": "Enforce stringent MOMRA and international safety standards at elevated heights",
+          "ar": "تطبيق أعلى معايير السلامة المهنية المعتمدة للعمل في المرتفعات",
+          "hi": "ऊंचाई पर काम करने के लिए सख्त अंतरराष्ट्रीय सुरक्षा मानकों को लागू करना"
+        }
+      ],
+      "requirements": [
+        {
+          "en": "Proven experience on at least 2 completed major elevated rail or highway viaduct projects",
+          "ar": "خبرة مثبتة في مشروعين رئيسيين مكتملين على الأقل للجسور العلوية أو السكك الحديدية",
+          "hi": "कम से कम 2 पूर्ण प्रमुख एलिवेटेड परियोजनाओं पर सिद्ध अनुभव"
+        }
+      ],
+      "applicationDeadline": "2026-11-30",
+      "status": "open",
+      "order": 1
+    },
+    {
+      "id": "vac-2",
+      "slug": "chief-geotechnical-specialist",
+      "title": {
+        "en": "Chief Geotechnical Specialist (Deep Foundations)",
+        "ar": "أخصائي أول جيوتقني (الأساسات العميقة والخوازيق)",
+        "hi": "मुख्य भू-तकनीकी विशेषज्ञ (डीप फाउंडेशन)"
+      },
+      "department": {
+        "en": "Technical Engineering Center",
+        "ar": "مركز الدراسات والتصميم الفني",
+        "hi": "तकनीकी इंजीनियरिंग केंद्र"
+      },
+      "location": {
+        "en": "Jubail, Saudi Arabia / Mumbai Design Hub",
+        "ar": "الجبيل، المملكة العربية السعودية / مركز مومباي",
+        "hi": "जुबैल, सऊदी अरब / मुंबई डिजाइन हब"
+      },
+      "employmentType": "Full-time",
+      "experience": "10–15 Years",
+      "qualification": {
+        "en": "M.Sc. or Ph.D. in Geotechnical Engineering",
+        "ar": "ماجستير أو دكتوراه في الهندسة الجيوتقنية",
+        "hi": "भू-तकनीकी इंजीनियरिंग में एम.टेक या पीएच.डी."
+      },
+      "skills": [
+        "PLAXIS 3D",
+        "Deep Piling Analysis",
+        "Borehole Stratigraphy",
+        "Ground Improvement",
+        "Soil Grouting"
+      ],
+      "description": {
+        "en": "Provide technical mastery for deep foundation designs, rock socketing calculations, ground improvement, and marine intake stability.",
+        "ar": "تقديم الاستشارات الفنية المتخصصة لحسابات الأساسات العميقة وحقن الصخور وتثبيت التربة واستقرار المآخذ البحرية.",
+        "hi": "गहरी नींव के डिजाइन, रॉक सॉकेटिंग गणना और ग्राउंड इम्प्रूवमेंट के लिए तकनीकी विशेषज्ञता प्रदान करना।"
+      },
+      "responsibilities": [
+        {
+          "en": "Analyze geotechnical borehole data and calibrate finite element 3D models in PLAXIS",
+          "ar": "تحليل عينات الجسات الجيوتقنية ومعايرة النماذج ثلاثية الأبعاد في PLAXIS",
+          "hi": "भू-तकनीकी डेटा का विश्लेषण और पीएलएएक्सआईएस में 3डी मॉडल कैलिब्रेट करना"
+        }
+      ],
+      "requirements": [
+        {
+          "en": "Extensive track record with petrochemical or heavy industrial foundation packages",
+          "ar": "سجل حافل في حزم الأساسات البتروكيماوية أو المنشآت الثقيلة",
+          "hi": "पेट्रोकेमिकल या भारी औद्योगिक परियोजनाओं में व्यापक अनुभव"
+        }
+      ],
+      "applicationDeadline": "2026-10-15",
+      "status": "open",
+      "order": 2
+    },
+    {
+      "id": "vac-3",
+      "slug": "hse-manager-industrial-mega-projects",
+      "title": {
+        "en": "HSE Manager (Mega-Project Safety Leadership)",
+        "ar": "مدير السلامة والصحة المهنية والبيئة (المشاريع الكبرى)",
+        "hi": "एचएसई प्रबंधक (मेगा-प्रोजेक्ट सुरक्षा)"
+      },
+      "department": {
+        "en": "Corporate Health, Safety & Environment",
+        "ar": "السلامة والصحة المهنية والبيئة",
+        "hi": "स्वास्थ्य, सुरक्षा और पर्यावरण"
+      },
+      "location": {
+        "en": "Eastern Province / SPARK",
+        "ar": "المنطقة الشرقية / مدينة سبارك",
+        "hi": "पूर्वी प्रांत, सऊदी अरब"
+      },
+      "employmentType": "Full-time",
+      "experience": "8+ Years",
+      "qualification": {
+        "en": "NEBOSH Diploma / CSP / Bachelor in Safety Engineering",
+        "ar": "دبلوم نيبوش (NEBOSH) / شهادة CSP / بكالوريوس هندسة السلامة",
+        "hi": "नेबोश डिप्लोमा / सीएसपी / सुरक्षा इंजीनियरिंग में डिग्री"
+      },
+      "skills": [
+        "Aramco HSE Audits",
+        "ISO 45001",
+        "Hazard Identification",
+        "Emergency Response",
+        "Zero-Incident Strategy"
+      ],
+      "description": {
+        "en": "Lead an active site safety team of 40+ safety officers ensuring compliance with Saudi Aramco stringent loss-prevention standards.",
+        "ar": "قيادة فريق سلامة ميداني يضم أكثر من 40 ضابط سلامة لضمان الامتثال التام لمعايير أرامكو لمنع الخسائر.",
+        "hi": "40 से अधिक सुरक्षा अधिकारियों की साइट टीम का नेतृत्व करना और शून्य-दुर्घटना लक्ष्य बनाए रखना।"
+      },
+      "responsibilities": [
+        {
+          "en": "Conduct daily job safety analysis (JSA), hazard mitigation drills, and incident root cause investigations",
+          "ar": "إجراء تحليل مخاطر العمل اليومي (JSA) وتدريبات الطوارئ والتحقيق في المسببات الجذرية",
+          "hi": "दैनिक सुरक्षा विश्लेषण (JSA) और आपातकालीन अभ्यास आयोजित करना"
+        }
+      ],
+      "requirements": [
+        {
+          "en": "Saudi Aramco SAP / Approved HSE Manager certification strongly preferred",
+          "ar": "يفضل بشدة الحصول على اعتماد أرامكو السعودية لمديري السلامة",
+          "hi": "अरामको अनुमोदित सुरक्षा प्रमाणन को प्राथमिकता"
+        }
+      ],
+      "applicationDeadline": "2026-11-15",
+      "status": "open",
+      "order": 3
+    }
+  ],
+  "brochures": [
+    {
+      "id": "doc-1",
+      "title": {
+        "en": "Apex Corporate Profile & Statement of Capabilities 2026",
+        "ar": "ملف الشركة التعريفي وبيان القدرات المؤسسية 2026",
+        "hi": "एपेक्स कॉर्पोरेट प्रोफ़ाइल एवं क्षमता विवरण 2026"
+      },
+      "description": {
+        "en": "Comprehensive 48-page corporate portfolio featuring executive leadership, corporate governance, plant fleet registers, financial bonding capacity, and signature project retrospectives.",
+        "ar": "ملف تعريفي شامل من 48 صفحة يستعرض القيادة التنفيذية، الحوكمة، سجل أسطول المعدات، الملاءة المالية، واستعراض المشاريع الكبرى المنجزة.",
+        "hi": "48 पृष्ठों का व्यापक कॉर्पोरेट पोर्टफोलियो जिसमें नेतृत्व, गवर्नेंस, भारी मशीनरी बेड़ा, और प्रमुख परियोजनाएं शामिल हैं।"
+      },
+      "category": "corporate",
+      "pagesCount": 48,
+      "fileSize": "14.2 MB (PDF)",
+      "thumbnail": "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f8?q=80&w=600&auto=format&fit=crop",
+      "documentUrl": "#controlled-viewer-doc-1",
+      "downloadAllowed": true,
+      "visible": true,
+      "order": 1,
+      "uploadDate": "2026-01-15"
+    },
+    {
+      "id": "doc-2",
+      "title": {
+        "en": "Transportation & Precast Viaduct Technical Handbook",
+        "ar": "الدليل الفني لمشاريع النقل والجسور مسبقة الصنع",
+        "hi": "परिवहन और प्रीकास्ट वायाडक्ट तकनीकी पुस्तिका"
+      },
+      "description": {
+        "en": "Engineering schematics, prestressed girder load tables, launching gantry deployment methodologies, and seismic damping specifications.",
+        "ar": "مخططات هندسية وجداول أحمال العوارض مسبقة الصنع ومنهجيات تشغيل الروافع الهيدروليكية ومواصفات التخميد الزلزالي.",
+        "hi": "इंजीनियरिंग रेखाचित्र, प्रीस्ट्रेस्ड गर्डर लोड टेबल और भूकंपीय डैम्पिंग विनिर्देश।"
+      },
+      "category": "infrastructure",
+      "pagesCount": 64,
+      "fileSize": "19.8 MB (PDF)",
+      "thumbnail": "https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=600&auto=format&fit=crop",
+      "documentUrl": "#controlled-viewer-doc-2",
+      "downloadAllowed": true,
+      "visible": true,
+      "order": 2,
+      "uploadDate": "2025-11-20"
+    },
+    {
+      "id": "doc-3",
+      "title": {
+        "en": "Heavy Industrial EPC & Deep Foundations Catalog",
+        "ar": "دليل الهندسة والتوريد والإنشاء والأساسات الصناعية العميقة",
+        "hi": "भारी औद्योगिक ईपीसी और डीप फाउंडेशन कैटलॉग"
+      },
+      "description": {
+        "en": "Detailed technical overview of petrochemical grade civil packages, blast-resistant design standards, and large-diameter bored piling capabilities.",
+        "ar": "نظرة فنية تفصيلية لحزم الأعمال المدنية للمجمعات البتروكيماوية ومعايير التصميم المقاوم للانفجار والخوازيق العميقة.",
+        "hi": "पेट्रोकेमिकल सिविल पैकेज और बड़े व्यास के बोरिंग पाइलिंग की तकनीकी जानकारी।"
+      },
+      "category": "projects",
+      "pagesCount": 36,
+      "fileSize": "11.5 MB (PDF)",
+      "thumbnail": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600&auto=format&fit=crop",
+      "documentUrl": "#controlled-viewer-doc-3",
+      "downloadAllowed": true,
+      "visible": false,
+      "order": 3,
+      "uploadDate": "2025-10-05"
+    },
+    {
+      "id": "doc-4",
+      "title": {
+        "en": "Apex Health, Safety & Sustainability Charter",
+        "ar": "ميثاق السلامة والصحة المهنية والاستدامة البيئية",
+        "hi": "स्वास्थ्य, सुरक्षा और स्थिरता चार्टर"
+      },
+      "description": {
+        "en": "Official HSE management policy, ISO 45001 & ISO 14001 compliance standards, green concrete specifications, and our zero-incident milestone breakdown.",
+        "ar": "سياسة إدارة السلامة والصحة والبيئة المعتمدة ومعايير الآيزو ومواصفات الخرسانة الخضراء وسجل ساعات العمل الآمنة.",
+        "hi": "आधिकारिक एचएसई नीति, आईएसओ मानक, ग्रीन कंक्रीट विनिर्देश और शून्य-दुर्घटना रिपोर्ट।"
+      },
+      "category": "safety",
+      "pagesCount": 28,
+      "fileSize": "8.4 MB (PDF)",
+      "thumbnail": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=600&auto=format&fit=crop",
+      "documentUrl": "#controlled-viewer-doc-4",
+      "downloadAllowed": true,
+      "visible": true,
+      "order": 4,
+      "uploadDate": "2025-09-12"
+    },
+    {
+      "id": "doc_1789546221467",
+      "order": 5,
+      "title": {
+        "en": "New Technical Publication",
+        "ar": "منشور فني جديد",
+        "hi": "नया तकनीकी प्रकाशन"
+      },
+      "description": {
+        "en": "Corporate specification dossier.",
+        "ar": "ملف المواصفات المؤسسية",
+        "hi": "कॉर्पोरेट विनिर्देश"
+      },
+      "category": "corporate",
+      "documentUrl": "/documents/spec.pdf",
+      "thumbnail": "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=600&q=80",
+      "fileSize": "4.2 MB",
+      "pagesCount": 18,
+      "uploadDate": "2026-03-15",
+      "downloadAllowed": true,
+      "visible": true
+    }
+  ],
+  "quotations": [
+    {
+      "id": "quote-101",
+      "firstName": "Ibrahim",
+      "lastName": "Al-Suwailem",
+      "company": "Najd Industrial Development Group",
+      "email": "i.suwailem@najd-group.com",
+      "phone": "+966 50 123 4567",
+      "country": "Saudi Arabia",
+      "location": "Riyadh Light Industrial Zone",
+      "projectType": "Industrial Heavy Foundations & Precast Warehouses",
+      "serviceRequired": "General & Industrial Construction",
+      "projectDescription": "Tendering for 120,000 sq. meter logistics hub with heavy reinforced slab to carry 15-ton rack column loads.",
+      "estimatedProjectSize": "120,000 m²",
+      "budgetRange": "$45M - $60M USD",
+      "preferredContactMethod": "teams_meeting",
+      "status": "in_progress",
+      "createdAt": "2026-02-28T09:30:00.000Z",
+      "notes": "Initial tender drawings reviewed by civil estimations team."
+    },
+    {
+      "id": "quote-102",
+      "firstName": "Devendra",
+      "lastName": "Patel",
+      "company": "Konkan Maritime Logistics",
+      "email": "dpatel@konkanlogistics.in",
+      "phone": "+91 98200 45678",
+      "country": "India",
+      "location": "Jawaharlal Nehru Port Zone, Navi Mumbai",
+      "projectType": "Heavy Berth Quay Wall & Dredging",
+      "serviceRequired": "Marine & Coastal Engineering",
+      "projectDescription": "Extension of coastal container berth with precast caissons and underwater stone column installation.",
+      "estimatedProjectSize": "650 meters quay wall",
+      "budgetRange": "$80M - $110M USD",
+      "preferredContactMethod": "email",
+      "status": "new",
+      "createdAt": "2026-03-05T14:15:00.000Z"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "cont-1",
+      "firstName": "Saad",
+      "lastName": "Al-Muqbil",
+      "email": "s.muqbil@aramco-contractors.sa",
+      "phone": "+966 55 987 6543",
+      "company": "Energy Infrastructure Partners",
+      "branchLocationId": "loc-1",
+      "subject": "Vendor Prequalification Submittal for SPARK Phase 3",
+      "message": "We are requesting formal prequalification meetings for upcoming substation civil packages in the Eastern Province.",
+      "status": "new",
+      "createdAt": "2026-03-10T11:00:00.000Z"
+    }
+  ],
+  "applications": [
+    {
+      "id": "app-1",
+      "vacancyId": "vac-1",
+      "vacancyTitle": "Senior Bridge Construction Engineer (Precast Viaducts)",
+      "firstName": "Omar",
+      "lastName": "Khateeb",
+      "email": "omar.khateeb.civil@gmail.com",
+      "phone": "+966 54 321 0987",
+      "location": "Riyadh, KSA",
+      "experienceYears": 10,
+      "qualification": "M.Sc. Structural Engineering, King Saud University",
+      "coverLetter": "I have served as Lead Bridge Engineer on the Riyadh Metro Line 3 viaduct package and have over a decade of launching gantry expertise.",
+      "resumeFileName": "Omar_Khateeb_Senior_Bridge_Engineer_CV.pdf",
+      "status": "shortlisted",
+      "createdAt": "2026-03-02T16:20:00.000Z"
+    }
+  ],
+  "media": [
+    {
+      "id": "med-1",
+      "filename": "hero-viaduct.webp",
+      "url": "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f8?q=80&w=2070&auto=format&fit=crop",
+      "title": "High-Altitude Viaduct Construction",
+      "altText": "Concrete segmental viaduct bridge construction under twilight sky",
+      "category": "hero",
+      "visibility": true,
+      "uploadDate": "2026-01-10",
+      "fileSize": "480 KB"
+    },
+    {
+      "id": "med-2",
+      "filename": "industrial-civil-grid.webp",
+      "url": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop",
+      "title": "Petrochemical Civil Foundations",
+      "altText": "Heavy industrial reinforced foundation pads with crane array",
+      "category": "projects",
+      "visibility": true,
+      "uploadDate": "2026-01-12",
+      "fileSize": "540 KB"
+    },
+    {
+      "id": "med-3",
+      "filename": "marine-quay-wall.webp",
+      "url": "https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?q=80&w=2070&auto=format&fit=crop",
+      "title": "Marine Seawater Intake Berth",
+      "altText": "Deep ocean maritime caisson installation",
+      "category": "services",
+      "visibility": true,
+      "uploadDate": "2026-01-14",
+      "fileSize": "610 KB"
+    }
+  ]
+}

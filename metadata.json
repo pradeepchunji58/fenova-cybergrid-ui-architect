@@ -1,0 +1,6 @@
+{
+  "name": "Fenova Hi-Tech Civil Engineering",
+  "description": "Fenova Hi-Tech Civil Engineering - Ultra-modern mega infrastructure, structural engineering, and turnkey industrial EPC with multi-location operations and interactive terminal interface.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
