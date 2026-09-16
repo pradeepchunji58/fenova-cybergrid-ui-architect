@@ -2,11 +2,11 @@
 
 @layer base {
   :root {
-    --font-heading: 'Orbitron', 'Space Grotesk', 'Rajdhani', sans-serif;
+    --font-heading: 'Orbitron', sans-serif;
     --font-mono: 'Share Tech Mono', monospace;
     --font-cyber: 'Orbitron', sans-serif;
     --font-geom: 'Space Grotesk', sans-serif;
-    --font-body: 'Outfit', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
     --font-arabic: 'Cairo', sans-serif;
     --font-hindi: 'Noto Sans Devanagari', sans-serif;
 
@@ -21,7 +21,7 @@
   }
 
   body {
-    font-family: var(--font-body);
+    font-family: 'Space Grotesk', sans-serif;
     background-color: #04070a;
     color: #f1f5f9;
   }
@@ -34,27 +34,27 @@
     font-family: var(--font-hindi);
   }
 
-  h1, h2, h3, .font-heading {
-    font-family: var(--font-heading);
-    letter-spacing: 0.05em;
+  h1, h2, h3, h4, h5, h6, .font-heading, .font-cyber {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.04em;
   }
 
-  .font-mono, .font-tech {
-    font-family: var(--font-mono);
+  body, p, span, button, input, select, textarea, .font-sans, .font-geom {
+    font-family: 'Space Grotesk', sans-serif;
   }
 
-  .font-cyber {
-    font-family: var(--font-cyber);
-  }
-
-  .font-geom {
-    font-family: var(--font-geom);
+  .font-mono, .font-tech, code, pre {
+    font-family: 'Share Tech Mono', monospace;
   }
 
   [dir="rtl"] h1, 
   [dir="rtl"] h2, 
-  [dir="rtl"] h3, 
-  [dir="rtl"] .font-heading {
+  [dir="rtl"] h3,
+  [dir="rtl"] h4,
+  [dir="rtl"] h5,
+  [dir="rtl"] h6,
+  [dir="rtl"] .font-heading,
+  [dir="rtl"] .font-cyber {
     font-family: var(--font-arabic);
     letter-spacing: normal;
   }

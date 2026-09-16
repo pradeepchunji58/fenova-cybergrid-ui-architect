@@ -8,6 +8,9 @@ import {
   DocumentItem,
   CareerVacancy,
 } from '../types.ts';
+import { AdminImageInput } from './AdminImageInput.tsx';
+
+export { ClientModal, LeaderModal, ChangePasswordModal } from './AdminClientAndLeaderModals.tsx';
 
 // -------------------------------------------------------------
 // 1. HERO SLIDE MODAL
@@ -65,12 +68,15 @@ export const HeroSlideModal: React.FC<HeroSlideModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-      <div className="bg-[#0b1320] border border-amber-500/30 w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 text-slate-100 hexagon-cut shadow-2xl space-y-4">
+      <div
+        className="bg-[#0b1320] border w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 text-slate-100 hexagon-cut shadow-2xl space-y-4"
+        style={{ borderColor: 'var(--accent-border)' }}
+      >
         <div className="flex items-center justify-between border-b border-white/10 pb-3">
-          <h3 className="text-lg font-bold font-heading text-amber-400">
+          <h3 className="text-lg font-bold font-heading" style={{ color: 'var(--accent-color)' }}>
             {slide ? 'Edit Hero Slide' : 'Add New Hero Slide'}
           </h3>
-          <button onClick={onClose} className="p-1 hover:text-amber-400">
+          <button onClick={onClose} className="p-1 hover:text-white transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -138,28 +144,23 @@ export const HeroSlideModal: React.FC<HeroSlideModalProps> = ({
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-slate-400 mb-1">Image URL *</label>
-              <input
-                type="text"
-                required
-                value={formData.imageUrl || ''}
-                onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
-                className="w-full px-3 py-2 bg-black/40 border border-white/15 rounded text-white"
-              />
-            </div>
+          <AdminImageInput
+            label="Hero Background Image *"
+            value={formData.imageUrl || ''}
+            onChange={(url) => setFormData({ ...formData, imageUrl: url })}
+            aspectRatio="wide"
+            placeholder="Image URL or upload local image file"
+          />
 
-            <div>
-              <label className="block text-slate-400 mb-1">Video Background URL (Optional)</label>
-              <input
-                type="text"
-                value={formData.videoUrl || ''}
-                onChange={(e) => setFormData({ ...formData, videoUrl: e.target.value })}
-                className="w-full px-3 py-2 bg-black/40 border border-white/15 rounded text-white"
-                placeholder="/hero_video.mp4"
-              />
-            </div>
+          <div>
+            <label className="block text-slate-400 mb-1">Video Background URL (Optional)</label>
+            <input
+              type="text"
+              value={formData.videoUrl || ''}
+              onChange={(e) => setFormData({ ...formData, videoUrl: e.target.value })}
+              className="w-full px-3 py-2 bg-black/40 border border-white/15 rounded text-white"
+              placeholder="/hero_video.mp4"
+            />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -206,7 +207,7 @@ export const HeroSlideModal: React.FC<HeroSlideModalProps> = ({
                 id="slide-visible"
                 checked={formData.visible !== false}
                 onChange={(e) => setFormData({ ...formData, visible: e.target.checked })}
-                className="w-4 h-4 accent-amber-500"
+                className="w-4 h-4"
               />
               <label htmlFor="slide-visible" className="text-slate-300">Slide is Visible</label>
             </div>
@@ -223,7 +224,8 @@ export const HeroSlideModal: React.FC<HeroSlideModalProps> = ({
             <button
               type="submit"
               disabled={saving}
-              className="px-5 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded text-xs flex items-center gap-1.5"
+              className="px-5 py-2 text-slate-950 font-bold rounded text-xs flex items-center gap-1.5 transition-all"
+              style={{ backgroundColor: 'var(--accent-color)' }}
             >
               <Save className="w-3.5 h-3.5" />
               <span>{saving ? 'Saving...' : 'Save Slide'}</span>
@@ -296,12 +298,15 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-      <div className="bg-[#0b1320] border border-amber-500/30 w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 text-slate-100 hexagon-cut shadow-2xl space-y-4">
+      <div
+        className="bg-[#0b1320] border w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 text-slate-100 hexagon-cut shadow-2xl space-y-4"
+        style={{ borderColor: 'var(--accent-border)' }}
+      >
         <div className="flex items-center justify-between border-b border-white/10 pb-3">
-          <h3 className="text-lg font-bold font-heading text-amber-400">
+          <h3 className="text-lg font-bold font-heading" style={{ color: 'var(--accent-color)' }}>
             {project ? 'Edit Project' : 'Add New Project'}
           </h3>
-          <button onClick={onClose} className="p-1 hover:text-amber-400">
+          <button onClick={onClose} className="p-1 hover:text-white transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -392,16 +397,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             </div>
           </div>
 
-          <div>
-            <label className="block text-slate-400 mb-1">Featured Main Image URL *</label>
-            <input
-              type="text"
-              required
-              value={formData.mainImage || ''}
-              onChange={(e) => setFormData({ ...formData, mainImage: e.target.value })}
-              className="w-full px-3 py-2 bg-black/40 border border-white/15 rounded text-white"
-            />
-          </div>
+          <AdminImageInput
+            label="Featured Main Image *"
+            value={formData.mainImage || ''}
+            onChange={(url) => setFormData({ ...formData, mainImage: url })}
+            aspectRatio="video"
+            placeholder="Image URL or upload local image file"
+          />
 
           <div>
             <label className="block text-slate-400 mb-1">Description Brief</label>
@@ -425,7 +427,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                 id="proj-featured"
                 checked={formData.featured || false}
                 onChange={(e) => setFormData({ ...formData, featured: e.target.checked })}
-                className="w-4 h-4 accent-amber-500"
+                className="w-4 h-4"
               />
               <label htmlFor="proj-featured" className="text-slate-300">Featured on Homepage</label>
             </div>
@@ -436,7 +438,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                 id="proj-visible"
                 checked={formData.visible !== false}
                 onChange={(e) => setFormData({ ...formData, visible: e.target.checked })}
-                className="w-4 h-4 accent-amber-500"
+                className="w-4 h-4"
               />
               <label htmlFor="proj-visible" className="text-slate-300">Publicly Visible</label>
             </div>
@@ -453,7 +455,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             <button
               type="submit"
               disabled={saving}
-              className="px-5 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded text-xs flex items-center gap-1.5"
+              className="px-5 py-2 text-slate-950 font-bold rounded text-xs flex items-center gap-1.5 transition-all"
+              style={{ backgroundColor: 'var(--accent-color)' }}
             >
               <Save className="w-3.5 h-3.5" />
               <span>{saving ? 'Saving...' : 'Save Project'}</span>
@@ -522,12 +525,15 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-      <div className="bg-[#0b1320] border border-amber-500/30 w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 text-slate-100 hexagon-cut shadow-2xl space-y-4">
+      <div
+        className="bg-[#0b1320] border w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 text-slate-100 hexagon-cut shadow-2xl space-y-4"
+        style={{ borderColor: 'var(--accent-border)' }}
+      >
         <div className="flex items-center justify-between border-b border-white/10 pb-3">
-          <h3 className="text-lg font-bold font-heading text-amber-400">
+          <h3 className="text-lg font-bold font-heading" style={{ color: 'var(--accent-color)' }}>
             {service ? 'Edit Engineering Service' : 'Add New Service'}
           </h3>
-          <button onClick={onClose} className="p-1 hover:text-amber-400">
+          <button onClick={onClose} className="p-1 hover:text-white transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -573,16 +579,13 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({
             </div>
           </div>
 
-          <div>
-            <label className="block text-slate-400 mb-1">Main Image URL *</label>
-            <input
-              type="text"
-              required
-              value={formData.mainImage || ''}
-              onChange={(e) => setFormData({ ...formData, mainImage: e.target.value })}
-              className="w-full px-3 py-2 bg-black/40 border border-white/15 rounded text-white"
-            />
-          </div>
+          <AdminImageInput
+            label="Service Main Cover Image *"
+            value={formData.mainImage || ''}
+            onChange={(url) => setFormData({ ...formData, mainImage: url })}
+            aspectRatio="wide"
+            placeholder="Image URL or upload local image file"
+          />
 
           <div>
             <label className="block text-slate-400 mb-1">Short Description *</label>
@@ -607,7 +610,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({
                 id="svc-visible"
                 checked={formData.visible !== false}
                 onChange={(e) => setFormData({ ...formData, visible: e.target.checked })}
-                className="w-4 h-4 accent-amber-500"
+                className="w-4 h-4"
               />
               <label htmlFor="svc-visible" className="text-slate-300">Service is Publicly Active</label>
             </div>
@@ -624,7 +627,8 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({
             <button
               type="submit"
               disabled={saving}
-              className="px-5 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded text-xs flex items-center gap-1.5"
+              className="px-5 py-2 text-slate-950 font-bold rounded text-xs flex items-center gap-1.5 transition-all"
+              style={{ backgroundColor: 'var(--accent-color)' }}
             >
               <Save className="w-3.5 h-3.5" />
               <span>{saving ? 'Saving...' : 'Save Service'}</span>
@@ -694,12 +698,15 @@ export const LocationModal: React.FC<LocationModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-      <div className="bg-[#0b1320] border border-amber-500/30 w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 text-slate-100 hexagon-cut shadow-2xl space-y-4">
+      <div
+        className="bg-[#0b1320] border w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 text-slate-100 hexagon-cut shadow-2xl space-y-4"
+        style={{ borderColor: 'var(--accent-border)' }}
+      >
         <div className="flex items-center justify-between border-b border-white/10 pb-3">
-          <h3 className="text-lg font-bold font-heading text-amber-400">
+          <h3 className="text-lg font-bold font-heading" style={{ color: 'var(--accent-color)' }}>
             {location ? 'Edit Branch Location' : 'Add New Branch Location'}
           </h3>
-          <button onClick={onClose} className="p-1 hover:text-amber-400">
+          <button onClick={onClose} className="p-1 hover:text-white transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -782,16 +789,13 @@ export const LocationModal: React.FC<LocationModalProps> = ({
             </div>
           </div>
 
-          <div>
-            <label className="block text-slate-400 mb-1">Location Photo URL *</label>
-            <input
-              type="text"
-              required
-              value={formData.locationImage || ''}
-              onChange={(e) => setFormData({ ...formData, locationImage: e.target.value })}
-              className="w-full px-3 py-2 bg-black/40 border border-white/15 rounded text-white"
-            />
-          </div>
+          <AdminImageInput
+            label="Location Photo *"
+            value={formData.locationImage || ''}
+            onChange={(url) => setFormData({ ...formData, locationImage: url })}
+            aspectRatio="wide"
+            placeholder="Image URL or upload local image file"
+          />
 
           <div>
             <label className="block text-slate-400 mb-1">Operational Status</label>
@@ -816,7 +820,8 @@ export const LocationModal: React.FC<LocationModalProps> = ({
             <button
               type="submit"
               disabled={saving}
-              className="px-5 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded text-xs flex items-center gap-1.5"
+              className="px-5 py-2 text-slate-950 font-bold rounded text-xs flex items-center gap-1.5 transition-all"
+              style={{ backgroundColor: 'var(--accent-color)' }}
             >
               <Save className="w-3.5 h-3.5" />
               <span>{saving ? 'Saving...' : 'Save Hub'}</span>
@@ -883,12 +888,15 @@ export const DocumentModal: React.FC<DocumentModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-      <div className="bg-[#0b1320] border border-amber-500/30 w-full max-w-xl max-h-[90vh] overflow-y-auto p-6 text-slate-100 hexagon-cut shadow-2xl space-y-4">
+      <div
+        className="bg-[#0b1320] border w-full max-w-xl max-h-[90vh] overflow-y-auto p-6 text-slate-100 hexagon-cut shadow-2xl space-y-4"
+        style={{ borderColor: 'var(--accent-border)' }}
+      >
         <div className="flex items-center justify-between border-b border-white/10 pb-3">
-          <h3 className="text-lg font-bold font-heading text-amber-400">
+          <h3 className="text-lg font-bold font-heading" style={{ color: 'var(--accent-color)' }}>
             {document ? 'Edit Document' : 'Register New PDF Document'}
           </h3>
-          <button onClick={onClose} className="p-1 hover:text-amber-400">
+          <button onClick={onClose} className="p-1 hover:text-white transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -970,7 +978,7 @@ export const DocumentModal: React.FC<DocumentModalProps> = ({
                 id="doc-download"
                 checked={formData.downloadAllowed || false}
                 onChange={(e) => setFormData({ ...formData, downloadAllowed: e.target.checked })}
-                className="w-4 h-4 accent-amber-500"
+                className="w-4 h-4"
               />
               <label htmlFor="doc-download" className="text-slate-300">Allow Public Download</label>
             </div>
@@ -981,7 +989,7 @@ export const DocumentModal: React.FC<DocumentModalProps> = ({
                 id="doc-visible"
                 checked={formData.visible !== false}
                 onChange={(e) => setFormData({ ...formData, visible: e.target.checked })}
-                className="w-4 h-4 accent-amber-500"
+                className="w-4 h-4"
               />
               <label htmlFor="doc-visible" className="text-slate-300">Publicly Visible</label>
             </div>
@@ -998,7 +1006,8 @@ export const DocumentModal: React.FC<DocumentModalProps> = ({
             <button
               type="submit"
               disabled={saving}
-              className="px-5 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded text-xs flex items-center gap-1.5"
+              className="px-5 py-2 text-slate-950 font-bold rounded text-xs flex items-center gap-1.5 transition-all"
+              style={{ backgroundColor: 'var(--accent-color)' }}
             >
               <Save className="w-3.5 h-3.5" />
               <span>{saving ? 'Saving...' : 'Save Document'}</span>
@@ -1068,12 +1077,15 @@ export const VacancyModal: React.FC<VacancyModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-      <div className="bg-[#0b1320] border border-amber-500/30 w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 text-slate-100 hexagon-cut shadow-2xl space-y-4">
+      <div
+        className="bg-[#0b1320] border w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 text-slate-100 hexagon-cut shadow-2xl space-y-4"
+        style={{ borderColor: 'var(--accent-border)' }}
+      >
         <div className="flex items-center justify-between border-b border-white/10 pb-3">
-          <h3 className="text-lg font-bold font-heading text-amber-400">
+          <h3 className="text-lg font-bold font-heading" style={{ color: 'var(--accent-color)' }}>
             {vacancy ? 'Edit Career Opening' : 'Add New Career Opening'}
           </h3>
-          <button onClick={onClose} className="p-1 hover:text-amber-400">
+          <button onClick={onClose} className="p-1 hover:text-white transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -1180,7 +1192,8 @@ export const VacancyModal: React.FC<VacancyModalProps> = ({
             <button
               type="submit"
               disabled={saving}
-              className="px-5 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded text-xs flex items-center gap-1.5"
+              className="px-5 py-2 text-slate-950 font-bold rounded text-xs flex items-center gap-1.5 transition-all"
+              style={{ backgroundColor: 'var(--accent-color)' }}
             >
               <Save className="w-3.5 h-3.5" />
               <span>{saving ? 'Saving...' : 'Save Vacancy'}</span>

@@ -194,7 +194,7 @@ export const ContactPage: React.FC = () => {
                         {activeRoute.parallelDeliveryEnabled && (
                           <div>
                             <span className="text-slate-500 uppercase">Parallel Delivery: </span>
-                            <span className="text-amber-300 font-bold">
+                            <span className="font-bold" style={{ color: 'var(--accent-color)' }}>
                               {activeRoute.parallelReceiverEmail}
                             </span>
                           </div>

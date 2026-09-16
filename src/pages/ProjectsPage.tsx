@@ -48,7 +48,7 @@ export const ProjectsPage: React.FC<{ initialFilter?: 'all' | 'completed' | 'ong
       {/* Page Header Terminal */}
       <section className="relative py-16 bg-[#03060a] border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          <div className="flex items-center gap-2 font-mono text-[11px] text-[#0df2c9] tracking-widest uppercase">
+          <div className="flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase" style={{ color: 'var(--accent-color)' }}>
             <button onClick={() => navigate('/')} className="hover:underline">
               {ui.home}
             </button>
@@ -67,7 +67,7 @@ export const ProjectsPage: React.FC<{ initialFilter?: 'all' | 'completed' | 'ong
           <div className="flex items-center gap-4 font-mono text-[11px] text-slate-500 pt-2 border-t border-white/5">
             <span>TOTAL_RECORDS: {filteredProjects.length}</span>
             <span>•</span>
-            <span className="text-[#0df2c9]">SYS_COMPLIANCE: 100% NOMINAL</span>
+            <span style={{ color: 'var(--accent-color)' }}>SYS_COMPLIANCE: 100% NOMINAL</span>
           </div>
         </div>
       </section>
@@ -82,9 +82,14 @@ export const ProjectsPage: React.FC<{ initialFilter?: 'all' | 'completed' | 'ong
               data-cursor="ALL"
               className={`px-3 py-1.5 rounded transition-all uppercase tracking-wider ${
                 statusFilter === 'all'
-                  ? 'bg-[#0df2c9] text-slate-950 font-bold'
+                  ? 'font-bold'
                   : 'text-slate-400 hover:text-white hover:bg-white/5'
               }`}
+              style={
+                statusFilter === 'all'
+                  ? { backgroundColor: 'var(--accent-color)', color: 'var(--accent-btn-text, #02060a)' }
+                  : {}
+              }
             >
               [ {ui.filterAll} ]
             </button>
@@ -93,9 +98,14 @@ export const ProjectsPage: React.FC<{ initialFilter?: 'all' | 'completed' | 'ong
               data-cursor="COMPLETED"
               className={`px-3 py-1.5 rounded transition-all uppercase tracking-wider ${
                 statusFilter === 'completed'
-                  ? 'bg-[#0df2c9] text-slate-950 font-bold'
+                  ? 'font-bold'
                   : 'text-slate-400 hover:text-white hover:bg-white/5'
               }`}
+              style={
+                statusFilter === 'completed'
+                  ? { backgroundColor: 'var(--accent-color)', color: 'var(--accent-btn-text, #02060a)' }
+                  : {}
+              }
             >
               [ {ui.completedProjects} ]
             </button>
@@ -104,9 +114,14 @@ export const ProjectsPage: React.FC<{ initialFilter?: 'all' | 'completed' | 'ong
               data-cursor="ONGOING"
               className={`px-3 py-1.5 rounded transition-all uppercase tracking-wider ${
                 statusFilter === 'ongoing'
-                  ? 'bg-[#0df2c9] text-slate-950 font-bold'
+                  ? 'font-bold'
                   : 'text-slate-400 hover:text-white hover:bg-white/5'
               }`}
+              style={
+                statusFilter === 'ongoing'
+                  ? { backgroundColor: 'var(--accent-color)', color: 'var(--accent-btn-text, #02060a)' }
+                  : {}
+              }
             >
               [ {ui.ongoingProjects} ]
             </button>
@@ -120,7 +135,8 @@ export const ProjectsPage: React.FC<{ initialFilter?: 'all' | 'completed' | 'ong
               placeholder="SEARCH_BY_ASSET_OR_CLIENT..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-3 py-1.5 rounded border border-white/10 bg-black/50 text-slate-100 text-xs outline-none focus:border-[#0df2c9] transition-colors"
+              className="w-full pl-9 pr-3 py-1.5 rounded border border-white/10 bg-black/50 text-slate-100 text-xs outline-none transition-colors"
+              style={{ borderColor: searchQuery ? 'var(--accent-color)' : undefined }}
             />
           </div>
         </div>
@@ -133,9 +149,18 @@ export const ProjectsPage: React.FC<{ initialFilter?: 'all' | 'completed' | 'ong
               onClick={() => setCategoryFilter(cat)}
               className={`px-2.5 py-1 rounded border uppercase tracking-wider transition-all ${
                 categoryFilter === cat
-                  ? 'bg-[#0df2c9]/15 text-[#0df2c9] border-[#0df2c9]/60 font-bold'
+                  ? 'font-bold'
                   : 'bg-white/[0.02] text-slate-400 border-white/10 hover:border-white/20'
               }`}
+              style={
+                categoryFilter === cat
+                  ? {
+                      backgroundColor: 'var(--accent-badge)',
+                      color: 'var(--accent-color)',
+                      borderColor: 'var(--accent-border)',
+                    }
+                  : {}
+              }
             >
               {cat === 'all' ? 'ALL_DISCIPLINES' : cat.replace('_', ' ')}
             </button>
@@ -154,11 +179,12 @@ export const ProjectsPage: React.FC<{ initialFilter?: 'all' | 'completed' | 'ong
               transition={{ duration: 0.35, delay: idx * 0.05 }}
               onClick={() => navigate(`/projects/${project.slug}`)}
               data-cursor="EXPLORE"
-              className="group cursor-pointer border border-white/10 bg-[#060b12] hover:border-[#0df2c9]/60 transition-all duration-300 relative flex flex-col justify-between overflow-hidden"
+              className="group cursor-pointer border border-white/10 bg-[#060b12] transition-all duration-300 relative flex flex-col justify-between overflow-hidden"
+              style={{ borderColor: 'rgba(255,255,255,0.1)' }}
             >
               {/* Corner crosshairs */}
-              <span className="absolute top-1 left-1 text-[10px] text-slate-700 group-hover:text-[#0df2c9] font-mono transition-colors">+</span>
-              <span className="absolute top-1 right-1 text-[10px] text-slate-700 group-hover:text-[#0df2c9] font-mono transition-colors">+</span>
+              <span className="absolute top-1 left-1 text-[10px] text-slate-700 font-mono transition-colors group-hover:opacity-100" style={{ color: 'var(--accent-color)' }}>+</span>
+              <span className="absolute top-1 right-1 text-[10px] text-slate-700 font-mono transition-colors group-hover:opacity-100" style={{ color: 'var(--accent-color)' }}>+</span>
 
               <div>
                 <div className="relative h-60 overflow-hidden bg-black">
@@ -170,7 +196,13 @@ export const ProjectsPage: React.FC<{ initialFilter?: 'all' | 'completed' | 'ong
                   <div className="absolute inset-0 bg-gradient-to-t from-[#060b12] via-transparent to-transparent opacity-80" />
 
                   <div className="absolute top-3 left-3">
-                    <span className="px-2.5 py-1 rounded bg-black/80 border border-[#0df2c9]/40 text-[#0df2c9] text-[10px] font-mono tracking-widest uppercase backdrop-blur-md">
+                    <span
+                      className="px-2.5 py-1 rounded bg-black/80 text-[10px] font-mono tracking-widest uppercase backdrop-blur-md"
+                      style={{
+                        border: '1px solid var(--accent-border)',
+                        color: 'var(--accent-color)',
+                      }}
+                    >
                       {project.status === 'completed' ? ui.completedStatus : ui.ongoingStatus}
                     </span>
                   </div>
@@ -183,12 +215,12 @@ export const ProjectsPage: React.FC<{ initialFilter?: 'all' | 'completed' | 'ong
                 </div>
 
                 <div className="p-6 space-y-3">
-                  <div className="flex items-center gap-1.5 text-xs font-mono text-[#0df2c9]">
+                  <div className="flex items-center gap-1.5 text-xs font-mono" style={{ color: 'var(--accent-color)' }}>
                     <MapPin className="w-3.5 h-3.5" />
                     <span className="line-clamp-1">{t(project.location)}</span>
                   </div>
 
-                  <h3 className="text-lg font-bold font-cyber text-white group-hover:text-[#0df2c9] transition-colors line-clamp-1">
+                  <h3 className="text-lg font-bold font-cyber text-white transition-colors line-clamp-1 group-hover:opacity-90">
                     {t(project.name)}
                   </h3>
 
@@ -199,8 +231,8 @@ export const ProjectsPage: React.FC<{ initialFilter?: 'all' | 'completed' | 'ong
               </div>
 
               <div className="p-6 pt-0">
-                <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-slate-400 group-hover:text-[#0df2c9] transition-colors">
-                  <span className="text-[11px]">CLIENT // {project.client}</span>
+                <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-slate-400 transition-colors" style={{ color: 'var(--accent-color)' }}>
+                  <span className="text-[11px] text-slate-400">CLIENT // {project.client}</span>
                   <span>{ui.viewDetails} →</span>
                 </div>
               </div>
@@ -220,7 +252,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
     return (
       <div className="max-w-7xl mx-auto px-4 py-24 text-center space-y-4 font-mono">
         <h2 className="text-2xl font-bold font-cyber">ASSET_NOT_FOUND</h2>
-        <button onClick={() => navigate('/projects')} className="text-[#0df2c9] hover:underline">
+        <button onClick={() => navigate('/projects')} className="hover:underline" style={{ color: 'var(--accent-color)' }}>
           RETURN_TO_PORTFOLIO
         </button>
       </div>
@@ -232,7 +264,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
       {/* Detail Header */}
       <section className="relative py-16 bg-[#03060a] border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          <div className="flex items-center gap-2 font-mono text-[11px] text-[#0df2c9] tracking-widest uppercase">
+          <div className="flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase" style={{ color: 'var(--accent-color)' }}>
             <button onClick={() => navigate('/')} className="hover:underline">
               {ui.home}
             </button>
@@ -246,14 +278,17 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
 
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
             <div className="space-y-2 max-w-3xl">
-              <span className="px-2.5 py-1 rounded bg-black/80 border border-[#0df2c9]/40 text-[#0df2c9] text-[10px] font-mono tracking-widest uppercase">
+              <span
+                className="px-2.5 py-1 rounded bg-black/80 text-[10px] font-mono tracking-widest uppercase"
+                style={{ border: '1px solid var(--accent-border)', color: 'var(--accent-color)' }}
+              >
                 STATUS: {project.status.toUpperCase()}
               </span>
               <h1 className="text-3xl sm:text-5xl font-black font-cyber text-white tracking-tight mt-2">
                 {t(project.name)}
               </h1>
               <p className="text-xs sm:text-sm font-mono text-slate-400 flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#0df2c9]" />
+                <MapPin className="w-3.5 h-3.5" style={{ color: 'var(--accent-color)' }} />
                 <span>{t(project.location)}</span>
                 <span>•</span>
                 <span>CLIENT: {project.client}</span>
@@ -263,7 +298,12 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
             <button
               onClick={() => openQuoteModal()}
               data-cursor="TENDER"
-              className="px-6 py-3.5 bg-[#0df2c9] text-slate-950 hover:bg-[#00f0b5] font-mono font-bold text-xs tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(13,242,201,0.3)] self-start lg:self-auto"
+              className="px-6 py-3.5 font-mono font-bold text-xs tracking-widest uppercase transition-all self-start lg:self-auto"
+              style={{
+                backgroundColor: 'var(--accent-color)',
+                color: 'var(--accent-btn-text, #02060a)',
+                boxShadow: '0 0 20px var(--accent-glow)',
+              }}
             >
               [ INQUIRE_SIMILAR_PROJECT ]
             </button>
@@ -282,7 +322,10 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
                 alt={t(project.name)}
                 className="w-full h-[440px] object-cover"
               />
-              <div className="absolute bottom-3 left-3 px-3 py-1 bg-black/80 font-mono text-[10px] text-[#0df2c9] border border-white/10">
+              <div
+                className="absolute bottom-3 left-3 px-3 py-1 bg-black/80 font-mono text-[10px] border border-white/10"
+                style={{ color: 'var(--accent-color)' }}
+              >
                 ASSET_PRIMARY_VIEW // {project.slug}
               </div>
             </div>
@@ -302,7 +345,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {project.scopeOfWork.map((scope, i) => (
                     <div key={i} className="p-3 border border-white/5 bg-white/[0.02] flex items-start gap-2.5 font-mono text-xs">
-                      <span className="text-[#0df2c9] font-bold">&gt;</span>
+                      <span className="font-bold" style={{ color: 'var(--accent-color)' }}>&gt;</span>
                       <span className="text-slate-300 font-sans">{t(scope)}</span>
                     </div>
                   ))}
@@ -314,7 +357,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
           {/* Right 4-col: Metadata Docket */}
           <div className="lg:col-span-4 space-y-6">
             <div className="p-6 border border-white/10 bg-[#060b12] space-y-5 font-mono text-xs">
-              <h3 className="font-bold font-cyber text-sm text-[#0df2c9] pb-3 border-b border-white/10">
+              <h3 className="font-bold font-cyber text-sm pb-3 border-b border-white/10" style={{ color: 'var(--accent-color)' }}>
                 TELEMETRY_DOSSIER
               </h3>
 
@@ -325,7 +368,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
                 </div>
                 <div className="flex justify-between py-1.5 border-b border-white/5">
                   <span className="text-slate-500">DISCIPLINE</span>
-                  <span className="text-[#0df2c9] font-bold uppercase">{project.category}</span>
+                  <span className="font-bold uppercase" style={{ color: 'var(--accent-color)' }}>{project.category}</span>
                 </div>
                 {project.projectValue && (
                   <div className="flex justify-between py-1.5 border-b border-white/5">
@@ -345,7 +388,11 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
 
               <button
                 onClick={() => openQuoteModal()}
-                className="w-full py-3 bg-[#0df2c9] text-slate-950 font-bold tracking-widest uppercase hover:bg-[#00f0b5] transition-all"
+                className="w-full py-3 font-bold tracking-widest uppercase transition-all"
+                style={{
+                  backgroundColor: 'var(--accent-color)',
+                  color: 'var(--accent-btn-text, #02060a)',
+                }}
               >
                 [ TENDER_INQUIRY ]
               </button>

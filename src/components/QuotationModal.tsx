@@ -13,8 +13,7 @@ import {
 } from 'lucide-react';
 
 export const QuotationForm: React.FC<{ isModal?: boolean; onClose?: () => void }> = ({ isModal = false, onClose }) => {
-  const { services, locations, theme, showToast, refreshData } = useApp();
-  const isLight = theme === 'modern-construction';
+  const { services, theme, showToast, refreshData } = useApp();
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -69,12 +68,19 @@ export const QuotationForm: React.FC<{ isModal?: boolean; onClose?: () => void }
 
   if (submittedId) {
     return (
-      <div className="p-8 sm:p-12 text-center space-y-4">
-        <div className="w-16 h-16 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 rounded-full flex items-center justify-center mx-auto">
+      <div className="p-8 sm:p-12 text-center space-y-4 font-mono">
+        <div
+          className="w-16 h-16 rounded-full flex items-center justify-center mx-auto border"
+          style={{
+            backgroundColor: 'var(--accent-badge)',
+            borderColor: 'var(--accent-border)',
+            color: 'var(--accent-color)',
+          }}
+        >
           <CheckCircle2 className="w-10 h-10" />
         </div>
-        <h3 className="text-2xl font-bold font-heading">Tender Request Received</h3>
-        <p className="text-sm text-slate-400 max-w-md mx-auto">
+        <h3 className="text-2xl font-bold font-cyber text-white">Tender Request Received</h3>
+        <p className="text-sm text-slate-400 max-w-md mx-auto font-sans">
           Reference Code: <span className="font-mono font-bold" style={{ color: 'var(--accent-color)' }}>{submittedId}</span>.
           Our Lead Commercial Tendering Engineer and Geotechnical Estimations team will analyze your project parameters within 24 business hours.
         </p>
@@ -82,7 +88,7 @@ export const QuotationForm: React.FC<{ isModal?: boolean; onClose?: () => void }
           {onClose && (
             <button
               onClick={onClose}
-              className="px-6 py-2.5 rounded-lg text-sm font-semibold font-bold"
+              className="px-6 py-2.5 rounded text-sm font-bold uppercase tracking-wider"
               style={{
                 backgroundColor: 'var(--accent-color)',
                 color: 'var(--accent-btn-text, #02060a)',
@@ -96,92 +102,83 @@ export const QuotationForm: React.FC<{ isModal?: boolean; onClose?: () => void }
     );
   }
 
+  const inputClasses =
+    'w-full px-3.5 py-2.5 rounded border border-white/15 bg-black/40 text-slate-100 text-sm outline-none transition-colors focus:border-white/40 font-mono';
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6 font-sans">
       {/* Contact Details */}
       <div>
-        <h4 className="text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2" style={{ color: 'var(--accent-color)' }}>
+        <h4 className="text-xs font-mono font-bold uppercase tracking-widest mb-3 flex items-center gap-2" style={{ color: 'var(--accent-color)' }}>
           <Building className="w-4 h-4" /> 1. Client & Organization Information
         </h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-400 mb-1">First Name *</label>
+            <label className="block text-xs font-mono font-semibold text-slate-400 mb-1">First Name *</label>
             <input
               type="text"
               required
               value={formData.firstName}
               onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-              className={`w-full px-3.5 py-2.5 rounded-lg border text-sm outline-none transition-colors ${
-                isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-orange-500' : 'bg-black/30 border-slate-700 text-slate-100 focus:border-amber-500'
-              }`}
+              className={inputClasses}
               placeholder="e.g. Abdullah"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-400 mb-1">Last Name *</label>
+            <label className="block text-xs font-mono font-semibold text-slate-400 mb-1">Last Name *</label>
             <input
               type="text"
               required
               value={formData.lastName}
               onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-              className={`w-full px-3.5 py-2.5 rounded-lg border text-sm outline-none transition-colors ${
-                isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-orange-500' : 'bg-black/30 border-slate-700 text-slate-100 focus:border-amber-500'
-              }`}
+              className={inputClasses}
               placeholder="e.g. Al-Otaibi"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-400 mb-1">Company / Authority Name *</label>
+            <label className="block text-xs font-mono font-semibold text-slate-400 mb-1">Company / Authority Name *</label>
             <input
               type="text"
               required
               value={formData.company}
               onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-              className={`w-full px-3.5 py-2.5 rounded-lg border text-sm outline-none transition-colors ${
-                isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-orange-500' : 'bg-black/30 border-slate-700 text-slate-100 focus:border-amber-500'
-              }`}
+              className={inputClasses}
               placeholder="e.g. Saudi Aramco / Red Sea Development"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-400 mb-1">Official Email Address *</label>
+            <label className="block text-xs font-mono font-semibold text-slate-400 mb-1">Official Email Address *</label>
             <input
               type="email"
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className={`w-full px-3.5 py-2.5 rounded-lg border text-sm outline-none transition-colors ${
-                isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-orange-500' : 'bg-black/30 border-slate-700 text-slate-100 focus:border-amber-500'
-              }`}
+              className={inputClasses}
               placeholder="tenders@organization.com"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-400 mb-1">Direct Phone / Mobile *</label>
+            <label className="block text-xs font-mono font-semibold text-slate-400 mb-1">Direct Phone / Mobile *</label>
             <input
               type="tel"
               required
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className={`w-full px-3.5 py-2.5 rounded-lg border text-sm outline-none transition-colors ${
-                isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-orange-500' : 'bg-black/30 border-slate-700 text-slate-100 focus:border-amber-500'
-              }`}
+              className={inputClasses}
               placeholder="+966 5X XXX XXXX"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-400 mb-1">Country of Execution</label>
+            <label className="block text-xs font-mono font-semibold text-slate-400 mb-1">Country of Execution</label>
             <select
               value={formData.country}
               onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-              className={`w-full px-3.5 py-2.5 rounded-lg border text-sm outline-none transition-colors ${
-                isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-orange-500' : 'bg-[#0d1622] border-slate-700 text-slate-100 focus:border-amber-500'
-              }`}
+              className={inputClasses}
             >
               <option value="Saudi Arabia">Kingdom of Saudi Arabia</option>
               <option value="India">India</option>
@@ -196,19 +193,17 @@ export const QuotationForm: React.FC<{ isModal?: boolean; onClose?: () => void }
       </div>
 
       {/* Project Scope & Requirements */}
-      <div className="pt-2 border-t border-slate-800/60">
-        <h4 className="text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2" style={{ color: 'var(--accent-color)' }}>
+      <div className="pt-2 border-t border-white/10">
+        <h4 className="text-xs font-mono font-bold uppercase tracking-widest mb-3 flex items-center gap-2" style={{ color: 'var(--accent-color)' }}>
           <FileText className="w-4 h-4" /> 2. Technical Scope & Specifications
         </h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-400 mb-1">Primary Engineering Discipline *</label>
+            <label className="block text-xs font-mono font-semibold text-slate-400 mb-1">Primary Engineering Discipline *</label>
             <select
               value={formData.serviceRequired}
               onChange={(e) => setFormData({ ...formData, serviceRequired: e.target.value })}
-              className={`w-full px-3.5 py-2.5 rounded-lg border text-sm outline-none transition-colors ${
-                isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-orange-500' : 'bg-[#0d1622] border-slate-700 text-slate-100 focus:border-amber-500'
-              }`}
+              className={inputClasses}
             >
               <option value="Civil Engineering & Heavy Foundations">Civil Engineering & Heavy Foundations</option>
               <option value="General & Industrial Construction">General & Industrial EPC Construction</option>
@@ -219,13 +214,11 @@ export const QuotationForm: React.FC<{ isModal?: boolean; onClose?: () => void }
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-400 mb-1">Estimated Budget Range</label>
+            <label className="block text-xs font-mono font-semibold text-slate-400 mb-1">Estimated Budget Range</label>
             <select
               value={formData.budgetRange}
               onChange={(e) => setFormData({ ...formData, budgetRange: e.target.value })}
-              className={`w-full px-3.5 py-2.5 rounded-lg border text-sm outline-none transition-colors ${
-                isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-orange-500' : 'bg-[#0d1622] border-slate-700 text-slate-100 focus:border-amber-500'
-              }`}
+              className={inputClasses}
             >
               <option value="$10M - $25M USD">$10M - $25M USD</option>
               <option value="$25M - $50M USD">$25M - $50M USD</option>
@@ -236,52 +229,46 @@ export const QuotationForm: React.FC<{ isModal?: boolean; onClose?: () => void }
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-400 mb-1">Project Site / City Location</label>
+            <label className="block text-xs font-mono font-semibold text-slate-400 mb-1">Project Site / City Location</label>
             <input
               type="text"
               value={formData.location}
               onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-              className={`w-full px-3.5 py-2.5 rounded-lg border text-sm outline-none transition-colors ${
-                isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-orange-500' : 'bg-black/30 border-slate-700 text-slate-100 focus:border-amber-500'
-              }`}
+              className={inputClasses}
               placeholder="e.g. Jubail Phase 2 / Riyadh Ring Road"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-400 mb-1">Estimated Footprint / Size</label>
+            <label className="block text-xs font-mono font-semibold text-slate-400 mb-1">Estimated Footprint / Size</label>
             <input
               type="text"
               value={formData.estimatedProjectSize}
               onChange={(e) => setFormData({ ...formData, estimatedProjectSize: e.target.value })}
-              className={`w-full px-3.5 py-2.5 rounded-lg border text-sm outline-none transition-colors ${
-                isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-orange-500' : 'bg-black/30 border-slate-700 text-slate-100 focus:border-amber-500'
-              }`}
+              className={inputClasses}
               placeholder="e.g. 18.5 km viaduct / 140,000 m² plot"
             />
           </div>
         </div>
 
         <div className="mt-4">
-          <label className="block text-xs font-semibold text-slate-400 mb-1">Project Scope & Tendering Brief *</label>
+          <label className="block text-xs font-mono font-semibold text-slate-400 mb-1">Project Scope & Tendering Brief *</label>
           <textarea
             required
             rows={4}
             value={formData.projectDescription}
             onChange={(e) => setFormData({ ...formData, projectDescription: e.target.value })}
-            className={`w-full px-3.5 py-2.5 rounded-lg border text-sm outline-none transition-colors resize-y ${
-              isLight ? 'bg-slate-50 border-slate-300 text-slate-900 focus:border-orange-500' : 'bg-black/30 border-slate-700 text-slate-100 focus:border-amber-500'
-            }`}
+            className="w-full px-3.5 py-2.5 rounded border border-white/15 bg-black/40 text-slate-100 text-sm outline-none transition-colors resize-y font-mono focus:border-white/40"
             placeholder="Please detail geotechnical requirements, expected foundation depth, target mobilization window, and required engineering certifications..."
           />
         </div>
 
         {/* Attachment Upload Simulation */}
-        <div className="mt-4 p-4 rounded-lg border border-dashed border-slate-700/80 bg-black/10 flex items-center justify-between">
+        <div className="mt-4 p-4 rounded border border-dashed border-white/20 bg-black/20 flex items-center justify-between font-mono">
           <div className="flex items-center gap-3">
-            <Upload className="w-5 h-5 text-amber-500" />
+            <Upload className="w-5 h-5" style={{ color: 'var(--accent-color)' }} />
             <div>
-              <p className="text-xs font-semibold">Attach RFQ Documents / Preliminary BoQ (Optional)</p>
+              <p className="text-xs font-semibold text-slate-200">Attach RFQ Documents / Preliminary BoQ (Optional)</p>
               <p className="text-[11px] text-slate-500">PDF, DWG, or ZIP up to 50 MB</p>
             </div>
           </div>
@@ -298,7 +285,7 @@ export const QuotationForm: React.FC<{ isModal?: boolean; onClose?: () => void }
             />
             <label
               htmlFor="quote-file"
-              className="px-3 py-1.5 rounded text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 cursor-pointer border border-slate-700"
+              className="px-3 py-1.5 rounded text-xs font-semibold bg-white/10 hover:bg-white/20 text-slate-200 cursor-pointer border border-white/10"
             >
               {formData.attachmentFileName ? formData.attachmentFileName : 'Browse File'}
             </label>
@@ -307,9 +294,9 @@ export const QuotationForm: React.FC<{ isModal?: boolean; onClose?: () => void }
       </div>
 
       {/* Preferred Contact Method */}
-      <div className="flex items-center justify-between pt-2">
-        <div className="flex items-center gap-4 text-xs font-medium text-slate-400">
-          <span>Preferred Contact:</span>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2 font-mono">
+        <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-400">
+          <span>Contact:</span>
           <label className="flex items-center gap-1.5 cursor-pointer">
             <input
               type="radio"
@@ -342,14 +329,14 @@ export const QuotationForm: React.FC<{ isModal?: boolean; onClose?: () => void }
         <button
           type="submit"
           disabled={submitting}
-          className="px-6 py-3 rounded-lg text-sm font-bold flex items-center gap-2 shadow-lg transition-all"
+          className="px-6 py-3 rounded text-sm font-bold flex items-center justify-center gap-2 shadow-lg transition-all uppercase tracking-wider"
           style={{
             backgroundColor: 'var(--accent-color)',
             color: 'var(--accent-btn-text, #02060a)',
           }}
         >
           <Send className="w-4 h-4" />
-          <span>{submitting ? 'Transmitting Request...' : 'Submit Quotation Request'}</span>
+          <span>{submitting ? 'Transmitting...' : 'Submit Quotation Request'}</span>
         </button>
       </div>
     </form>
@@ -357,30 +344,20 @@ export const QuotationForm: React.FC<{ isModal?: boolean; onClose?: () => void }
 };
 
 export const QuotationModal: React.FC = () => {
-  const { quoteModalOpen, closeQuoteModal, theme } = useApp();
+  const { quoteModalOpen, closeQuoteModal } = useApp();
   if (!quoteModalOpen) return null;
 
-  const isLight = theme === 'modern-construction';
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-sm animate-fadeIn">
-      <div
-        className={`w-full max-w-3xl max-h-[92vh] flex flex-col rounded-xl overflow-hidden shadow-2xl border ${
-          isLight ? 'bg-white border-slate-300 text-slate-900' : 'bg-[#0d1622] border-[#1e2f42] text-slate-100'
-        }`}
-      >
-        <div
-          className={`px-6 py-4 border-b flex items-center justify-between ${
-            isLight ? 'bg-slate-100 border-slate-200' : 'bg-[#080f18] border-slate-800'
-          }`}
-        >
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-sm animate-fadeIn">
+      <div className="w-full max-w-3xl max-h-[92vh] flex flex-col rounded overflow-hidden shadow-2xl border border-white/15 bg-[#060b12] text-slate-100">
+        <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-[#04080e]">
           <div>
-            <h3 className="text-lg font-bold font-heading">Request an Engineering Quotation</h3>
-            <p className="text-xs text-slate-400">Direct transmission to Fenova Commercial Tendering & Estimations</p>
+            <h3 className="text-lg font-bold font-cyber text-white">Request an Engineering Quotation</h3>
+            <p className="text-xs text-slate-400 font-mono">Direct transmission to Fenova Commercial Tendering & Estimations</p>
           </div>
           <button
             onClick={closeQuoteModal}
-            className="p-1.5 rounded-lg hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
+            className="p-1.5 rounded hover:bg-white/10 transition-colors text-slate-400 hover:text-white"
           >
             <X className="w-5 h-5" />
           </button>

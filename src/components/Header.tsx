@@ -110,10 +110,10 @@ export const Header: React.FC = () => {
     >
       {/* Top Telemetry & Micro-Data Status Bar */}
       <div className="border-b border-white/5 bg-[#020406]/90 px-4 sm:px-8 py-1.5 text-[11px] font-mono text-slate-400 flex items-center justify-between overflow-x-auto whitespace-nowrap">
-        {/* Left Side: Monospaced Metrics & Active GPS Coordinates (Blinking NOMINAL removed) */}
+        {/* Left Side: Monospaced Metrics & Active System Status */}
         <div className="flex items-center space-x-4 rtl:space-x-reverse">
-          <span className="text-slate-300 font-semibold tracking-wider">
-            [SYS.GRID // 24°42'44"N 46°40'28"E]
+          <span className="text-slate-300 font-semibold tracking-wider font-mono">
+            SYS.STATUS: <span style={{ color: 'var(--accent-color)' }} className="font-bold">ACTIVE</span>
           </span>
           <span className="hidden md:inline text-white/20">|</span>
           <span className="hidden md:inline text-slate-400">
@@ -133,9 +133,9 @@ export const Header: React.FC = () => {
           {/* Top Theme Selector */}
           <div
             id="top-theme-selector"
-            className="hidden sm:flex items-center px-2 py-0.5 hexagon-cut-sm border border-white/10 bg-black/40 text-[10px] font-mono gap-1"
+            className="flex items-center px-2 py-0.5 hexagon-cut-sm border border-white/10 bg-black/40 text-[10px] font-mono gap-1"
           >
-            <Palette className="w-3 h-3 mr-1" style={{ color: 'var(--accent-color)' }} />
+            <Palette className="w-3 h-3 mr-1 shrink-0" style={{ color: 'var(--accent-color)' }} />
             {themeOptions.map((opt) => (
               <button
                 key={opt.key}
@@ -336,8 +336,25 @@ export const Header: React.FC = () => {
           id="mobile-menu-drawer"
           className="xl:hidden border-t border-white/10 bg-[#05090f]/98 px-4 pt-4 pb-8 space-y-4 max-h-[85vh] overflow-y-auto backdrop-blur-2xl"
         >
-          <div className="font-mono text-[10px] tracking-widest pb-2 border-b border-white/10" style={{ color: 'var(--accent-color)' }}>
-            FENOVA_DIRECTORY // MOBILE_ACCESS
+          <div className="flex items-center justify-between font-mono text-[10px] tracking-widest pb-2 border-b border-white/10">
+            <span style={{ color: 'var(--accent-color)' }}>FENOVA_DIRECTORY // MOBILE</span>
+            <div className="flex items-center gap-1">
+              {themeOptions.map((opt) => (
+                <button
+                  key={opt.key}
+                  onClick={() => setTheme(opt.key)}
+                  className={`px-2 py-0.5 hexagon-cut-sm text-[9px] font-bold uppercase transition-all ${
+                    theme === opt.key ? 'bg-white/15 text-white' : 'text-slate-400 hover:text-white'
+                  }`}
+                  style={{
+                    color: theme === opt.key ? opt.color : undefined,
+                    border: theme === opt.key ? `1px solid ${opt.color}` : '1px solid rgba(255,255,255,0.1)',
+                  }}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
           </div>
 
           {navLinks.map((link) => (
