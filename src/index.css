@@ -125,6 +125,76 @@
   --theme-grid-color: rgba(255, 51, 102, 0.04);
 }
 
+/* Theme 4: Admin Orange (Strictly isolated to Admin Panel) */
+.theme-admin-orange {
+  --bg-primary: #080402;
+  --bg-secondary: #100804;
+  --bg-card: #170c06;
+  --bg-card-hover: #241309;
+  --accent-color: #ff6a00;
+  --accent-secondary: #ff851a;
+  --accent-glow: rgba(255, 106, 0, 0.4);
+  --accent-border: rgba(255, 106, 0, 0.35);
+  --accent-badge: rgba(255, 106, 0, 0.14);
+  --accent-btn-bg: #ff6a00;
+  --accent-btn-text: #ffffff;
+  --theme-grid-color: rgba(255, 106, 0, 0.05);
+}
+
+/* Hexagon-Cut Corner and Chamfered Architectural Shapes */
+.hexagon-cut {
+  clip-path: polygon(
+    14px 0%,
+    calc(100% - 14px) 0%,
+    100% 14px,
+    100% calc(100% - 14px),
+    calc(100% - 14px) 100%,
+    14px 100%,
+    0% calc(100% - 14px),
+    0% 14px
+  );
+}
+
+.hexagon-cut-sm {
+  clip-path: polygon(
+    8px 0%,
+    calc(100% - 8px) 0%,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    8px 100%,
+    0% calc(100% - 8px),
+    0% 8px
+  );
+}
+
+/* Custom Hexagon-Rectangle Button:
+   Top-Left: Hexagon cut
+   Top-Right: Sharp
+   Bottom-Right: Hexagon cut
+   Bottom-Left: Sharp */
+.clip-quote-btn {
+  clip-path: polygon(
+    10px 0,
+    100% 0,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    0 100%,
+    0 10px
+  );
+}
+
+.clip-chamfer-tl-br {
+  clip-path: polygon(
+    12px 0,
+    100% 0,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    0 100%,
+    0 12px
+  );
+}
+
 /* Global Dynamic Theme Classes */
 .text-theme-accent {
   color: var(--accent-color);

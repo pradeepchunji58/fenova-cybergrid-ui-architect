@@ -180,15 +180,15 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   useEffect(() => {
     localStorage.setItem('apex_theme', theme);
     const root = document.documentElement;
-    if (theme === 'modern-construction') {
-      root.classList.add('theme-modern-construction');
-      root.classList.remove('theme-premium-engineering');
-      document.body.className = 'theme-modern-construction bg-slate-50 text-slate-900 antialiased';
-    } else {
-      root.classList.add('theme-premium-engineering');
-      root.classList.remove('theme-modern-construction');
-      document.body.className = 'theme-premium-engineering bg-neutral-950 text-neutral-100 antialiased';
-    }
+    root.classList.remove(
+      'theme-tech-green',
+      'theme-cyber-blue',
+      'theme-crimson-red',
+      'theme-modern-construction',
+      'theme-premium-engineering'
+    );
+    root.classList.add(`theme-${theme}`);
+    document.body.className = `theme-${theme} antialiased`;
   }, [theme]);
 
   const setLanguage = (lang: Language) => {

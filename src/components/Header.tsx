@@ -110,25 +110,17 @@ export const Header: React.FC = () => {
     >
       {/* Top Telemetry & Micro-Data Status Bar */}
       <div className="border-b border-white/5 bg-[#020406]/90 px-4 sm:px-8 py-1.5 text-[11px] font-mono text-slate-400 flex items-center justify-between overflow-x-auto whitespace-nowrap">
-        {/* Left Side: Monospaced Metrics & Active GPS Coordinates */}
+        {/* Left Side: Monospaced Metrics & Active GPS Coordinates (Blinking NOMINAL removed) */}
         <div className="flex items-center space-x-4 rtl:space-x-reverse">
-          <div className="flex items-center gap-2" style={{ color: 'var(--accent-color)' }}>
-            <span
-              className="w-1.5 h-1.5 rounded-full animate-ping"
-              style={{ backgroundColor: 'var(--accent-color)' }}
-            />
-            <span className="font-semibold tracking-wider">FENOVA.SYS: NOMINAL</span>
-          </div>
-          <span className="text-white/20">|</span>
-          <span className="hidden md:inline text-slate-300">
+          <span className="text-slate-300 font-semibold tracking-wider">
             [SYS.GRID // 24°42'44"N 46°40'28"E]
+          </span>
+          <span className="hidden md:inline text-white/20">|</span>
+          <span className="hidden md:inline text-slate-400">
+            LOAD: <span className="text-white font-bold">{tickerMetric}%</span>
           </span>
           <span className="hidden lg:inline text-white/20">|</span>
           <span className="hidden lg:inline text-slate-400">
-            LOAD: <span className="text-white font-bold">{tickerMetric}%</span>
-          </span>
-          <span className="hidden xl:inline text-white/20">|</span>
-          <span className="hidden xl:inline text-slate-400">
             TIME:{' '}
             <span style={{ color: 'var(--accent-color)' }}>
               {sysTime || 'SYNCING...'}
@@ -136,68 +128,36 @@ export const Header: React.FC = () => {
           </span>
         </div>
 
-        {/* Right Side: 3-Theme Selector, Security Terminal & Language Selector */}
+        {/* Right Side: Language & Visual Theme Selectors */}
         <div className="flex items-center space-x-3 sm:space-x-4 rtl:space-x-reverse">
-          {/* Multi-Theme Selector: Green, Blue, Red */}
+          {/* Top Theme Selector */}
           <div
-            id="theme-selector-bar"
-            className="flex items-center gap-1 px-2 py-0.5 rounded border border-white/10 bg-black/60 text-[10px] font-mono"
+            id="top-theme-selector"
+            className="hidden sm:flex items-center px-2 py-0.5 hexagon-cut-sm border border-white/10 bg-black/40 text-[10px] font-mono gap-1"
           >
-            <Palette className="w-3 h-3 text-slate-400 mr-1 hidden sm:inline" />
-            <span className="text-slate-400 mr-1 hidden sm:inline">THEME:</span>
-            {themeOptions.map((opt) => {
-              const isSelected = theme === opt.key;
-              return (
-                <button
-                  key={opt.key}
-                  id={`theme-btn-${opt.key}`}
-                  onClick={() => setTheme(opt.key)}
-                  data-cursor={opt.label}
-                  className={`px-1.5 py-0.5 rounded flex items-center gap-1 transition-all uppercase tracking-wider ${
-                    isSelected
-                      ? 'font-bold shadow-sm'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                  style={{
-                    backgroundColor: isSelected ? `${opt.color}22` : 'transparent',
-                    color: isSelected ? opt.color : undefined,
-                    border: isSelected ? `1px solid ${opt.color}66` : '1px solid transparent',
-                  }}
-                  title={`${opt.label} Theme`}
-                >
-                  <span
-                    className="w-1.5 h-1.5 rounded-full shrink-0"
-                    style={{ backgroundColor: opt.color }}
-                  />
-                  <span>{opt.label}</span>
-                </button>
-              );
-            })}
+            <Palette className="w-3 h-3 mr-1" style={{ color: 'var(--accent-color)' }} />
+            {themeOptions.map((opt) => (
+              <button
+                key={opt.key}
+                id={`top-theme-${opt.key}`}
+                onClick={() => setTheme(opt.key)}
+                className={`px-1.5 py-0.2 uppercase transition-all hexagon-cut-sm text-[9px] font-bold ${
+                  theme === opt.key
+                    ? 'bg-white/15 text-white'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+                style={{
+                  color: theme === opt.key ? opt.color : undefined,
+                }}
+              >
+                {opt.label}
+              </button>
+            ))}
           </div>
 
-          {/* Admin Terminal Access Link */}
-          <button
-            id="header-admin-link"
-            onClick={() => handleNav('/admin')}
-            title="Open Operational Terminal CMS"
-            data-cursor="CMS"
-            className={`px-2 py-0.5 rounded text-[10px] font-mono flex items-center gap-1.5 border transition-all ${
-              adminUser
-                ? 'bg-white/10 text-white'
-                : 'bg-white/5 text-slate-300 border-white/10 hover:text-white'
-            }`}
-            style={{
-              borderColor: adminUser ? 'var(--accent-color)' : undefined,
-            }}
-          >
-            <Lock className="w-2.5 h-2.5" style={{ color: 'var(--accent-color)' }} />
-            <span>{adminUser ? `ROOT_${adminUser.role.split('_')[0].toUpperCase()}` : 'TERMINAL_CMS'}</span>
-          </button>
-
-          {/* Precision Language Selector */}
           <div
             id="top-language-selector"
-            className="flex items-center px-2 py-0.5 rounded border border-white/10 bg-black/40 text-[10px] font-mono"
+            className="flex items-center px-2 py-0.5 hexagon-cut-sm border border-white/10 bg-black/40 text-[10px] font-mono"
           >
             <Globe className="w-3 h-3 mr-1.5 rtl:ml-1.5" style={{ color: 'var(--accent-color)' }} />
             {(['en', 'ar', 'hi'] as Language[]).map((lang, idx) => (
@@ -225,58 +185,24 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Flat Top Header Bar Nested Inside Fine Line Grid Boundaries */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative">
-        {/* Brand Terminal Mark: FENOVA */}
+      {/* Main Header Bar - Full scale of screen */}
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 h-24 flex items-center justify-between relative">
+        {/* Brand Terminal Mark: FENOVA (No home icon, bold, double size, Hightech Civil Engineering text) */}
         <div
           id="brand-logo-container"
           onClick={() => handleNav('/')}
           data-cursor="HOME"
-          className="flex items-center gap-3.5 cursor-pointer group select-none"
+          className="flex flex-col cursor-pointer select-none group"
         >
-          {/* Cyber-automotive Geometric Vector Emblem */}
-          <div
-            className="w-11 h-11 rounded border bg-[#060c13] flex items-center justify-center relative overflow-hidden transition-all duration-300"
-            style={{
-              borderColor: 'var(--accent-border)',
-            }}
-          >
-            <Building2 className="w-5 h-5" style={{ color: 'var(--accent-color)' }} />
-            <div
-              className="absolute -top-1 -right-1 w-2 h-2 rounded-full"
-              style={{ backgroundColor: 'var(--accent-color)' }}
-            />
-            <div
-              className="absolute inset-0 opacity-20 pointer-events-none"
-              style={{
-                background: 'linear-gradient(to top right, var(--accent-color), transparent)',
-              }}
-            />
-          </div>
-
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="text-xl sm:text-2xl font-black font-cyber tracking-wider text-white">
-                FENOVA
-              </span>
-              <span
-                className="text-[9px] font-mono font-semibold uppercase tracking-widest px-1.5 py-0.5 rounded border"
-                style={{
-                  borderColor: 'var(--accent-border)',
-                  backgroundColor: 'var(--accent-badge)',
-                  color: 'var(--accent-color)',
-                }}
-              >
-                HI-TECH CIVIL EPC
-              </span>
-            </div>
-            <p className="text-[10px] font-mono tracking-widest uppercase text-slate-400">
-              FENOVA HI-TECH CIVIL ENGINEERING
-            </p>
-          </div>
+          <span className="text-3xl sm:text-4xl lg:text-5xl font-black font-cyber tracking-wider text-white leading-none">
+            FENOVA
+          </span>
+          <p className="text-xs sm:text-sm font-mono tracking-widest uppercase font-semibold text-slate-300 mt-1">
+            Hightech Civil Engineering
+          </p>
         </div>
 
-        {/* Desktop Navigation Items */}
+        {/* Desktop Navigation Items (Numbers series 01, 02 hidden) */}
         <nav className="hidden xl:flex items-center h-full">
           {navLinks.map((link) => {
             const activeRoute = currentRoute || '';
@@ -295,7 +221,7 @@ export const Header: React.FC = () => {
               >
                 <button
                   onClick={() => handleNav(link.path)}
-                  data-cursor={link.code}
+                  data-cursor={link.label}
                   className={`h-full px-3.5 border-b-2 text-xs font-mono tracking-wider flex items-center gap-1.5 transition-all ${
                     isActive
                       ? 'text-white font-semibold'
@@ -306,8 +232,7 @@ export const Header: React.FC = () => {
                     backgroundColor: isActive ? 'var(--accent-badge)' : undefined,
                   }}
                 >
-                  <span className="text-[10px] text-slate-500">{link.code}</span>
-                  <span className="font-sans font-medium uppercase text-xs">{link.label}</span>
+                  <span className="font-sans font-semibold uppercase text-xs">{link.label}</span>
                   {link.hasDropdown && (
                     <ChevronDown
                       className={`w-3 h-3 text-slate-500 transition-transform duration-200 ${
@@ -321,11 +246,11 @@ export const Header: React.FC = () => {
                 {/* Seamless Micro-Grid Menu Dropdown */}
                 {link.hasDropdown && isMenuOpen && (
                   <div
-                    className="absolute top-full left-0 rtl:left-auto rtl:right-0 w-[420px] bg-[#05090f]/98 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)] p-4 z-50 backdrop-blur-xl"
+                    className="absolute top-full left-0 rtl:left-auto rtl:right-0 w-[420px] bg-[#05090f]/98 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)] p-4 z-50 backdrop-blur-xl hexagon-cut"
                     style={{ borderTopColor: 'var(--accent-color)' }}
                   >
                     <div className="flex items-center justify-between pb-2 mb-3 border-b border-white/5 font-mono text-[10px] text-slate-500">
-                      <span>TERMINAL_SUBSYSTEM // {link.code}</span>
+                      <span>TERMINAL_SUBSYSTEM</span>
                       <span style={{ color: 'var(--accent-color)' }}>ACTIVE_SECTOR</span>
                     </div>
 
@@ -335,7 +260,7 @@ export const Header: React.FC = () => {
                           key={sub.path}
                           onClick={() => handleNav(sub.path)}
                           data-cursor="OPEN"
-                          className={`w-full text-left rtl:text-right p-3 rounded border transition-all group ${
+                          className={`w-full text-left rtl:text-right p-3 border transition-all group hexagon-cut-sm ${
                             currentRoute === sub.path
                               ? 'text-white'
                               : 'bg-white/[0.02] border-white/5 hover:bg-white/[0.05] text-slate-300'
@@ -350,7 +275,7 @@ export const Header: React.FC = () => {
                               {sub.label}
                             </span>
                             <span
-                              className="font-mono text-[9px] px-1 py-0.5 rounded bg-black/60 border"
+                              className="font-mono text-[9px] px-1 py-0.5 bg-black/60 border"
                               style={{
                                 borderColor: 'var(--accent-border)',
                                 color: 'var(--accent-color)',
@@ -372,24 +297,19 @@ export const Header: React.FC = () => {
           })}
         </nav>
 
-        {/* Action Button: RFQ / Tender Docket */}
+        {/* Action Button: Request Quote (White, non-radius, custom hexagon rectangle cuts) */}
         <div className="hidden sm:flex items-center gap-3">
           <button
             id="nav-quote-cta"
             onClick={() => handleNav('/quotation')}
-            data-cursor="TENDER"
-            className="relative px-5 py-2.5 rounded border text-xs font-mono font-bold tracking-widest uppercase transition-all duration-300 flex items-center gap-2 group"
+            data-cursor="QUOTE"
+            className="px-4 py-2 bg-white hover:bg-slate-200 text-black text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200 flex items-center gap-2 cursor-pointer shadow-none"
             style={{
-              borderColor: 'var(--accent-color)',
-              color: 'var(--accent-color)',
-              backgroundColor: 'rgba(0,0,0,0.4)',
-              boxShadow: '0 0 15px var(--accent-glow)',
+              clipPath: 'polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)',
             }}
           >
-            <span className="absolute -top-1 -left-1 text-[10px] leading-none" style={{ color: 'var(--accent-color)' }}>+</span>
-            <span className="absolute -bottom-1 -right-1 text-[10px] leading-none" style={{ color: 'var(--accent-color)' }}>+</span>
-            <FileText className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform" />
-            <span>[ {ui.requestQuote} ]</span>
+            <FileText className="w-3.5 h-3.5 text-black" />
+            <span>{ui.requestQuote}</span>
           </button>
         </div>
 
@@ -399,7 +319,7 @@ export const Header: React.FC = () => {
             id="mobile-menu-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             data-cursor="MENU"
-            className="p-2 rounded border border-white/10 text-slate-200 transition-colors"
+            className="p-2 hexagon-cut-sm border border-white/10 text-slate-200 transition-colors"
             style={{
               borderColor: mobileMenuOpen ? 'var(--accent-color)' : undefined,
               color: mobileMenuOpen ? 'var(--accent-color)' : undefined,
@@ -416,36 +336,12 @@ export const Header: React.FC = () => {
           id="mobile-menu-drawer"
           className="xl:hidden border-t border-white/10 bg-[#05090f]/98 px-4 pt-4 pb-8 space-y-4 max-h-[85vh] overflow-y-auto backdrop-blur-2xl"
         >
-          {/* Mobile Theme Switcher */}
-          <div className="flex items-center justify-between pb-3 border-b border-white/10 font-mono text-xs">
-            <span className="text-slate-400">ACTIVE_THEME:</span>
-            <div className="flex items-center gap-1.5">
-              {themeOptions.map((opt) => (
-                <button
-                  key={opt.key}
-                  onClick={() => setTheme(opt.key)}
-                  className={`px-2 py-1 rounded text-[10px] font-mono flex items-center gap-1 border ${
-                    theme === opt.key ? 'font-bold' : 'text-slate-400'
-                  }`}
-                  style={{
-                    backgroundColor: theme === opt.key ? `${opt.color}22` : 'transparent',
-                    color: theme === opt.key ? opt.color : undefined,
-                    borderColor: theme === opt.key ? opt.color : 'rgba(255,255,255,0.1)',
-                  }}
-                >
-                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: opt.color }} />
-                  <span>{opt.label}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
           <div className="font-mono text-[10px] tracking-widest pb-2 border-b border-white/10" style={{ color: 'var(--accent-color)' }}>
             FENOVA_DIRECTORY // MOBILE_ACCESS
           </div>
 
           {navLinks.map((link) => (
-            <div key={link.path} className="border border-white/5 rounded p-2 bg-white/[0.02]">
+            <div key={link.path} className="border border-white/5 hexagon-cut-sm p-2 bg-white/[0.02]">
               <button
                 onClick={() => handleNav(link.path)}
                 className="w-full text-left rtl:text-right px-2 py-1.5 text-xs font-mono font-semibold flex items-center justify-between"
@@ -453,7 +349,7 @@ export const Header: React.FC = () => {
                   color: currentRoute === link.path ? 'var(--accent-color)' : undefined,
                 }}
               >
-                <span>{link.code} // {link.label}</span>
+                <span>{link.label}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-slate-500" />
               </button>
 
@@ -463,7 +359,7 @@ export const Header: React.FC = () => {
                     <button
                       key={sub.path}
                       onClick={() => handleNav(sub.path)}
-                      className="w-full text-left rtl:text-right px-2 py-1 text-[11px] rounded transition-colors flex items-center justify-between"
+                      className="w-full text-left rtl:text-right px-2 py-1 text-[11px] transition-colors flex items-center justify-between"
                       style={{
                         color: currentRoute === sub.path ? 'var(--accent-color)' : undefined,
                       }}
@@ -480,18 +376,17 @@ export const Header: React.FC = () => {
           <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
             <button
               onClick={() => handleNav('/quotation')}
-              className="w-full py-3 rounded text-slate-950 font-mono font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2 transition-all"
+              className="w-full py-3 bg-white text-black font-mono font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2 transition-all cursor-pointer"
               style={{
-                backgroundColor: 'var(--accent-color)',
-                boxShadow: '0 0 20px var(--accent-glow)',
+                clipPath: 'polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)',
               }}
             >
-              <FileText className="w-4 h-4" />
-              <span>[ {ui.requestQuote} ]</span>
+              <FileText className="w-4 h-4 text-black" />
+              <span>{ui.requestQuote}</span>
             </button>
             <button
               onClick={() => handleNav('/admin')}
-              className="w-full py-2.5 rounded border border-white/10 bg-white/5 text-slate-300 font-mono text-xs flex items-center justify-center gap-2"
+              className="w-full py-2.5 hexagon-cut-sm border border-white/10 bg-white/5 text-slate-300 font-mono text-xs flex items-center justify-center gap-2 hover:bg-white/10"
             >
               <Lock className="w-3.5 h-3.5" style={{ color: 'var(--accent-color)' }} />
               <span>{ui.adminPortal}</span>

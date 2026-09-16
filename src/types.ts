@@ -142,7 +142,13 @@ export interface CareerVacancy {
   responsibilities: MultilingualText[];
   requirements: MultilingualText[];
   applicationDeadline: string;
-  status: 'open' | 'closed' | 'hidden' | 'active';
+  durationMonths?: number;
+  expiryDate?: string;
+  isExpired?: boolean;
+  contactEmail?: string;
+  contactPhone?: string;
+  linkedInUrl?: string;
+  status: 'open' | 'closed' | 'hidden' | 'active' | 'expired';
   order: number;
 }
 
@@ -228,6 +234,30 @@ export interface MediaItem {
   fileSize?: string;
 }
 
+export interface InquiryRoutingRule {
+  id: string;
+  category: string;
+  primaryReceiverEmail: string;
+  parallelDeliveryEnabled: boolean;
+  parallelReceiverEmail: string;
+  description?: string;
+}
+
+export interface WhatsAppSettings {
+  enabled: boolean;
+  phoneNumber: string;
+  defaultMessage: string;
+  quickTags: string[];
+}
+
+export interface RegionalAddress {
+  id: string;
+  region: string;
+  address: string;
+  phone: string;
+  email: string;
+}
+
 export interface SiteSettings {
   companyName: MultilingualText;
   tagline: MultilingualText;
@@ -238,13 +268,25 @@ export interface SiteSettings {
   emailContact: string;
   emailCareers: string;
   emailQuotes: string;
+  officialMailPath?: string;
+  logoUrl?: string;
+  rfqEnabled?: boolean;
   headquartersAddress: MultilingualText;
+  regionalAddresses?: RegionalAddress[];
   socials: {
     linkedin?: string;
     twitter?: string;
     youtube?: string;
+    facebook?: string;
     instagram?: string;
   };
+  advertising?: {
+    enabled: boolean;
+    bannerText: string;
+    bannerLink?: string;
+  };
+  inquiryRouting?: InquiryRoutingRule[];
+  whatsAppSettings?: WhatsAppSettings;
   stats: {
     yearsOfExcellence: number;
     completedMegaProjects: number;

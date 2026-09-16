@@ -16,6 +16,7 @@ import {
   Star,
 } from 'lucide-react';
 import { ClientLogoBadge } from '../components/ClientLogoBadge.tsx';
+import { RunningCounter } from '../components/RunningCounter.tsx';
 import { fallbackHeroSlides } from '../data/fallbackData.ts';
 
 export const HomePage: React.FC = () => {
@@ -63,8 +64,8 @@ export const HomePage: React.FC = () => {
   return (
     <div className="space-y-16 lg:space-y-24 pb-24 text-slate-100 font-sans">
       {/* 1. FULL-FLEDGED LANDSCAPE CINEMATIC HERO (CEER MOTORS INSPIRED) */}
-      <section id="hero-slider-section" className="relative border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5 pb-8">
+      <section id="hero-slider-section" className="relative border-b border-white/10 w-full">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 pt-5 pb-8">
           {/* Top Breadcrumb & Status Bar */}
           <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10 font-mono text-[11px] text-slate-400">
             <div className="flex items-center gap-2">
@@ -88,37 +89,51 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          {/* Full-fledged Landscape Container (No Telemetric Log Feed) */}
-          <div className="w-full border border-white/10 bg-[#04070c] relative overflow-hidden flex flex-col justify-between min-h-[580px] lg:min-h-[660px] xl:min-h-[700px] shadow-2xl">
+          {/* Full-fledged Landscape Container with Hexagon Cuts */}
+          <div className="w-full border border-white/10 bg-[#04070c] relative overflow-hidden flex flex-col justify-between min-h-[580px] lg:min-h-[660px] xl:min-h-[700px] shadow-2xl hexagon-cut">
             {/* Corner Crosshair Reticles */}
             <span className="absolute top-2 left-2 text-[12px] leading-none z-30 font-mono" style={{ color: 'var(--accent-color)' }}>+</span>
             <span className="absolute top-2 right-2 text-[12px] leading-none z-30 font-mono" style={{ color: 'var(--accent-color)' }}>+</span>
             <span className="absolute bottom-2 left-2 text-[12px] leading-none z-30 font-mono" style={{ color: 'var(--accent-color)' }}>+</span>
             <span className="absolute bottom-2 right-2 text-[12px] leading-none z-30 font-mono" style={{ color: 'var(--accent-color)' }}>+</span>
 
-            {/* Media Background Crossfade */}
-            {effectiveSlides.map((slide, idx) => (
-              <div
-                key={slide.id}
-                className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
-                  idx === currentSlideIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-                }`}
-              >
-                <img
-                  src={slide.imageUrl}
-                  alt={t(slide.title)}
-                  className="w-full h-full object-cover object-center scale-100 animate-subtleZoom"
-                />
-                {/* High-Tech Automotive Gradient Vignette & Dark Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#020509] via-[#020509]/70 to-[#020509]/40" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#020509]/95 via-[#020509]/60 to-transparent" />
-                <div className="absolute inset-0 scanline-overlay opacity-25" />
-              </div>
-            ))}
+            {/* Media Background Crossfade (Video in Top of Home Screen) */}
+            {effectiveSlides.map((slide, idx) => {
+              const hasVideo = slide.videoUrl || (idx === 0 ? '/hero_video.mp4' : undefined);
+              return (
+                <div
+                  key={slide.id}
+                  className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
+                    idx === currentSlideIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                  }`}
+                >
+                  {hasVideo ? (
+                    <video
+                      src={hasVideo}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover object-center scale-100"
+                    />
+                  ) : (
+                    <img
+                      src={slide.imageUrl}
+                      alt={t(slide.title)}
+                      className="w-full h-full object-cover object-center scale-100 animate-subtleZoom"
+                    />
+                  )}
+                  {/* High-Tech Automotive Gradient Vignette & Dark Overlays */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#020509] via-[#020509]/70 to-[#020509]/40" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#020509]/95 via-[#020509]/60 to-transparent" />
+                  <div className="absolute inset-0 scanline-overlay opacity-25" />
+                </div>
+              );
+            })}
 
             {/* Top Landscape Status Tag */}
             <div className="relative z-20 p-6 sm:p-10 lg:p-12 pb-0 flex items-center justify-between">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-black/75 border text-[11px] font-mono tracking-widest uppercase backdrop-blur-md"
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 hexagon-cut-sm bg-black/75 border text-[11px] font-mono tracking-widest uppercase backdrop-blur-md"
                 style={{
                   borderColor: 'var(--accent-border)',
                   color: 'var(--accent-color)',
@@ -129,7 +144,7 @@ export const HomePage: React.FC = () => {
               </div>
 
               {/* Landscape Coordinate HUD */}
-              <div className="hidden sm:flex items-center gap-3 px-3 py-1.5 rounded bg-black/60 border border-white/10 text-[10px] font-mono text-slate-300 backdrop-blur-sm">
+              <div className="hidden sm:flex items-center gap-3 px-3 py-1.5 hexagon-cut-sm bg-black/60 border border-white/10 text-[10px] font-mono text-slate-300 backdrop-blur-sm">
                 <span>COORD: 24°42'44"N 46°40'28"E</span>
                 <span className="text-white/20">|</span>
                 <span style={{ color: 'var(--accent-color)' }}>SPEC: GRADE 1 EPC</span>
@@ -153,21 +168,20 @@ export const HomePage: React.FC = () => {
                 {t(currentSlide?.description)}
               </p>
 
-              {/* Action Controls: Proportional Quotation & Mega Project Exploration */}
+              {/* Action Controls: Hexagon Cut Quotation & Mega Project Exploration */}
               <div className="pt-4 flex flex-wrap items-center gap-4">
-                {/* 1. Request Quotation & Tender Docket */}
+                {/* 1. Request Quotation & Tender Docket (White/Hexagon Cut) */}
                 <button
                   id="hero-quotation-cta"
                   onClick={() => navigate(currentSlide?.secondaryCtaLink || '/quotation')}
                   data-cursor="TENDER"
-                  className="relative px-7 py-4 rounded text-slate-950 text-xs font-mono font-bold tracking-widest uppercase transition-all duration-300 flex items-center gap-2.5 group"
+                  className="px-7 py-4 bg-white hover:bg-slate-200 text-black text-xs font-mono font-bold tracking-widest uppercase transition-all duration-200 flex items-center gap-2.5 cursor-pointer shadow-none"
                   style={{
-                    backgroundColor: 'var(--accent-color)',
-                    boxShadow: '0 0 30px var(--accent-glow)',
+                    clipPath: 'polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px)',
                   }}
                 >
-                  <FileText className="w-4 h-4 text-slate-950 group-hover:scale-110 transition-transform" />
-                  <span>[ {t(currentSlide?.secondaryCtaText) || ui.requestQuote} ]</span>
+                  <FileText className="w-4 h-4 text-black" />
+                  <span>{t(currentSlide?.secondaryCtaText) || ui.requestQuote}</span>
                 </button>
 
                 {/* 2. Explore Mega Projects Portfolio */}
@@ -175,7 +189,7 @@ export const HomePage: React.FC = () => {
                   id="hero-projects-cta"
                   onClick={() => navigate(currentSlide?.primaryCtaLink || '/projects')}
                   data-cursor="PORTFOLIO"
-                  className="px-7 py-4 rounded bg-black/60 hover:bg-white/10 text-white border text-xs font-mono tracking-widest uppercase backdrop-blur-md transition-all flex items-center gap-2.5 group"
+                  className="px-7 py-4 bg-black/60 hover:bg-white/10 text-white border text-xs font-mono tracking-widest uppercase backdrop-blur-md transition-all flex items-center gap-2.5 group hexagon-cut-sm"
                   style={{
                     borderColor: 'var(--accent-border)',
                   }}
@@ -191,7 +205,7 @@ export const HomePage: React.FC = () => {
                   id="hero-disciplines-cta"
                   onClick={() => navigate('/services')}
                   data-cursor="SPECS"
-                  className="hidden md:inline-flex px-6 py-4 rounded bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 text-xs font-mono tracking-widest uppercase backdrop-blur-sm transition-all"
+                  className="hidden md:inline-flex px-6 py-4 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 text-xs font-mono tracking-widest uppercase backdrop-blur-sm transition-all hexagon-cut-sm"
                 >
                   <span>[ CIVIL_EPC_SPECS ]</span>
                 </button>
@@ -212,7 +226,7 @@ export const HomePage: React.FC = () => {
                       key={slide.id}
                       onClick={() => setCurrentSlideIndex(idx)}
                       data-cursor={`PROJECT_${idx + 1}`}
-                      className={`px-3 py-2 rounded text-left border transition-all text-xs font-mono flex items-center gap-2.5 ${
+                      className={`px-3 py-2 text-left border transition-all text-xs font-mono flex items-center gap-2.5 hexagon-cut-sm ${
                         isSelected
                           ? 'text-white'
                           : 'bg-white/[0.02] border-white/10 text-slate-400 hover:text-white hover:bg-white/[0.05]'
@@ -252,7 +266,7 @@ export const HomePage: React.FC = () => {
                 <div className="flex items-center gap-1.5">
                   <button
                     onClick={() => setCurrentSlideIndex((prev) => (prev - 1 + effectiveSlides.length) % effectiveSlides.length)}
-                    className="p-2 rounded border border-white/10 hover:text-white transition-colors"
+                    className="p-2 border border-white/10 hover:text-white transition-colors hexagon-cut-sm"
                     style={{ borderColor: 'var(--accent-border)' }}
                     title="Previous Slide"
                   >
@@ -260,7 +274,7 @@ export const HomePage: React.FC = () => {
                   </button>
                   <button
                     onClick={() => setCurrentSlideIndex((prev) => (prev + 1) % effectiveSlides.length)}
-                    className="p-2 rounded border border-white/10 hover:text-white transition-colors"
+                    className="p-2 border border-white/10 hover:text-white transition-colors hexagon-cut-sm"
                     style={{ borderColor: 'var(--accent-border)' }}
                     title="Next Slide"
                   >
@@ -268,7 +282,7 @@ export const HomePage: React.FC = () => {
                   </button>
                   <button
                     onClick={() => setAutoplay(!autoplay)}
-                    className="p-2 rounded border border-white/10 hover:text-white transition-colors ml-1"
+                    className="p-2 border border-white/10 hover:text-white transition-colors ml-1 hexagon-cut-sm"
                     style={{ borderColor: 'var(--accent-border)' }}
                     title={autoplay ? 'Pause Reel' : 'Resume Reel'}
                   >
@@ -281,16 +295,16 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* 2. CORPORATE AUDITED TELEMETRY METRICS BANNER */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-white/10 bg-[#05080e]">
+      {/* 2. CORPORATE AUDITED TELEMETRY METRICS BANNER (Full-scale with Matrix Running Numbers) */}
+      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border border-white/10 bg-[#05080e] hexagon-cut">
           {/* Tile 1 */}
           <div className="p-6 sm:p-8 border-b sm:border-b-0 sm:border-r border-white/10 relative group">
             <span className="absolute top-2 right-2 text-[10px] font-mono text-slate-600 group-hover:text-white transition-colors">[METRIC_01]</span>
             <div className="space-y-1">
-              <span className="text-3xl sm:text-5xl font-black font-cyber text-white">
-                {settings?.stats.yearsOfExcellence || 34}<span style={{ color: 'var(--accent-color)' }}>+</span>
-              </span>
+              <div className="text-3xl sm:text-5xl font-black font-cyber text-white">
+                <RunningCounter target={Number(settings?.stats.yearsOfExcellence) || 34} suffix="+" duration={2400} />
+              </div>
               <p className="text-xs sm:text-sm font-mono font-bold uppercase text-slate-200">
                 OPERATIONAL YEARS
               </p>
@@ -302,9 +316,9 @@ export const HomePage: React.FC = () => {
           <div className="p-6 sm:p-8 border-b sm:border-b-0 lg:border-r border-white/10 relative group">
             <span className="absolute top-2 right-2 text-[10px] font-mono text-slate-600 group-hover:text-white transition-colors">[METRIC_02]</span>
             <div className="space-y-1">
-              <span className="text-3xl sm:text-5xl font-black font-cyber text-white">
-                {settings?.stats.completedMegaProjects || 148}<span style={{ color: 'var(--accent-color)' }}>+</span>
-              </span>
+              <div className="text-3xl sm:text-5xl font-black font-cyber text-white">
+                <RunningCounter target={Number(settings?.stats.completedMegaProjects) || 148} suffix="+" duration={2600} />
+              </div>
               <p className="text-xs sm:text-sm font-mono font-bold uppercase text-slate-200">
                 MEGA EPC ASSETS
               </p>
@@ -316,9 +330,9 @@ export const HomePage: React.FC = () => {
           <div className="p-6 sm:p-8 border-r border-white/10 relative group">
             <span className="absolute top-2 right-2 text-[10px] font-mono text-slate-600 group-hover:text-white transition-colors">[METRIC_03]</span>
             <div className="space-y-1">
-              <span className="text-3xl sm:text-5xl font-black font-cyber text-white">
-                {settings?.stats.workforceStrength || '12.5K'}
-              </span>
+              <div className="text-3xl sm:text-5xl font-black font-cyber text-white">
+                <RunningCounter textValue={String(settings?.stats.workforceStrength || '12.5K')} duration={2800} />
+              </div>
               <p className="text-xs sm:text-sm font-mono font-bold uppercase text-slate-200">
                 SKILLED SPECIALISTS
               </p>
@@ -330,9 +344,9 @@ export const HomePage: React.FC = () => {
           <div className="p-6 sm:p-8 relative group">
             <span className="absolute top-2 right-2 text-[10px] font-mono text-slate-600 group-hover:text-white transition-colors">[METRIC_04]</span>
             <div className="space-y-1">
-              <span className="text-3xl sm:text-5xl font-black font-cyber" style={{ color: 'var(--accent-color)' }}>
-                {settings?.stats.safetyHoursWithoutLTI || '42.8M'}
-              </span>
+              <div className="text-3xl sm:text-5xl font-black font-cyber" style={{ color: 'var(--accent-color)' }}>
+                <RunningCounter textValue={String(settings?.stats.safetyHoursWithoutLTI || '42.8M')} duration={3000} />
+              </div>
               <p className="text-xs sm:text-sm font-mono font-bold uppercase text-slate-200">
                 SAFE MAN-HOURS
               </p>
@@ -342,8 +356,8 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. SIGNATURE ASYMMETRICAL PORTFOLIO TILES */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 3. SIGNATURE ASYMMETRICAL PORTFOLIO TILES (Full-scale with Hexagon Cuts) */}
+      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-white/10 gap-4">
           <div>
             <div className="flex items-center gap-2 font-mono text-[11px] tracking-widest" style={{ color: 'var(--accent-color)' }}>
@@ -357,7 +371,7 @@ export const HomePage: React.FC = () => {
           <button
             onClick={() => navigate('/projects')}
             data-cursor="ALL_PROJECTS"
-            className="px-5 py-2.5 rounded border border-white/20 text-xs font-mono tracking-wider uppercase text-slate-200 hover:text-white flex items-center gap-2 transition-all self-start md:self-auto"
+            className="px-5 py-2.5 border border-white/20 text-xs font-mono tracking-wider uppercase text-slate-200 hover:text-white flex items-center gap-2 transition-all self-start md:self-auto hexagon-cut-sm cursor-pointer"
             style={{
               borderColor: 'var(--accent-border)',
             }}
@@ -367,17 +381,14 @@ export const HomePage: React.FC = () => {
           </button>
         </div>
 
-        {/* 3-column Bento layout */}
+        {/* 3-column Bento layout with Hexagon Cuts */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {featuredProjects.map((project, idx) => (
             <div
               key={project.id}
               onClick={() => navigate(`/projects/${project.slug}`)}
               data-cursor={`VIEW_${idx + 1}`}
-              className="group cursor-pointer rounded border border-white/10 bg-[#060b12] hover:border-white/40 transition-all duration-300 relative flex flex-col justify-between overflow-hidden"
-              style={{
-                borderColor: undefined,
-              }}
+              className="group cursor-pointer border border-white/10 bg-[#060b12] hover:border-white/40 transition-all duration-300 relative flex flex-col justify-between overflow-hidden hexagon-cut"
             >
               {/* Corner crosshairs */}
               <span className="absolute top-1 left-1 text-[10px] text-slate-700 group-hover:text-white font-mono transition-colors">+</span>
@@ -395,7 +406,7 @@ export const HomePage: React.FC = () => {
                 {/* Status chip */}
                 <div className="absolute top-3 left-3">
                   <span
-                    className="px-2.5 py-1 rounded bg-black/75 border text-[10px] font-mono tracking-widest uppercase backdrop-blur-md"
+                    className="px-2.5 py-1 bg-black/75 border text-[10px] font-mono tracking-widest uppercase backdrop-blur-md hexagon-cut-sm"
                     style={{
                       borderColor: 'var(--accent-border)',
                       color: 'var(--accent-color)',
@@ -406,7 +417,7 @@ export const HomePage: React.FC = () => {
                 </div>
 
                 {project.projectValue && (
-                  <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-black/80 text-white font-mono text-xs border border-white/10">
+                  <div className="absolute bottom-3 right-3 px-2 py-0.5 bg-black/80 text-white font-mono text-xs border border-white/10 hexagon-cut-sm">
                     {project.projectValue}
                   </div>
                 )}
@@ -440,8 +451,8 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* 4. MODULAR DISCIPLINES: STRICT FINE LINE GRID */}
-      <section className="border-y border-white/10 bg-[#03060a]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section className="border-y border-white/10 bg-[#03060a] w-full">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-4 border-b border-white/10 gap-4">
             <div>
               <span className="font-mono text-[11px] tracking-widest uppercase" style={{ color: 'var(--accent-color)' }}>
@@ -456,7 +467,7 @@ export const HomePage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-white/10 bg-[#05090f]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-white/10 bg-[#05090f] hexagon-cut">
             {services.map((serv, idx) => (
               <div
                 key={serv.id}
@@ -470,7 +481,7 @@ export const HomePage: React.FC = () => {
 
                 <div className="space-y-4 my-6">
                   <div
-                    className="w-12 h-12 rounded border bg-black/40 flex items-center justify-center transition-all"
+                    className="w-12 h-12 border bg-black/40 flex items-center justify-center transition-all hexagon-cut-sm"
                     style={{
                       borderColor: 'var(--accent-border)',
                       color: 'var(--accent-color)',
@@ -497,7 +508,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* 5. STRATEGIC OPERATING HUBS & GPS COORDINATE TILES */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-white/10 gap-4">
           <div>
             <span className="font-mono text-[11px] tracking-widest uppercase" style={{ color: 'var(--accent-color)' }}>
@@ -510,7 +521,7 @@ export const HomePage: React.FC = () => {
           <button
             onClick={() => navigate('/about/locations')}
             data-cursor="MAPS"
-            className="px-5 py-2.5 rounded border border-white/20 text-xs font-mono tracking-wider uppercase text-slate-200 hover:text-white flex items-center gap-2 transition-all self-start md:self-auto"
+            className="px-5 py-2.5 border border-white/20 text-xs font-mono tracking-wider uppercase text-slate-200 hover:text-white flex items-center gap-2 transition-all self-start md:self-auto hexagon-cut-sm cursor-pointer"
             style={{
               borderColor: 'var(--accent-border)',
             }}
@@ -526,7 +537,7 @@ export const HomePage: React.FC = () => {
               key={loc.id}
               onClick={() => navigate('/about/locations')}
               data-cursor="NODE"
-              className="rounded border border-white/10 bg-[#060b12] hover:border-white/40 transition-all cursor-pointer group flex flex-col justify-between overflow-hidden"
+              className="border border-white/10 bg-[#060b12] hover:border-white/40 transition-all cursor-pointer group flex flex-col justify-between overflow-hidden hexagon-cut"
             >
               <div className="h-44 relative overflow-hidden bg-black">
                 <img
@@ -536,7 +547,7 @@ export const HomePage: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#060b12] via-transparent to-transparent" />
                 <div
-                  className="absolute top-3 left-3 px-2 py-0.5 rounded bg-black/80 font-mono text-[10px] border"
+                  className="absolute top-3 left-3 px-2 py-0.5 bg-black/80 font-mono text-[10px] border hexagon-cut-sm"
                   style={{
                     borderColor: 'var(--accent-border)',
                     color: 'var(--accent-color)',
@@ -544,7 +555,7 @@ export const HomePage: React.FC = () => {
                 >
                   {t(loc.country)}
                 </div>
-                <div className="absolute bottom-2 right-3 font-mono text-[9px] text-slate-400 bg-black/60 px-1.5 py-0.5 rounded">
+                <div className="absolute bottom-2 right-3 font-mono text-[9px] text-slate-400 bg-black/60 px-1.5 py-0.5 hexagon-cut-sm">
                   GPS: {loc.coordinates?.lat?.toFixed(2) || '24.71'}°N, {loc.coordinates?.lng?.toFixed(2) || '46.67'}°E
                 </div>
               </div>
@@ -566,9 +577,9 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* 6. SOVEREIGN COMMENDATIONS & ENDORSEMENTS (VERIFIED FEEDBACKS WITH SHARPENER RUBBER LOGOS) */}
-      <section className="border-t border-white/10 bg-[#020508] py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      {/* 6. SOVEREIGN COMMENDATIONS & ENDORSEMENTS */}
+      <section className="border-t border-white/10 bg-[#020508] py-16 w-full">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 space-y-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-4 border-b border-white/10 gap-4">
             <div>
               <span className="font-mono text-[11px] tracking-widest uppercase" style={{ color: 'var(--accent-color)' }}>
@@ -588,7 +599,7 @@ export const HomePage: React.FC = () => {
             {testimonials.map((test) => (
               <div
                 key={test.id}
-                className="p-6 rounded border border-white/10 bg-[#050910] hover:border-white/30 transition-all flex flex-col justify-between relative shadow-lg group"
+                className="p-6 border border-white/10 bg-[#050910] hover:border-white/30 transition-all flex flex-col justify-between relative shadow-lg group hexagon-cut"
               >
                 <div className="space-y-4">
                   {/* Header: Verification Hash + Small "Sharpener Rubber" Sized Logo */}
@@ -637,6 +648,57 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. BOTTOM OF HOME SCREEN: WEBP BACKGROUND INFRASTRUCTURE SHOWCASE */}
+      <section
+        id="home-bottom-showcase"
+        className="w-full relative overflow-hidden border-t border-white/10 bg-cover bg-center py-20 lg:py-28"
+        style={{
+          backgroundImage: `linear-gradient(to bottom, rgba(2, 5, 8, 0.92), rgba(2, 5, 8, 0.82)), url('/footer_bg.webp')`,
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
+          <div className="p-8 lg:p-12 border border-white/15 bg-black/60 backdrop-blur-xl hexagon-cut">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+              <div className="space-y-4 max-w-3xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 font-mono text-[11px] uppercase tracking-widest border border-white/10 hexagon-cut-sm bg-black/50" style={{ color: 'var(--accent-color)' }}>
+                  <Award className="w-3.5 h-3.5" />
+                  <span>KINGDOM INFRASTRUCTURE GRADE-1 EPC PRIME CONTRACTOR</span>
+                </div>
+                <h3 className="text-2xl sm:text-4xl lg:text-5xl font-black font-cyber text-white leading-tight">
+                  READY TO MOBILIZE COMPLEX CIVIL INFRASTRUCTURE?
+                </h3>
+                <p className="text-slate-300 text-sm sm:text-base font-sans leading-relaxed">
+                  Connect directly with Fenova's executive engineering division in Riyadh, Jeddah, Dammam, and Al Khobar. We execute geotechnical, structural, and mega EPC tenders with audited safety and engineering mastery.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row lg:flex-col gap-4 w-full lg:w-auto shrink-0">
+                <button
+                  onClick={() => navigate('/quotation')}
+                  data-cursor="TENDER"
+                  className="px-8 py-4 bg-white hover:bg-slate-200 text-black font-mono font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 cursor-pointer shadow-none transition-all"
+                  style={{
+                    clipPath: 'polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px)',
+                  }}
+                >
+                  <FileText className="w-4 h-4 text-black" />
+                  <span>{ui.requestQuote}</span>
+                </button>
+                <button
+                  onClick={() => navigate('/contact')}
+                  data-cursor="CONTACT"
+                  className="px-8 py-4 border border-white/20 hover:border-white/50 text-white font-mono font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all hexagon-cut-sm cursor-pointer bg-black/40"
+                >
+                  <span>{ui.contact}</span>
+                  <ArrowRight className="w-4 h-4 rtl:rotate-180" style={{ color: 'var(--accent-color)' }} />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

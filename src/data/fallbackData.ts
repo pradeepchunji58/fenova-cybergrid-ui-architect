@@ -26,6 +26,7 @@ export const fallbackHeroSlides: HeroSlide[] = [
       hi: 'मध्य पूर्व और दक्षिण एशिया में मल्टी-स्पैन ब्रिज वायाडक्ट्स और हाई-स्पीड रेल कॉरिडोर से लेकर अत्याधुनिक औद्योगिक परिसरों तक।',
     },
     imageUrl: 'https://images.unsplash.com/photo-1541888946425-d0fbb186c5f8?q=80&w=2070&auto=format&fit=crop',
+    videoUrl: '/hero_video.mp4',
     primaryCtaText: {
       en: 'Explore Mega Projects',
       ar: 'استكشف المشاريع الكبرى',
@@ -64,6 +65,7 @@ export const fallbackHeroSlides: HeroSlide[] = [
       hi: '1,850 से अधिक भारी उपकरणों के हमारे स्वामित्व वाले बेड़े के साथ विशिष्ट गहरे फाउंडेशन, समुद्री बर्थ और जटिल संरचनात्मक इंजीनियरिंग।',
     },
     imageUrl: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop',
+    videoUrl: '/hero_desert_video.mp4',
     primaryCtaText: {
       en: 'Our Capabilities',
       ar: 'قدراتنا وخبراتنا',

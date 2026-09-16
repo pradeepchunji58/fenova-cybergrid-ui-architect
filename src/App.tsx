@@ -11,6 +11,7 @@ import { DocumentViewerModal } from './components/DocumentViewerModal.tsx';
 import { QuotationModal } from './components/QuotationModal.tsx';
 import { ApplyJobModal } from './components/ApplyJobModal.tsx';
 import { TechCursor } from './components/TechCursor.tsx';
+import { WhatsAppWidget } from './components/WhatsAppWidget.tsx';
 import { motion, AnimatePresence } from 'motion/react';
 
 // Pages
@@ -87,10 +88,15 @@ const AppContent: React.FC = () => {
 
   return (
     <div
-      className={`min-h-screen flex flex-col font-sans transition-colors duration-300 relative bg-[#04070a] text-slate-100 theme-${theme}`}
+      className={`min-h-screen flex flex-col font-sans transition-colors duration-300 relative ${
+        isAdmin ? 'bg-[#080402] text-slate-100 theme-admin-orange' : `bg-[#04070a] text-slate-100 theme-${theme}`
+      }`}
     >
       {/* Hardware-accelerated X-Mark Tracker Custom Cursor */}
       <TechCursor />
+
+      {/* Floating Dynamic WhatsApp Communication Widget */}
+      {!isAdmin && <WhatsAppWidget />}
 
       {/* Global Background Cyber Gridlines */}
       <div className="fixed inset-0 bg-grid-cyber opacity-35 pointer-events-none z-0" />
