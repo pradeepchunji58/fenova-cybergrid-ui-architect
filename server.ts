@@ -80,6 +80,49 @@ function loadDatabase(): AppDatabase {
 function saveDatabase(db: AppDatabase) {
   try {
     fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 2), 'utf-8');
+
+    // Also save to public/content.json so static deployments (Netlify/Vercel/GitHub Pages) can fetch directly
+    const publicDir = path.join(process.cwd(), 'public');
+    if (!fs.existsSync(publicDir)) {
+      fs.mkdirSync(publicDir, { recursive: true });
+    }
+    fs.writeFileSync(path.join(publicDir, 'content.json'), JSON.stringify(db, null, 2), 'utf-8');
+
+    // Update server/defaultData.ts so any static `npm run build` directly bundles current CMS state into fallbackData
+    const defaultDataPath = path.join(process.cwd(), 'server', 'defaultData.ts');
+    const codePayload = `import {
+  HeroSlide,
+  Project,
+  Service,
+  BranchLocation,
+  Client,
+  Testimonial,
+  Leader,
+  CareerVacancy,
+  BrochureDocument,
+  SiteSettings,
+  MediaItem,
+  QuotationRequest,
+  ContactInquiry,
+  CareerApplication,
+} from '../src/types.ts';
+
+export const initialSiteSettings: SiteSettings = ${JSON.stringify(db.settings, null, 2)};
+export const initialHeroSlides: HeroSlide[] = ${JSON.stringify(db.heroSlides, null, 2)};
+export const initialProjects: Project[] = ${JSON.stringify(db.projects, null, 2)};
+export const initialServices: Service[] = ${JSON.stringify(db.services, null, 2)};
+export const initialLocations: BranchLocation[] = ${JSON.stringify(db.locations, null, 2)};
+export const initialClients: Client[] = ${JSON.stringify(db.clients, null, 2)};
+export const initialTestimonials: Testimonial[] = ${JSON.stringify(db.testimonials, null, 2)};
+export const initialLeaders: Leader[] = ${JSON.stringify(db.leaders, null, 2)};
+export const initialCareers: CareerVacancy[] = ${JSON.stringify(db.careers, null, 2)};
+export const initialBrochures: BrochureDocument[] = ${JSON.stringify(db.brochures, null, 2)};
+export const initialQuotations: QuotationRequest[] = ${JSON.stringify(db.quotations, null, 2)};
+export const initialContacts: ContactInquiry[] = ${JSON.stringify(db.contacts, null, 2)};
+export const initialApplications: CareerApplication[] = ${JSON.stringify(db.applications, null, 2)};
+export const initialMedia: MediaItem[] = ${JSON.stringify(db.media, null, 2)};
+`;
+    fs.writeFileSync(defaultDataPath, codePayload, 'utf-8');
   } catch (err) {
     console.error('Failed saving database file:', err);
   }
@@ -88,32 +131,34 @@ function saveDatabase(db: AppDatabase) {
 let db = loadDatabase();
 
 // Pre-configured Admin accounts
-const ADMIN_ACCOUNTS: (AdminUser & { passwordHash: string })[] = [
+const DEFAULT_ADMIN_ACCOUNTS: (AdminUser & { passwordHash: string })[] = [
   {
     id: 'user-super-1',
     name: 'Eng. Tariq Al-Mansoor',
-    email: 'admin@apexcivil.com',
+    email: 'admin@fenovacivil.com',
     role: 'super_admin',
-    passwordHash: 'ApexEngineering2026!',
+    passwordHash: 'fenova2026',
     avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop',
   },
   {
     id: 'user-content-1',
     name: 'Faris Al-Ghamdi',
-    email: 'content@apexcivil.com',
+    email: 'content@fenovacivil.com',
     role: 'content_manager',
-    passwordHash: 'ContentApex2026!',
+    passwordHash: 'fenova2026',
     avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop',
   },
   {
     id: 'user-hr-1',
     name: 'Sara Al-Otaibi',
-    email: 'hr@apexcivil.com',
+    email: 'hr@fenovacivil.com',
     role: 'hr_manager',
-    passwordHash: 'HRApex2026!',
+    passwordHash: 'fenova2026',
     avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop',
   },
 ];
+
+let ADMIN_ACCOUNTS = [...DEFAULT_ADMIN_ACCOUNTS];
 
 async function startServer() {
   const app = express();
@@ -170,34 +215,77 @@ async function startServer() {
     });
   });
 
-  // Auth: Login
+  // Auth: Login (supports direct passcode or email+password)
   app.post('/api/auth/login', (req, res) => {
     const { email, password } = req.body;
+    const currentAdminPassword = (db.settings as any)?.adminPassword || 'fenova2026';
+
+    // Direct password match against current admin master password
+    if (password === currentAdminPassword) {
+      const superAdmin = ADMIN_ACCOUNTS[0];
+      const { passwordHash, ...user } = superAdmin;
+      return res.json({
+        user,
+        token: `fenova-token-${user.id}-${Date.now()}`,
+        message: 'Authentication successful',
+      });
+    }
+
+    // Check individual accounts
     const account = ADMIN_ACCOUNTS.find(
-      (acc) => acc.email.toLowerCase() === (email || '').toLowerCase() && acc.passwordHash === password
+      (acc) =>
+        (!email || acc.email.toLowerCase() === (email || '').toLowerCase()) &&
+        (acc.passwordHash === password || password === currentAdminPassword)
     );
 
     if (!account) {
-      return res.status(401).json({ error: 'Invalid email or password' });
+      return res.status(401).json({ error: 'Invalid terminal password or credentials' });
     }
 
     // Return sanitized user object
     const { passwordHash, ...user } = account;
     res.json({
       user,
-      token: `apex-token-${user.id}-${Date.now()}`,
+      token: `fenova-token-${user.id}-${Date.now()}`,
       message: 'Authentication successful',
+    });
+  });
+
+  // Auth: Change Admin Password
+  app.post('/api/auth/change-password', (req, res) => {
+    const { currentPassword, newPassword } = req.body;
+    const currentAdminPassword = (db.settings as any)?.adminPassword || 'fenova2026';
+
+    if (!newPassword || newPassword.trim().length < 4) {
+      return res.status(400).json({ error: 'New password must be at least 4 characters long' });
+    }
+
+    if (currentPassword !== currentAdminPassword && !ADMIN_ACCOUNTS.some((a) => a.passwordHash === currentPassword)) {
+      return res.status(401).json({ error: 'Current password is incorrect' });
+    }
+
+    // Update settings in database
+    (db.settings as any).adminPassword = newPassword.trim();
+    ADMIN_ACCOUNTS = ADMIN_ACCOUNTS.map((acc) => ({ ...acc, passwordHash: newPassword.trim() }));
+    saveDatabase(db);
+
+    res.json({
+      success: true,
+      message: 'Admin terminal password updated successfully',
+      newPassword: newPassword.trim(),
     });
   });
 
   // Auth: Current User Demo Info
   app.get('/api/auth/accounts', (req, res) => {
+    const currentAdminPassword = (db.settings as any)?.adminPassword || 'fenova2026';
     res.json({
+      currentPassword: currentAdminPassword,
       accounts: ADMIN_ACCOUNTS.map((a) => ({
         email: a.email,
         role: a.role,
         name: a.name,
-        passwordHint: a.passwordHash,
+        passwordHint: currentAdminPassword,
       })),
     });
   });
@@ -459,6 +547,41 @@ async function startServer() {
     db.media.unshift(newMedia);
     saveDatabase(db);
     res.json({ success: true, media: newMedia });
+  });
+
+  // Admin: Bake & Sync all current state directly to static files & source code
+  app.post('/api/admin/bake-defaults', (req, res) => {
+    saveDatabase(db);
+    res.json({
+      success: true,
+      message: 'Current CMS database successfully baked into source code and static deployment payloads!',
+      timestamp: new Date().toISOString(),
+    });
+  });
+
+  // Admin: Import whole database snapshot from client
+  app.post('/api/admin/import-all', (req, res) => {
+    const incoming = req.body;
+    if (!incoming || typeof incoming !== 'object') {
+      return res.status(400).json({ error: 'Invalid database payload' });
+    }
+    if (incoming.settings) db.settings = incoming.settings;
+    if (incoming.heroSlides) db.heroSlides = incoming.heroSlides;
+    if (incoming.projects) db.projects = incoming.projects;
+    if (incoming.services) db.services = incoming.services;
+    if (incoming.locations) db.locations = incoming.locations;
+    if (incoming.clients) db.clients = incoming.clients;
+    if (incoming.testimonials) db.testimonials = incoming.testimonials;
+    if (incoming.leaders) db.leaders = incoming.leaders;
+    if (incoming.careers) db.careers = incoming.careers;
+    if (incoming.brochures) db.brochures = incoming.brochures;
+    if (incoming.media) db.media = incoming.media;
+    if (incoming.quotations) db.quotations = incoming.quotations;
+    if (incoming.applications) db.applications = incoming.applications;
+    if (incoming.contacts) db.contacts = incoming.contacts;
+
+    saveDatabase(db);
+    res.json({ success: true, message: 'Database successfully imported and baked to static codebase' });
   });
 
   // Admin: Reset to initial demo database (helpful for testing)

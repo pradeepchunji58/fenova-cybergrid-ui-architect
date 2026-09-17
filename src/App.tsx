@@ -88,9 +88,7 @@ const AppContent: React.FC = () => {
 
   return (
     <div
-      className={`min-h-screen flex flex-col font-sans transition-colors duration-300 relative ${
-        isAdmin ? 'bg-[#080402] text-slate-100 theme-admin-orange' : `bg-[#04070a] text-slate-100 theme-${theme}`
-      }`}
+      className={`min-h-screen flex flex-col font-sans transition-colors duration-300 relative bg-[#04070a] text-slate-100 theme-${theme}`}
     >
       {/* Hardware-accelerated X-Mark Tracker Custom Cursor */}
       <TechCursor />

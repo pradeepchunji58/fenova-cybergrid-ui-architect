@@ -209,13 +209,13 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 4: HQ Telemetry & Coordinates */}
+          {/* Column 4: HQ Corporate Location & Contact */}
           <div className="space-y-3">
             <h4
               className="text-xs font-mono font-bold uppercase tracking-widest"
               style={{ color: 'var(--accent-color)' }}
             >
-              HQ_COORDINATES
+              GLOBAL HEADQUARTERS
             </h4>
             <div className="space-y-2.5 text-xs font-mono text-slate-400">
               <div className="flex items-start gap-2">
@@ -253,7 +253,7 @@ export const Footer: React.FC = () => {
             <p>© 2026 FENOVA HI-TECH CIVIL ENGINEERING CORP. ALL RIGHTS RESERVED.</p>
             <span className="hidden sm:inline text-white/20">|</span>
             <span className="text-[11px] text-slate-400">
-              HUD ENGINE: <span className="font-bold text-white uppercase">{theme.replace('-', ' ')}</span>
+              ACTIVE PALETTE: <span className="font-bold text-white uppercase">{theme.replace('-', ' ')}</span>
             </span>
           </div>
 
@@ -265,7 +265,7 @@ export const Footer: React.FC = () => {
             >
               <span className="flex items-center gap-1.5 text-slate-400 uppercase tracking-wider text-[10px] font-bold">
                 <Palette className="w-3.5 h-3.5" style={{ color: 'var(--accent-color)' }} />
-                <span>CYBERGRID THEME:</span>
+                <span>THEME PALETTE:</span>
               </span>
               <div className="flex items-center gap-1.5">
                 {themeOptions.map((opt) => {

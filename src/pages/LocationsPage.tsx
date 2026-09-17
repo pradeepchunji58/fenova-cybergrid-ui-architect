@@ -76,8 +76,8 @@ export const LocationsPage: React.FC = () => {
                       <span className="text-[11px] font-mono font-bold uppercase tracking-wider" style={{ color: 'var(--accent-color)' }}>
                         {t(loc.country)}
                       </span>
-                      <span className="text-[10px] font-mono text-slate-500">
-                        {loc.coordinates.lat.toFixed(2)}° N, {loc.coordinates.lng.toFixed(2)}° E
+                      <span className="text-[10px] font-mono text-slate-400 bg-white/5 px-2 py-0.5 rounded">
+                        REGIONAL HUB
                       </span>
                     </div>
 
@@ -106,6 +106,7 @@ export const LocationsPage: React.FC = () => {
                     <img
                       src={activeLoc.locationImage}
                       alt={t(activeLoc.name)}
+                      referrerPolicy="no-referrer"
                       className="w-full h-full object-cover"
                     />
                     <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/80 text-[10px] text-white font-mono border border-white/10">
@@ -116,6 +117,7 @@ export const LocationsPage: React.FC = () => {
                     <img
                       src={activeLoc.officeImage}
                       alt={t(activeLoc.name)}
+                      referrerPolicy="no-referrer"
                       className="w-full h-full object-cover"
                     />
                     <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/80 text-[10px] text-white font-mono border border-white/10">
@@ -172,9 +174,9 @@ export const LocationsPage: React.FC = () => {
                 {/* Interactive Map Embed */}
                 <div className="pt-4 border-t border-white/10">
                   <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center justify-between">
-                    <span>Geographic Satellite Coordinates</span>
+                    <span>Facility Location & Access Map</span>
                     <span className="text-[11px]" style={{ color: 'var(--accent-color)' }}>
-                      LAT {activeLoc.coordinates.lat} / LNG {activeLoc.coordinates.lng}
+                      [ SATELLITE MAP EMBED ]
                     </span>
                   </h4>
                   <div className="h-64 sm:h-80 rounded overflow-hidden border border-white/10 bg-slate-900">

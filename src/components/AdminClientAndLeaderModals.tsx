@@ -421,7 +421,7 @@ export const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
@@ -435,12 +435,29 @@ export const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({
     }
 
     setSaving(true);
-    // Update local storage credentials
+    // Update server and local storage credentials
     try {
+      const res = await fetch('/api/auth/change-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          currentPassword,
+          newPassword,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        setError(data.error || 'Failed updating admin password on server.');
+        setSaving(false);
+        return;
+      }
+
       const storedCredentials = localStorage.getItem('fenova_custom_passwords');
       const creds = storedCredentials ? JSON.parse(storedCredentials) : {};
       creds[userEmail.toLowerCase()] = newPassword;
       localStorage.setItem('fenova_custom_passwords', JSON.stringify(creds));
+      localStorage.setItem('fenova_master_password', newPassword);
       onSuccess(newPassword);
       onClose();
     } catch {

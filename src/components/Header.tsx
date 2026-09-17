@@ -108,23 +108,21 @@ export const Header: React.FC = () => {
       id="main-header"
       className="sticky top-0 z-50 bg-[#04070a]/95 backdrop-blur-md border-b border-white/10 text-slate-100 transition-colors"
     >
-      {/* Top Telemetry & Micro-Data Status Bar */}
+      {/* Top Corporate Engineering Status & Utility Bar */}
       <div className="border-b border-white/5 bg-[#020406]/90 px-4 sm:px-8 py-1.5 text-[11px] font-mono text-slate-400 flex items-center justify-between overflow-x-auto whitespace-nowrap">
-        {/* Left Side: Monospaced Metrics & Active System Status */}
-        <div className="flex items-center space-x-4 rtl:space-x-reverse">
-          <span className="text-slate-300 font-semibold tracking-wider font-mono">
-            SYS.STATUS: <span style={{ color: 'var(--accent-color)' }} className="font-bold">ACTIVE</span>
+        {/* Left Side: Corporate EPC Status & Hotline */}
+        <div className="flex items-center space-x-3 sm:space-x-4 rtl:space-x-reverse">
+          <span className="text-slate-300 font-semibold tracking-wider font-mono flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: 'var(--accent-color)' }}></span>
+            <span className="text-slate-400">EPC STATUS:</span> <span style={{ color: 'var(--accent-color)' }} className="font-bold">ACTIVE OPERATIONS</span>
           </span>
-          <span className="hidden md:inline text-white/20">|</span>
-          <span className="hidden md:inline text-slate-400">
-            LOAD: <span className="text-white font-bold">{tickerMetric}%</span>
+          <span className="hidden sm:inline text-white/20">|</span>
+          <span className="hidden sm:inline text-slate-400">
+            HOTLINE: <a href="tel:+966114897700" className="text-slate-200 hover:text-white font-bold tracking-wider">+966 11 489 7700</a>
           </span>
           <span className="hidden lg:inline text-white/20">|</span>
           <span className="hidden lg:inline text-slate-400">
-            TIME:{' '}
-            <span style={{ color: 'var(--accent-color)' }}>
-              {sysTime || 'SYNCING...'}
-            </span>
+            GLOBAL EPC & INFRASTRUCTURE
           </span>
         </div>
 

@@ -108,6 +108,7 @@ export const ServicesPage: React.FC = () => {
                   <img
                     src={serv.mainImage}
                     alt={t(serv.title)}
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div
@@ -214,7 +215,7 @@ export const ServiceDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="h-96 sm:h-[480px] rounded overflow-hidden shadow-2xl bg-black border border-white/10">
-          <img src={service.mainImage} alt={t(service.title)} className="w-full h-full object-cover" />
+          <img src={service.mainImage} alt={t(service.title)} referrerPolicy="no-referrer" className="w-full h-full object-cover" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">

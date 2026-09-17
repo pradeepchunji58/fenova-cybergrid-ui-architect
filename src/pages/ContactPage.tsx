@@ -376,7 +376,7 @@ export const ContactPage: React.FC = () => {
               className="hexagon-cut border border-white/10 bg-[#060b12] overflow-hidden hover:border-white/30 transition-colors"
             >
               <div className="h-44 bg-black overflow-hidden relative">
-                <img src={loc.locationImage} alt={t(loc.name)} className="w-full h-full object-cover" />
+                <img src={loc.locationImage} alt={t(loc.name)} referrerPolicy="no-referrer" className="w-full h-full object-cover" />
                 <span
                   className="absolute top-2 left-2 px-2 py-0.5 hexagon-cut-sm text-xs font-mono font-bold bg-black/80"
                   style={{ color: 'var(--accent-color)' }}

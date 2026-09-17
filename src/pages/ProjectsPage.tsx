@@ -191,6 +191,7 @@ export const ProjectsPage: React.FC<{ initialFilter?: 'all' | 'completed' | 'ong
                   <img
                     src={project.mainImage}
                     alt={t(project.name)}
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#060b12] via-transparent to-transparent opacity-80" />
@@ -320,6 +321,7 @@ export const ProjectDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
               <img
                 src={project.mainImage}
                 alt={t(project.name)}
+                referrerPolicy="no-referrer"
                 className="w-full h-[440px] object-cover"
               />
               <div

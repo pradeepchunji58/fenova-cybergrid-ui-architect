@@ -120,6 +120,7 @@ export const HomePage: React.FC = () => {
                     <img
                       src={slide.imageUrl}
                       alt={t(slide.title)}
+                      referrerPolicy="no-referrer"
                       className="w-full h-full object-cover object-center scale-100 animate-subtleZoom"
                     />
                   )}
@@ -132,7 +133,7 @@ export const HomePage: React.FC = () => {
             })}
 
             {/* Top Landscape Status Tag */}
-            <div className="relative z-20 p-6 sm:p-10 lg:p-12 pb-0 flex items-center justify-between">
+            <div className="relative z-20 p-4 sm:p-8 lg:p-12 pb-0 flex flex-wrap items-center justify-between gap-3">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 hexagon-cut-sm bg-black/75 border text-[11px] font-mono tracking-widest uppercase backdrop-blur-md"
                 style={{
                   borderColor: 'var(--accent-border)',
@@ -143,44 +144,44 @@ export const HomePage: React.FC = () => {
                 <span>[ {currentSlide?.badge ? t(currentSlide.badge) : 'COMPLEX CIVIL INFRASTRUCTURE'} ]</span>
               </div>
 
-              {/* Landscape Coordinate HUD */}
-              <div className="hidden sm:flex items-center gap-3 px-3 py-1.5 hexagon-cut-sm bg-black/60 border border-white/10 text-[10px] font-mono text-slate-300 backdrop-blur-sm">
-                <span>COORD: 24°42'44"N 46°40'28"E</span>
+              {/* Accreditations badge */}
+              <div className="flex items-center gap-2 px-3 py-1.5 hexagon-cut-sm bg-black/60 border border-white/10 text-[10px] font-mono text-slate-300 backdrop-blur-sm">
+                <span style={{ color: 'var(--accent-color)' }}>ISO 9001:2015</span>
                 <span className="text-white/20">|</span>
-                <span style={{ color: 'var(--accent-color)' }}>SPEC: GRADE 1 EPC</span>
+                <span>GRADE 1 EPC</span>
               </div>
             </div>
 
             {/* Middle Content Area: Broad Landscape Typography & Quotation/Exploration Focus */}
-            <div className="relative z-20 px-6 sm:p-10 lg:px-12 py-8 max-w-4xl space-y-5">
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black font-cyber tracking-tight leading-[1.05] text-white">
+            <div className="relative z-20 px-4 sm:px-8 lg:px-12 py-6 sm:py-8 max-w-4xl space-y-4 sm:space-y-5">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-cyber tracking-tight leading-[1.08] text-white">
                 {t(currentSlide?.title)}
               </h1>
 
               <p
-                className="text-sm sm:text-base lg:text-lg font-geom tracking-wider uppercase font-semibold"
+                className="text-xs sm:text-sm md:text-base lg:text-lg font-geom tracking-wider uppercase font-semibold"
                 style={{ color: 'var(--accent-color)' }}
               >
                 // {t(currentSlide?.subtitle)}
               </p>
 
-              <p className="text-xs sm:text-base text-slate-300 leading-relaxed max-w-2xl font-normal font-sans">
+              <p className="text-xs sm:text-sm md:text-base text-slate-300 leading-relaxed max-w-2xl font-normal font-sans">
                 {t(currentSlide?.description)}
               </p>
 
               {/* Action Controls: Hexagon Cut Quotation & Mega Project Exploration */}
-              <div className="pt-4 flex flex-wrap items-center gap-4">
+              <div className="pt-2 sm:pt-4 flex flex-wrap items-center gap-3 sm:gap-4">
                 {/* 1. Request Quotation & Tender Docket (White/Hexagon Cut) */}
                 <button
                   id="hero-quotation-cta"
                   onClick={() => navigate(currentSlide?.secondaryCtaLink || '/quotation')}
                   data-cursor="TENDER"
-                  className="px-7 py-4 bg-white hover:bg-slate-200 text-black text-xs font-mono font-bold tracking-widest uppercase transition-all duration-200 flex items-center gap-2.5 cursor-pointer shadow-none"
+                  className="px-5 sm:px-7 py-3.5 sm:py-4 bg-white hover:bg-slate-200 text-black text-xs font-mono font-bold tracking-widest uppercase transition-all duration-200 flex items-center gap-2.5 cursor-pointer shadow-none"
                   style={{
                     clipPath: 'polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px)',
                   }}
                 >
-                  <FileText className="w-4 h-4 text-black" />
+                  <FileText className="w-4 h-4 text-black shrink-0" />
                   <span>{t(currentSlide?.secondaryCtaText) || ui.requestQuote}</span>
                 </button>
 
@@ -189,7 +190,7 @@ export const HomePage: React.FC = () => {
                   id="hero-projects-cta"
                   onClick={() => navigate(currentSlide?.primaryCtaLink || '/projects')}
                   data-cursor="PORTFOLIO"
-                  className="px-7 py-4 bg-black/60 hover:bg-white/10 text-white border text-xs font-mono tracking-widest uppercase backdrop-blur-md transition-all flex items-center gap-2.5 group hexagon-cut-sm"
+                  className="px-5 sm:px-7 py-3.5 sm:py-4 bg-black/60 hover:bg-white/10 text-white border text-xs font-mono tracking-widest uppercase backdrop-blur-md transition-all flex items-center gap-2.5 group hexagon-cut-sm cursor-pointer"
                   style={{
                     borderColor: 'var(--accent-border)',
                   }}
@@ -399,6 +400,7 @@ export const HomePage: React.FC = () => {
                 <img
                   src={project.mainImage}
                   alt={t(project.name)}
+                  referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#060b12] via-transparent to-transparent opacity-80" />
@@ -543,6 +545,7 @@ export const HomePage: React.FC = () => {
                 <img
                   src={loc.locationImage}
                   alt={t(loc.name)}
+                  referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#060b12] via-transparent to-transparent" />
@@ -555,8 +558,8 @@ export const HomePage: React.FC = () => {
                 >
                   {t(loc.country)}
                 </div>
-                <div className="absolute bottom-2 right-3 font-mono text-[9px] text-slate-400 bg-black/60 px-1.5 py-0.5 hexagon-cut-sm">
-                  GPS: {loc.coordinates?.lat?.toFixed(2) || '24.71'}°N, {loc.coordinates?.lng?.toFixed(2) || '46.67'}°E
+                <div className="absolute bottom-2 right-3 font-mono text-[9px] text-slate-300 bg-black/70 px-2 py-0.5 hexagon-cut-sm border border-white/10">
+                  REGIONAL FACILITY
                 </div>
               </div>
 

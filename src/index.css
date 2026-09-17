@@ -2,7 +2,7 @@
 
 @layer base {
   :root {
-    --font-heading: 'Orbitron', sans-serif;
+    --font-heading: 'Orbitron', -apple-system, sans-serif;
     --font-mono: 'Share Tech Mono', monospace;
     --font-cyber: 'Orbitron', sans-serif;
     --font-geom: 'Space Grotesk', sans-serif;
@@ -35,16 +35,16 @@
   }
 
   h1, h2, h3, h4, h5, h6, .font-heading, .font-cyber {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', sans-serif !important;
     letter-spacing: 0.04em;
   }
 
-  body, p, span, button, input, select, textarea, .font-sans, .font-geom {
+  body, p, span, button, input, select, textarea, .font-sans, .font-geom, .font-body {
     font-family: 'Space Grotesk', sans-serif;
   }
 
   .font-mono, .font-tech, code, pre {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Share Tech Mono', monospace !important;
   }
 
   [dir="rtl"] h1, 
@@ -55,7 +55,7 @@
   [dir="rtl"] h6,
   [dir="rtl"] .font-heading,
   [dir="rtl"] .font-cyber {
-    font-family: var(--font-arabic);
+    font-family: var(--font-arabic) !important;
     letter-spacing: normal;
   }
 }
@@ -69,14 +69,15 @@
 }
 
 /* =======================================================
-   THREE CEER-INSPIRED COLOR THEMES
-   1. Tech Green (Default - Ceer Neptune Teal / Emerald)
-   2. Cyber Blue (Electric Cobalt / Cyan)
+   THREE UNIFIED HIGH-TECH COLOR THEMES
+   1. Tech Green (Emerald / Ceer Neptune Teal)
+   2. Cyber Blue (Electric Cobalt / High-Tech Cyan)
    3. Crimson Red (Hyper Red / Cyber Crimson)
    ======================================================= */
 
-/* Theme 1: Tech Green (Neptune Teal / High-Tech Green) */
+/* Theme 1: Tech Green */
 .theme-tech-green,
+.theme-green,
 .theme-premium-engineering {
   --bg-primary: #04070a;
   --bg-secondary: #070c12;
@@ -92,8 +93,9 @@
   --theme-grid-color: rgba(13, 242, 201, 0.04);
 }
 
-/* Theme 2: Cyber Blue (Electric Cobalt / High-Tech Cyan) */
+/* Theme 2: Cyber Blue */
 .theme-cyber-blue,
+.theme-blue,
 .theme-modern-construction {
   --bg-primary: #04070e;
   --bg-secondary: #060b16;
@@ -109,8 +111,9 @@
   --theme-grid-color: rgba(0, 210, 255, 0.04);
 }
 
-/* Theme 3: Crimson Red (Hyper Red / Cyber Crimson) */
-.theme-crimson-red {
+/* Theme 3: Crimson Red */
+.theme-crimson-red,
+.theme-red {
   --bg-primary: #0a0406;
   --bg-secondary: #12060a;
   --bg-card: #18090f;
@@ -125,20 +128,12 @@
   --theme-grid-color: rgba(255, 51, 102, 0.04);
 }
 
-/* Theme 4: Admin Orange (Strictly isolated to Admin Panel) */
+/* Unified Admin Interface - Inherits Active Global Theme */
 .theme-admin-orange {
-  --bg-primary: #080402;
-  --bg-secondary: #100804;
-  --bg-card: #170c06;
-  --bg-card-hover: #241309;
-  --accent-color: #ff6a00;
-  --accent-secondary: #ff851a;
-  --accent-glow: rgba(255, 106, 0, 0.4);
-  --accent-border: rgba(255, 106, 0, 0.35);
-  --accent-badge: rgba(255, 106, 0, 0.14);
-  --accent-btn-bg: #ff6a00;
-  --accent-btn-text: #ffffff;
-  --theme-grid-color: rgba(255, 106, 0, 0.05);
+  --bg-primary: #060a10;
+  --bg-secondary: #09101a;
+  --bg-card: #0c1422;
+  --bg-card-hover: #121c2e;
 }
 
 /* Hexagon-Cut Corner and Chamfered Architectural Shapes */
