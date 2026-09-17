@@ -12,6 +12,7 @@ import { QuotationModal } from './components/QuotationModal.tsx';
 import { ApplyJobModal } from './components/ApplyJobModal.tsx';
 import { TechCursor } from './components/TechCursor.tsx';
 import { WhatsAppWidget } from './components/WhatsAppWidget.tsx';
+import { RequestQuoteFloatingWidget } from './components/RequestQuoteFloatingWidget.tsx';
 import { motion, AnimatePresence } from 'motion/react';
 
 // Pages

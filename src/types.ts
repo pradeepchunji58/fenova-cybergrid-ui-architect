@@ -262,6 +262,7 @@ export interface SiteSettings {
   companyName: MultilingualText;
   tagline: MultilingualText;
   theme: VisualTheme;
+  primaryTheme?: string;
   defaultLanguage: Language;
   phonePrimary: string;
   phoneSecondary: string;
@@ -270,6 +271,10 @@ export interface SiteSettings {
   emailQuotes: string;
   officialMailPath?: string;
   logoUrl?: string;
+  logoSize?: number;
+  logoZoom?: number;
+  rfqButtonEnabled?: boolean;
+  rfqButtonColor?: string;
   rfqEnabled?: boolean;
   headquartersAddress: MultilingualText;
   regionalAddresses?: RegionalAddress[];

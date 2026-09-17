@@ -71,6 +71,7 @@ import {
   LeaderModal,
   ChangePasswordModal,
 } from '../components/AdminCrudModals.tsx';
+import { AdminImageInput } from '../components/AdminImageInput.tsx';
 
 type AdminTabType =
   | 'dashboard'
@@ -1215,6 +1216,133 @@ export const initialMedia: MediaItem[] = [];
                   </div>
                 );
               })}
+            </div>
+
+            {/* Brand Logo & Icon Path & Size Preview Controller */}
+            <div className="p-6 rounded-xl border border-white/10 bg-[#0c1420] space-y-6">
+              <div>
+                <span className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">LOGO & ICON PATH CONFIGURATION</span>
+                <h3 className="text-lg font-bold font-heading text-white mt-1">Custom Logo Path & Size Sizer Preview</h3>
+                <p className="text-xs text-slate-400 mt-1">
+                  Upload or specify your custom logo emblem path. Adjust the size slider to preview the logo scaling live across headers and footers.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-xs font-mono uppercase text-slate-300 mb-1.5">Logo Image Path / URL</label>
+                    <AdminImageInput
+                      label="Logo Emblem Icon"
+                      value={settings.logoUrl || ''}
+                      onChange={(url) => updateSettings({ ...settings, logoUrl: url })}
+                    />
+                  </div>
+
+                  <div>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <label className="text-xs font-mono uppercase text-slate-300">Logo Size Sizer Preview ({settings.logoSize || 56}px)</label>
+                      <button
+                        type="button"
+                        onClick={() => updateSettings({ ...settings, logoSize: 56 })}
+                        className="text-[10px] font-mono text-cyan-400 hover:underline"
+                      >
+                        Reset Default
+                      </button>
+                    </div>
+                    <input
+                      type="range"
+                      min="30"
+                      max="120"
+                      value={settings.logoSize || 56}
+                      onChange={(e) => updateSettings({ ...settings, logoSize: Number(e.target.value) })}
+                      className="w-full accent-cyan-400 bg-black/50 rounded-lg cursor-pointer"
+                    />
+                  </div>
+
+                  <div>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <label className="text-xs font-mono uppercase text-slate-300">Logo Zoom-Up Multiplier ({Math.round((settings.logoZoom || 1.5) * 100)}%)</label>
+                      <button
+                        type="button"
+                        onClick={() => updateSettings({ ...settings, logoZoom: 1.5 })}
+                        className="text-[10px] font-mono text-cyan-400 hover:underline"
+                      >
+                        Reset Zoom
+                      </button>
+                    </div>
+                    <input
+                      type="range"
+                      min="1.0"
+                      max="3.5"
+                      step="0.1"
+                      value={settings.logoZoom || 1.5}
+                      onChange={(e) => updateSettings({ ...settings, logoZoom: Number(e.target.value) })}
+                      className="w-full accent-emerald-400 bg-black/50 rounded-lg cursor-pointer"
+                    />
+                  </div>
+                </div>
+
+                <div className="p-6 rounded-xl border border-white/15 bg-black/60 flex flex-col items-center justify-center space-y-3">
+                  <span className="text-[10px] font-mono uppercase text-slate-400">Live Size Preview Box</span>
+                  <div className="p-4 bg-[#04070a] rounded-lg border border-white/10 flex items-center justify-center w-full min-h-[100px]">
+                    <div className="flex items-center gap-3">
+                      {settings.logoUrl ? (
+                        <img
+                          src={settings.logoUrl}
+                          alt="Preview"
+                          style={{ width: `${settings.logoSize || 36}px`, height: `${settings.logoSize || 36}px` }}
+                          className="object-contain"
+                        />
+                      ) : (
+                        <div
+                          style={{ width: `${settings.logoSize || 36}px`, height: `${settings.logoSize || 36}px` }}
+                          className="bg-cyan-500/20 border border-cyan-400/50 rounded flex items-center justify-center text-cyan-300 font-mono text-xs font-bold"
+                        >
+                          LOGO
+                        </div>
+                      )}
+                      <div className="text-left">
+                        <div className="font-cyber font-black text-white text-lg tracking-wider">FɅNOVA</div>
+                        <div className="text-[9px] font-mono text-slate-400">ENGINEERING</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Request a Quote Corner Widget Controller */}
+            <div className="p-6 rounded-xl border border-white/10 bg-[#0c1420] space-y-6">
+              <div>
+                <span className="text-xs font-mono font-bold uppercase tracking-widest text-cyan-400">FLOATING CORNER WIDGET</span>
+                <h3 className="text-lg font-bold font-heading text-white mt-1">Request a Quote Corner Button</h3>
+                <p className="text-xs text-slate-400 mt-1">
+                  Configure the white/accent Request a Quote button appearing in the screen corner for rapid tender and quote submissions.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <label className="flex items-center justify-between p-4 rounded-lg border border-white/10 bg-black/40 cursor-pointer">
+                  <span className="text-xs font-mono text-slate-200 uppercase font-bold">Enable Screen Corner RFQ Button</span>
+                  <input
+                    type="checkbox"
+                    checked={settings.rfqButtonEnabled !== false}
+                    onChange={(e) => updateSettings({ ...settings, rfqButtonEnabled: e.target.checked })}
+                    className="w-4 h-4 accent-cyan-400 rounded cursor-pointer"
+                  />
+                </label>
+
+                <div className="p-4 rounded-lg border border-white/10 bg-black/40 flex items-center justify-between">
+                  <span className="text-xs font-mono text-slate-200 uppercase font-bold">Button Theme Color</span>
+                  <input
+                    type="color"
+                    value={settings.rfqButtonColor || '#ffffff'}
+                    onChange={(e) => updateSettings({ ...settings, rfqButtonColor: e.target.value })}
+                    className="w-8 h-8 rounded border border-white/20 bg-transparent cursor-pointer"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         )}

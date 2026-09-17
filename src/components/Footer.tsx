@@ -17,6 +17,7 @@ import {
   Palette,
 } from 'lucide-react';
 import { VisualTheme } from '../types.ts';
+import { LogoBrand } from './LogoBrand.tsx';
 
 export const Footer: React.FC = () => {
   const { navigate, ui, settings, t, theme, setTheme } = useApp();
@@ -108,18 +109,8 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Column 1: Company Profile */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3 cursor-pointer group" onClick={() => navigate('/')}>
-              <div>
-                <span className="text-2xl font-black font-cyber tracking-wider text-white transition-colors block">
-                  FENOVA
-                </span>
-                <span
-                  className="block text-[10px] font-mono tracking-widest uppercase font-semibold mt-0.5"
-                  style={{ color: 'var(--accent-color)' }}
-                >
-                  HIGHTECH CIVIL ENGINEERING
-                </span>
-              </div>
+            <div onClick={() => navigate('/')} className="inline-block">
+              <LogoBrand size="md" />
             </div>
 
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm font-sans">

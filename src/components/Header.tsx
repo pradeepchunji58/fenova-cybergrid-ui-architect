@@ -12,6 +12,7 @@ import {
   Palette,
 } from 'lucide-react';
 import { Language, VisualTheme } from '../types.ts';
+import { LogoBrand } from './LogoBrand.tsx';
 
 export const Header: React.FC = () => {
   const {
@@ -110,49 +111,15 @@ export const Header: React.FC = () => {
     >
       {/* Top Corporate Engineering Status & Utility Bar */}
       <div className="border-b border-white/5 bg-[#020406]/90 px-4 sm:px-8 py-1.5 text-[11px] font-mono text-slate-400 flex items-center justify-between overflow-x-auto whitespace-nowrap">
-        {/* Left Side: Corporate EPC Status & Hotline */}
+        {/* Left Side: Hotline */}
         <div className="flex items-center space-x-3 sm:space-x-4 rtl:space-x-reverse">
-          <span className="text-slate-300 font-semibold tracking-wider font-mono flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: 'var(--accent-color)' }}></span>
-            <span className="text-slate-400">EPC STATUS:</span> <span style={{ color: 'var(--accent-color)' }} className="font-bold">ACTIVE OPERATIONS</span>
-          </span>
-          <span className="hidden sm:inline text-white/20">|</span>
-          <span className="hidden sm:inline text-slate-400">
-            HOTLINE: <a href="tel:+966114897700" className="text-slate-200 hover:text-white font-bold tracking-wider">+966 11 489 7700</a>
-          </span>
-          <span className="hidden lg:inline text-white/20">|</span>
-          <span className="hidden lg:inline text-slate-400">
-            GLOBAL EPC & INFRASTRUCTURE
+          <span className="text-slate-300">
+            HOTLINE: <a href="tel:+966114897700" className="text-white font-bold tracking-wider hover:underline">+966 11 489 7700</a>
           </span>
         </div>
 
-        {/* Right Side: Language & Visual Theme Selectors */}
+        {/* Right Side: Language Selector */}
         <div className="flex items-center space-x-3 sm:space-x-4 rtl:space-x-reverse">
-          {/* Top Theme Selector */}
-          <div
-            id="top-theme-selector"
-            className="flex items-center px-2 py-0.5 hexagon-cut-sm border border-white/10 bg-black/40 text-[10px] font-mono gap-1"
-          >
-            <Palette className="w-3 h-3 mr-1 shrink-0" style={{ color: 'var(--accent-color)' }} />
-            {themeOptions.map((opt) => (
-              <button
-                key={opt.key}
-                id={`top-theme-${opt.key}`}
-                onClick={() => setTheme(opt.key)}
-                className={`px-1.5 py-0.2 uppercase transition-all hexagon-cut-sm text-[9px] font-bold ${
-                  theme === opt.key
-                    ? 'bg-white/15 text-white'
-                    : 'text-slate-400 hover:text-white'
-                }`}
-                style={{
-                  color: theme === opt.key ? opt.color : undefined,
-                }}
-              >
-                {opt.label}
-              </button>
-            ))}
-          </div>
-
           <div
             id="top-language-selector"
             className="flex items-center px-2 py-0.5 hexagon-cut-sm border border-white/10 bg-black/40 text-[10px] font-mono"
@@ -185,19 +152,14 @@ export const Header: React.FC = () => {
 
       {/* Main Header Bar - Full scale of screen */}
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 h-24 flex items-center justify-between relative">
-        {/* Brand Terminal Mark: FENOVA (No home icon, bold, double size, Hightech Civil Engineering text) */}
+        {/* Brand Terminal Mark with Logo & Hexagon Cut */}
         <div
           id="brand-logo-container"
           onClick={() => handleNav('/')}
           data-cursor="HOME"
-          className="flex flex-col cursor-pointer select-none group"
+          className="flex items-center cursor-pointer select-none group"
         >
-          <span className="text-3xl sm:text-4xl lg:text-5xl font-black font-cyber tracking-wider text-white leading-none">
-            FENOVA
-          </span>
-          <p className="text-xs sm:text-sm font-mono tracking-widest uppercase font-semibold text-slate-300 mt-1">
-            Hightech Civil Engineering
-          </p>
+          <LogoBrand size="md" />
         </div>
 
         {/* Desktop Navigation Items (Numbers series 01, 02 hidden) */}
